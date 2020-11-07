@@ -1,0 +1,24 @@
+Priority Notes:
+SD3 -> GPS
+SD2 -> Xbee
+SD6 -> debug 
+
+High priodity/fast interrupts:
+PPS (E15??) Priority 1
+ADC DRDY (E0) Priority 0
+SPI receive Priority 0
+
+OS aware:
+PendSV Priority 3->4
+
+gpt5(callback) Priority 2
+
+I2C Priority 5
+
+SDC Priority 9
+
+UART2 Priority 6->3
+UART3 Priority 12->3
+UART6 Priority 12
+
+Might need to move SD2 (xbee) receive isr callback code into isr to increase reliability or else move to UART driver with DMA

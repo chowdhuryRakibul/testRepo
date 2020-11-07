@@ -1,0 +1,1452 @@
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s 			page 1
+
+
+   1              		.cpu cortex-m4
+   2              		.eabi_attribute 20, 1
+   3              		.eabi_attribute 21, 1
+   4              		.eabi_attribute 23, 3
+   5              		.eabi_attribute 24, 1
+   6              		.eabi_attribute 25, 1
+   7              		.eabi_attribute 26, 1
+   8              		.eabi_attribute 30, 1
+   9              		.eabi_attribute 34, 1
+  10              		.eabi_attribute 18, 4
+  11              		.file	"crt1.c"
+  12              		.text
+  13              	.Ltext0:
+  14              		.cfi_sections	.debug_frame
+  15              		.align	1
+  16              		.p2align 4,,15
+  17              		.weak	__core_init
+  18              		.syntax unified
+  19              		.thumb
+  20              		.thumb_func
+  21              		.fpu softvfp
+  22              		.type	__core_init, %function
+  23              	__core_init:
+  24              	.LFB130:
+  25              		.file 1 "../../../ChibiOSRepo/chibios191/os/common/startup/ARMCMx/compilers/GCC/crt1.c"
+  26              		.loc 1 137 0
+  27              		.cfi_startproc
+  28              		@ args = 0, pretend = 0, frame = 0
+  29              		@ frame_needed = 0, uses_anonymous_args = 0
+  30              		@ link register save eliminated.
+  31              		.loc 1 143 0
+  32 0000 7047     		bx	lr
+  33              		.cfi_endproc
+  34              	.LFE130:
+  35              		.size	__core_init, .-__core_init
+  36              		.align	1
+  37 0002 00BFAFF3 		.p2align 4,,15
+  37      0080AFF3 
+  37      0080AFF3 
+  37      0080
+  38              		.weak	__early_init
+  39              		.syntax unified
+  40              		.thumb
+  41              		.thumb_func
+  42              		.fpu softvfp
+  43              		.type	__early_init, %function
+  44              	__early_init:
+  45              	.LFB131:
+  46              		.loc 1 156 0
+  47              		.cfi_startproc
+  48              		@ args = 0, pretend = 0, frame = 0
+  49              		@ frame_needed = 0, uses_anonymous_args = 0
+  50              		@ link register save eliminated.
+  51              		.loc 1 156 0
+  52 0010 7047     		bx	lr
+  53              		.cfi_endproc
+  54              	.LFE131:
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s 			page 2
+
+
+  55              		.size	__early_init, .-__early_init
+  56              		.align	1
+  57 0012 00BFAFF3 		.p2align 4,,15
+  57      0080AFF3 
+  57      0080AFF3 
+  57      0080
+  58              		.weak	__late_init
+  59              		.syntax unified
+  60              		.thumb
+  61              		.thumb_func
+  62              		.fpu softvfp
+  63              		.type	__late_init, %function
+  64              	__late_init:
+  65              	.LFB132:
+  66              		.loc 1 170 0
+  67              		.cfi_startproc
+  68              		@ args = 0, pretend = 0, frame = 0
+  69              		@ frame_needed = 0, uses_anonymous_args = 0
+  70              		@ link register save eliminated.
+  71              		.loc 1 170 0
+  72 0020 7047     		bx	lr
+  73              		.cfi_endproc
+  74              	.LFE132:
+  75              		.size	__late_init, .-__late_init
+  76              		.align	1
+  77 0022 00BFAFF3 		.p2align 4,,15
+  77      0080AFF3 
+  77      0080AFF3 
+  77      0080
+  78              		.weak	__default_exit
+  79              		.syntax unified
+  80              		.thumb
+  81              		.thumb_func
+  82              		.fpu softvfp
+  83              		.type	__default_exit, %function
+  84              	__default_exit:
+  85              	.LFB133:
+  86              		.loc 1 183 0
+  87              		.cfi_startproc
+  88              		@ Volatile: function does not return.
+  89              		@ args = 0, pretend = 0, frame = 0
+  90              		@ frame_needed = 0, uses_anonymous_args = 0
+  91              		@ link register save eliminated.
+  92              	.L5:
+  93 0030 FEE7     		b	.L5
+  94              		.cfi_endproc
+  95              	.LFE133:
+  96              		.size	__default_exit, .-__default_exit
+  97              		.align	1
+  98 0032 00BFAFF3 		.p2align 4,,15
+  98      0080AFF3 
+  98      0080AFF3 
+  98      0080
+  99              		.global	__init_ram_areas
+ 100              		.syntax unified
+ 101              		.thumb
+ 102              		.thumb_func
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s 			page 3
+
+
+ 103              		.fpu softvfp
+ 104              		.type	__init_ram_areas, %function
+ 105              	__init_ram_areas:
+ 106              	.LFB134:
+ 107              		.loc 1 193 0
+ 108              		.cfi_startproc
+ 109              		@ args = 0, pretend = 0, frame = 0
+ 110              		@ frame_needed = 0, uses_anonymous_args = 0
+ 111              		@ link register save eliminated.
+ 112              	.LVL0:
+ 113              		.loc 1 195 0
+ 114 0040 0B4A     		ldr	r2, .L13
+ 115 0042 11E0     		b	.L11
+ 116              	.LVL1:
+ 117              	.L8:
+ 118              	.LBB2:
+ 119              		.loc 1 203 0
+ 120 0044 50F8041B 		ldr	r1, [r0], #4
+ 121              	.LVL2:
+ 122 0048 43F8041B 		str	r1, [r3], #4
+ 123              	.LVL3:
+ 124              	.L7:
+ 125              		.loc 1 202 0
+ 126 004c 9168     		ldr	r1, [r2, #8]
+ 127 004e 9942     		cmp	r1, r3
+ 128 0050 F8D8     		bhi	.L8
+ 129 0052 02E0     		b	.L9
+ 130              	.L10:
+ 131              		.loc 1 210 0
+ 132 0054 0021     		movs	r1, #0
+ 133 0056 43F8041B 		str	r1, [r3], #4
+ 134              	.LVL4:
+ 135              	.L9:
+ 136              		.loc 1 209 0
+ 137 005a D168     		ldr	r1, [r2, #12]
+ 138 005c 9942     		cmp	r1, r3
+ 139 005e F9D8     		bhi	.L10
+ 140              		.loc 1 213 0
+ 141 0060 1032     		adds	r2, r2, #16
+ 142              	.LVL5:
+ 143              	.LBE2:
+ 144              		.loc 1 215 0
+ 145 0062 044B     		ldr	r3, .L13+4
+ 146              	.LVL6:
+ 147 0064 9A42     		cmp	r2, r3
+ 148 0066 02D2     		bcs	.L12
+ 149              	.LVL7:
+ 150              	.L11:
+ 151              	.LBB3:
+ 152              		.loc 1 198 0
+ 153 0068 1068     		ldr	r0, [r2]
+ 154              	.LVL8:
+ 155              		.loc 1 199 0
+ 156 006a 5368     		ldr	r3, [r2, #4]
+ 157              	.LVL9:
+ 158              		.loc 1 202 0
+ 159 006c EEE7     		b	.L7
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s 			page 4
+
+
+ 160              	.LVL10:
+ 161              	.L12:
+ 162              	.LBE3:
+ 163              		.loc 1 217 0
+ 164 006e 7047     		bx	lr
+ 165              	.L14:
+ 166              		.align	2
+ 167              	.L13:
+ 168 0070 00000000 		.word	.LANCHOR0
+ 169 0074 80000000 		.word	.LANCHOR0+128
+ 170              		.cfi_endproc
+ 171              	.LFE134:
+ 172              		.size	__init_ram_areas, .-__init_ram_areas
+ 173              		.section	.rodata
+ 174              		.align	2
+ 175              		.set	.LANCHOR0,. + 0
+ 176              		.type	ram_areas, %object
+ 177              		.size	ram_areas, 128
+ 178              	ram_areas:
+ 179 0000 00000000 		.word	__ram0_init_text__
+ 180 0004 00000000 		.word	__ram0_init__
+ 181 0008 00000000 		.word	__ram0_clear__
+ 182 000c 00000000 		.word	__ram0_noinit__
+ 183 0010 00000000 		.word	__ram1_init_text__
+ 184 0014 00000000 		.word	__ram1_init__
+ 185 0018 00000000 		.word	__ram1_clear__
+ 186 001c 00000000 		.word	__ram1_noinit__
+ 187 0020 00000000 		.word	__ram2_init_text__
+ 188 0024 00000000 		.word	__ram2_init__
+ 189 0028 00000000 		.word	__ram2_clear__
+ 190 002c 00000000 		.word	__ram2_noinit__
+ 191 0030 00000000 		.word	__ram3_init_text__
+ 192 0034 00000000 		.word	__ram3_init__
+ 193 0038 00000000 		.word	__ram3_clear__
+ 194 003c 00000000 		.word	__ram3_noinit__
+ 195 0040 00000000 		.word	__ram4_init_text__
+ 196 0044 00000000 		.word	__ram4_init__
+ 197 0048 00000000 		.word	__ram4_clear__
+ 198 004c 00000000 		.word	__ram4_noinit__
+ 199 0050 00000000 		.word	__ram5_init_text__
+ 200 0054 00000000 		.word	__ram5_init__
+ 201 0058 00000000 		.word	__ram5_clear__
+ 202 005c 00000000 		.word	__ram5_noinit__
+ 203 0060 00000000 		.word	__ram6_init_text__
+ 204 0064 00000000 		.word	__ram6_init__
+ 205 0068 00000000 		.word	__ram6_clear__
+ 206 006c 00000000 		.word	__ram6_noinit__
+ 207 0070 00000000 		.word	__ram7_init_text__
+ 208 0074 00000000 		.word	__ram7_init__
+ 209 0078 00000000 		.word	__ram7_clear__
+ 210 007c 00000000 		.word	__ram7_noinit__
+ 211              		.text
+ 212              	.Letext0:
+ 213              		.file 2 "c:\\chibistudio\\tools\\gnu tools arm embedded\\7.0 2017q4\\arm-none-eabi\\include\\machi
+ 214              		.file 3 "c:\\chibistudio\\tools\\gnu tools arm embedded\\7.0 2017q4\\arm-none-eabi\\include\\sys\\
+ 215              		.file 4 "../../../ChibiOSRepo/chibios191/os/common/ext/ARM/CMSIS/Core/Include/core_cm4.h"
+ 216              		.file 5 "../../../ChibiOSRepo/chibios191/os/common/ext/ST/STM32F4xx/system_stm32f4xx.h"
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s 			page 5
+
+
+ 217              		.section	.debug_info,"",%progbits
+ 218              	.Ldebug_info0:
+ 219 0000 70030000 		.4byte	0x370
+ 220 0004 0400     		.2byte	0x4
+ 221 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 222 000a 04       		.byte	0x4
+ 223 000b 01       		.uleb128 0x1
+ 224 000c 70000000 		.4byte	.LASF60
+ 225 0010 0C       		.byte	0xc
+ 226 0011 41040000 		.4byte	.LASF61
+ 227 0015 F9010000 		.4byte	.LASF62
+ 228 0019 00000000 		.4byte	.Ltext0
+ 229 001d 78000000 		.4byte	.Letext0-.Ltext0
+ 230 0021 00000000 		.4byte	.Ldebug_line0
+ 231 0025 02       		.uleb128 0x2
+ 232 0026 01       		.byte	0x1
+ 233 0027 06       		.byte	0x6
+ 234 0028 D5020000 		.4byte	.LASF0
+ 235 002c 03       		.uleb128 0x3
+ 236 002d DF010000 		.4byte	.LASF4
+ 237 0031 02       		.byte	0x2
+ 238 0032 2B       		.byte	0x2b
+ 239 0033 37000000 		.4byte	0x37
+ 240 0037 02       		.uleb128 0x2
+ 241 0038 01       		.byte	0x1
+ 242 0039 08       		.byte	0x8
+ 243 003a 9A020000 		.4byte	.LASF1
+ 244 003e 02       		.uleb128 0x2
+ 245 003f 02       		.byte	0x2
+ 246 0040 05       		.byte	0x5
+ 247 0041 3A000000 		.4byte	.LASF2
+ 248 0045 02       		.uleb128 0x2
+ 249 0046 02       		.byte	0x2
+ 250 0047 07       		.byte	0x7
+ 251 0048 80030000 		.4byte	.LASF3
+ 252 004c 03       		.uleb128 0x3
+ 253 004d 37040000 		.4byte	.LASF5
+ 254 0051 02       		.byte	0x2
+ 255 0052 4D       		.byte	0x4d
+ 256 0053 57000000 		.4byte	0x57
+ 257 0057 02       		.uleb128 0x2
+ 258 0058 04       		.byte	0x4
+ 259 0059 05       		.byte	0x5
+ 260 005a AB010000 		.4byte	.LASF6
+ 261 005e 03       		.uleb128 0x3
+ 262 005f 55000000 		.4byte	.LASF7
+ 263 0063 02       		.byte	0x2
+ 264 0064 4F       		.byte	0x4f
+ 265 0065 69000000 		.4byte	0x69
+ 266 0069 02       		.uleb128 0x2
+ 267 006a 04       		.byte	0x4
+ 268 006b 07       		.byte	0x7
+ 269 006c 1D030000 		.4byte	.LASF8
+ 270 0070 02       		.uleb128 0x2
+ 271 0071 08       		.byte	0x8
+ 272 0072 05       		.byte	0x5
+ 273 0073 63010000 		.4byte	.LASF9
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s 			page 6
+
+
+ 274 0077 02       		.uleb128 0x2
+ 275 0078 08       		.byte	0x8
+ 276 0079 07       		.byte	0x7
+ 277 007a E1020000 		.4byte	.LASF10
+ 278 007e 04       		.uleb128 0x4
+ 279 007f 04       		.byte	0x4
+ 280 0080 05       		.byte	0x5
+ 281 0081 696E7400 		.ascii	"int\000"
+ 282 0085 02       		.uleb128 0x2
+ 283 0086 04       		.byte	0x4
+ 284 0087 07       		.byte	0x7
+ 285 0088 10030000 		.4byte	.LASF11
+ 286 008c 03       		.uleb128 0x3
+ 287 008d 14010000 		.4byte	.LASF12
+ 288 0091 03       		.byte	0x3
+ 289 0092 18       		.byte	0x18
+ 290 0093 2C000000 		.4byte	0x2c
+ 291 0097 05       		.uleb128 0x5
+ 292 0098 8C000000 		.4byte	0x8c
+ 293 009c 03       		.uleb128 0x3
+ 294 009d 78030000 		.4byte	.LASF13
+ 295 00a1 03       		.byte	0x3
+ 296 00a2 2C       		.byte	0x2c
+ 297 00a3 4C000000 		.4byte	0x4c
+ 298 00a7 06       		.uleb128 0x6
+ 299 00a8 9C000000 		.4byte	0x9c
+ 300 00ac 03       		.uleb128 0x3
+ 301 00ad F8020000 		.4byte	.LASF14
+ 302 00b1 03       		.byte	0x3
+ 303 00b2 30       		.byte	0x30
+ 304 00b3 5E000000 		.4byte	0x5e
+ 305 00b7 07       		.uleb128 0x7
+ 306 00b8 1A040000 		.4byte	.LASF15
+ 307 00bc 04       		.byte	0x4
+ 308 00bd 0408     		.2byte	0x804
+ 309 00bf A7000000 		.4byte	0xa7
+ 310 00c3 08       		.uleb128 0x8
+ 311 00c4 B9030000 		.4byte	.LASF16
+ 312 00c8 05       		.byte	0x5
+ 313 00c9 4C       		.byte	0x4c
+ 314 00ca AC000000 		.4byte	0xac
+ 315 00ce 09       		.uleb128 0x9
+ 316 00cf 97000000 		.4byte	0x97
+ 317 00d3 DE000000 		.4byte	0xde
+ 318 00d7 0A       		.uleb128 0xa
+ 319 00d8 85000000 		.4byte	0x85
+ 320 00dc 0F       		.byte	0xf
+ 321 00dd 00       		.byte	0
+ 322 00de 05       		.uleb128 0x5
+ 323 00df CE000000 		.4byte	0xce
+ 324 00e3 08       		.uleb128 0x8
+ 325 00e4 EA030000 		.4byte	.LASF17
+ 326 00e8 05       		.byte	0x5
+ 327 00e9 4E       		.byte	0x4e
+ 328 00ea DE000000 		.4byte	0xde
+ 329 00ee 09       		.uleb128 0x9
+ 330 00ef 97000000 		.4byte	0x97
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s 			page 7
+
+
+ 331 00f3 FE000000 		.4byte	0xfe
+ 332 00f7 0A       		.uleb128 0xa
+ 333 00f8 85000000 		.4byte	0x85
+ 334 00fc 07       		.byte	0x7
+ 335 00fd 00       		.byte	0
+ 336 00fe 05       		.uleb128 0x5
+ 337 00ff EE000000 		.4byte	0xee
+ 338 0103 08       		.uleb128 0x8
+ 339 0104 C7020000 		.4byte	.LASF18
+ 340 0108 05       		.byte	0x5
+ 341 0109 4F       		.byte	0x4f
+ 342 010a FE000000 		.4byte	0xfe
+ 343 010e 0B       		.uleb128 0xb
+ 344 010f 10       		.byte	0x10
+ 345 0110 01       		.byte	0x1
+ 346 0111 35       		.byte	0x35
+ 347 0112 47010000 		.4byte	0x147
+ 348 0116 0C       		.uleb128 0xc
+ 349 0117 D8040000 		.4byte	.LASF19
+ 350 011b 01       		.byte	0x1
+ 351 011c 36       		.byte	0x36
+ 352 011d 47010000 		.4byte	0x147
+ 353 0121 00       		.byte	0
+ 354 0122 0C       		.uleb128 0xc
+ 355 0123 CE040000 		.4byte	.LASF20
+ 356 0127 01       		.byte	0x1
+ 357 0128 37       		.byte	0x37
+ 358 0129 47010000 		.4byte	0x147
+ 359 012d 04       		.byte	0x4
+ 360 012e 0C       		.uleb128 0xc
+ 361 012f 2F000000 		.4byte	.LASF21
+ 362 0133 01       		.byte	0x1
+ 363 0134 38       		.byte	0x38
+ 364 0135 47010000 		.4byte	0x147
+ 365 0139 08       		.byte	0x8
+ 366 013a 0C       		.uleb128 0xc
+ 367 013b 80010000 		.4byte	.LASF22
+ 368 013f 01       		.byte	0x1
+ 369 0140 39       		.byte	0x39
+ 370 0141 47010000 		.4byte	0x147
+ 371 0145 0C       		.byte	0xc
+ 372 0146 00       		.byte	0
+ 373 0147 0D       		.uleb128 0xd
+ 374 0148 04       		.byte	0x4
+ 375 0149 AC000000 		.4byte	0xac
+ 376 014d 03       		.uleb128 0x3
+ 377 014e 8D010000 		.4byte	.LASF23
+ 378 0152 01       		.byte	0x1
+ 379 0153 3A       		.byte	0x3a
+ 380 0154 0E010000 		.4byte	0x10e
+ 381 0158 05       		.uleb128 0x5
+ 382 0159 4D010000 		.4byte	0x14d
+ 383 015d 08       		.uleb128 0x8
+ 384 015e A6030000 		.4byte	.LASF24
+ 385 0162 01       		.byte	0x1
+ 386 0163 41       		.byte	0x41
+ 387 0164 AC000000 		.4byte	0xac
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s 			page 8
+
+
+ 388 0168 08       		.uleb128 0x8
+ 389 0169 13000000 		.4byte	.LASF25
+ 390 016d 01       		.byte	0x1
+ 391 016e 41       		.byte	0x41
+ 392 016f AC000000 		.4byte	0xac
+ 393 0173 08       		.uleb128 0x8
+ 394 0174 F8030000 		.4byte	.LASF26
+ 395 0178 01       		.byte	0x1
+ 396 0179 41       		.byte	0x41
+ 397 017a AC000000 		.4byte	0xac
+ 398 017e 08       		.uleb128 0x8
+ 399 017f B7020000 		.4byte	.LASF27
+ 400 0183 01       		.byte	0x1
+ 401 0184 41       		.byte	0x41
+ 402 0185 AC000000 		.4byte	0xac
+ 403 0189 08       		.uleb128 0x8
+ 404 018a 87020000 		.4byte	.LASF28
+ 405 018e 01       		.byte	0x1
+ 406 018f 44       		.byte	0x44
+ 407 0190 AC000000 		.4byte	0xac
+ 408 0194 08       		.uleb128 0x8
+ 409 0195 9D010000 		.4byte	.LASF29
+ 410 0199 01       		.byte	0x1
+ 411 019a 44       		.byte	0x44
+ 412 019b AC000000 		.4byte	0xac
+ 413 019f 08       		.uleb128 0x8
+ 414 01a0 D0010000 		.4byte	.LASF30
+ 415 01a4 01       		.byte	0x1
+ 416 01a5 44       		.byte	0x44
+ 417 01a6 AC000000 		.4byte	0xac
+ 418 01aa 08       		.uleb128 0x8
+ 419 01ab 8F040000 		.4byte	.LASF31
+ 420 01af 01       		.byte	0x1
+ 421 01b0 44       		.byte	0x44
+ 422 01b1 AC000000 		.4byte	0xac
+ 423 01b5 08       		.uleb128 0x8
+ 424 01b6 D7030000 		.4byte	.LASF32
+ 425 01ba 01       		.byte	0x1
+ 426 01bb 47       		.byte	0x47
+ 427 01bc AC000000 		.4byte	0xac
+ 428 01c0 08       		.uleb128 0x8
+ 429 01c1 C9030000 		.4byte	.LASF33
+ 430 01c5 01       		.byte	0x1
+ 431 01c6 47       		.byte	0x47
+ 432 01c7 AC000000 		.4byte	0xac
+ 433 01cb 08       		.uleb128 0x8
+ 434 01cc 78020000 		.4byte	.LASF34
+ 435 01d0 01       		.byte	0x1
+ 436 01d1 47       		.byte	0x47
+ 437 01d2 AC000000 		.4byte	0xac
+ 438 01d6 08       		.uleb128 0x8
+ 439 01d7 53010000 		.4byte	.LASF35
+ 440 01db 01       		.byte	0x1
+ 441 01dc 47       		.byte	0x47
+ 442 01dd AC000000 		.4byte	0xac
+ 443 01e1 08       		.uleb128 0x8
+ 444 01e2 BB040000 		.4byte	.LASF36
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s 			page 9
+
+
+ 445 01e6 01       		.byte	0x1
+ 446 01e7 4A       		.byte	0x4a
+ 447 01e8 AC000000 		.4byte	0xac
+ 448 01ec 08       		.uleb128 0x8
+ 449 01ed 21000000 		.4byte	.LASF37
+ 450 01f1 01       		.byte	0x1
+ 451 01f2 4A       		.byte	0x4a
+ 452 01f3 AC000000 		.4byte	0xac
+ 453 01f7 08       		.uleb128 0x8
+ 454 01f8 A8020000 		.4byte	.LASF38
+ 455 01fc 01       		.byte	0x1
+ 456 01fd 4A       		.byte	0x4a
+ 457 01fe AC000000 		.4byte	0xac
+ 458 0202 08       		.uleb128 0x8
+ 459 0203 60000000 		.4byte	.LASF39
+ 460 0207 01       		.byte	0x1
+ 461 0208 4A       		.byte	0x4a
+ 462 0209 AC000000 		.4byte	0xac
+ 463 020d 08       		.uleb128 0x8
+ 464 020e 07040000 		.4byte	.LASF40
+ 465 0212 01       		.byte	0x1
+ 466 0213 4D       		.byte	0x4d
+ 467 0214 AC000000 		.4byte	0xac
+ 468 0218 08       		.uleb128 0x8
+ 469 0219 9F040000 		.4byte	.LASF41
+ 470 021d 01       		.byte	0x1
+ 471 021e 4D       		.byte	0x4d
+ 472 021f AC000000 		.4byte	0xac
+ 473 0223 08       		.uleb128 0x8
+ 474 0224 05010000 		.4byte	.LASF42
+ 475 0228 01       		.byte	0x1
+ 476 0229 4D       		.byte	0x4d
+ 477 022a AC000000 		.4byte	0xac
+ 478 022e 08       		.uleb128 0x8
+ 479 022f 3E030000 		.4byte	.LASF43
+ 480 0233 01       		.byte	0x1
+ 481 0234 4D       		.byte	0x4d
+ 482 0235 AC000000 		.4byte	0xac
+ 483 0239 08       		.uleb128 0x8
+ 484 023a 00000000 		.4byte	.LASF44
+ 485 023e 01       		.byte	0x1
+ 486 023f 50       		.byte	0x50
+ 487 0240 AC000000 		.4byte	0xac
+ 488 0244 08       		.uleb128 0x8
+ 489 0245 1C010000 		.4byte	.LASF45
+ 490 0249 01       		.byte	0x1
+ 491 024a 50       		.byte	0x50
+ 492 024b AC000000 		.4byte	0xac
+ 493 024f 08       		.uleb128 0x8
+ 494 0250 01030000 		.4byte	.LASF46
+ 495 0254 01       		.byte	0x1
+ 496 0255 50       		.byte	0x50
+ 497 0256 AC000000 		.4byte	0xac
+ 498 025a 08       		.uleb128 0x8
+ 499 025b E9010000 		.4byte	.LASF47
+ 500 025f 01       		.byte	0x1
+ 501 0260 50       		.byte	0x50
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s 			page 10
+
+
+ 502 0261 AC000000 		.4byte	0xac
+ 503 0265 08       		.uleb128 0x8
+ 504 0266 40010000 		.4byte	.LASF48
+ 505 026a 01       		.byte	0x1
+ 506 026b 53       		.byte	0x53
+ 507 026c AC000000 		.4byte	0xac
+ 508 0270 08       		.uleb128 0x8
+ 509 0271 4E030000 		.4byte	.LASF49
+ 510 0275 01       		.byte	0x1
+ 511 0276 53       		.byte	0x53
+ 512 0277 AC000000 		.4byte	0xac
+ 513 027b 08       		.uleb128 0x8
+ 514 027c 2F030000 		.4byte	.LASF50
+ 515 0280 01       		.byte	0x1
+ 516 0281 53       		.byte	0x53
+ 517 0282 AC000000 		.4byte	0xac
+ 518 0286 08       		.uleb128 0x8
+ 519 0287 C0010000 		.4byte	.LASF51
+ 520 028b 01       		.byte	0x1
+ 521 028c 53       		.byte	0x53
+ 522 028d AC000000 		.4byte	0xac
+ 523 0291 08       		.uleb128 0x8
+ 524 0292 93030000 		.4byte	.LASF52
+ 525 0296 01       		.byte	0x1
+ 526 0297 56       		.byte	0x56
+ 527 0298 AC000000 		.4byte	0xac
+ 528 029c 08       		.uleb128 0x8
+ 529 029d AD040000 		.4byte	.LASF53
+ 530 02a1 01       		.byte	0x1
+ 531 02a2 56       		.byte	0x56
+ 532 02a3 AC000000 		.4byte	0xac
+ 533 02a7 08       		.uleb128 0x8
+ 534 02a8 5C030000 		.4byte	.LASF54
+ 535 02ac 01       		.byte	0x1
+ 536 02ad 56       		.byte	0x56
+ 537 02ae AC000000 		.4byte	0xac
+ 538 02b2 08       		.uleb128 0x8
+ 539 02b3 27040000 		.4byte	.LASF55
+ 540 02b7 01       		.byte	0x1
+ 541 02b8 56       		.byte	0x56
+ 542 02b9 AC000000 		.4byte	0xac
+ 543 02bd 09       		.uleb128 0x9
+ 544 02be 58010000 		.4byte	0x158
+ 545 02c2 CD020000 		.4byte	0x2cd
+ 546 02c6 0A       		.uleb128 0xa
+ 547 02c7 85000000 		.4byte	0x85
+ 548 02cb 07       		.byte	0x7
+ 549 02cc 00       		.byte	0
+ 550 02cd 05       		.uleb128 0x5
+ 551 02ce BD020000 		.4byte	0x2bd
+ 552 02d2 0E       		.uleb128 0xe
+ 553 02d3 2A010000 		.4byte	.LASF56
+ 554 02d7 01       		.byte	0x1
+ 555 02d8 5D       		.byte	0x5d
+ 556 02d9 CD020000 		.4byte	0x2cd
+ 557 02dd 05       		.uleb128 0x5
+ 558 02de 03       		.byte	0x3
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s 			page 11
+
+
+ 559 02df 00000000 		.4byte	ram_areas
+ 560 02e3 0F       		.uleb128 0xf
+ 561 02e4 44000000 		.4byte	.LASF63
+ 562 02e8 01       		.byte	0x1
+ 563 02e9 C1       		.byte	0xc1
+ 564 02ea 40000000 		.4byte	.LFB134
+ 565 02ee 38000000 		.4byte	.LFE134-.LFB134
+ 566 02f2 01       		.uleb128 0x1
+ 567 02f3 9C       		.byte	0x9c
+ 568 02f4 29030000 		.4byte	0x329
+ 569 02f8 10       		.uleb128 0x10
+ 570 02f9 72617000 		.ascii	"rap\000"
+ 571 02fd 01       		.byte	0x1
+ 572 02fe C3       		.byte	0xc3
+ 573 02ff 29030000 		.4byte	0x329
+ 574 0303 00000000 		.4byte	.LLST0
+ 575 0307 11       		.uleb128 0x11
+ 576 0308 00000000 		.4byte	.Ldebug_ranges0+0
+ 577 030c 10       		.uleb128 0x10
+ 578 030d 747000   		.ascii	"tp\000"
+ 579 0310 01       		.byte	0x1
+ 580 0311 C6       		.byte	0xc6
+ 581 0312 47010000 		.4byte	0x147
+ 582 0316 23000000 		.4byte	.LLST1
+ 583 031a 10       		.uleb128 0x10
+ 584 031b 7000     		.ascii	"p\000"
+ 585 031d 01       		.byte	0x1
+ 586 031e C7       		.byte	0xc7
+ 587 031f 47010000 		.4byte	0x147
+ 588 0323 59000000 		.4byte	.LLST2
+ 589 0327 00       		.byte	0
+ 590 0328 00       		.byte	0
+ 591 0329 0D       		.uleb128 0xd
+ 592 032a 04       		.byte	0x4
+ 593 032b 58010000 		.4byte	0x158
+ 594 032f 12       		.uleb128 0x12
+ 595 0330 71010000 		.4byte	.LASF64
+ 596 0334 01       		.byte	0x1
+ 597 0335 B7       		.byte	0xb7
+ 598 0336 30000000 		.4byte	.LFB133
+ 599 033a 02000000 		.4byte	.LFE133-.LFB133
+ 600 033e 01       		.uleb128 0x1
+ 601 033f 9C       		.byte	0x9c
+ 602 0340 13       		.uleb128 0x13
+ 603 0341 B4010000 		.4byte	.LASF57
+ 604 0345 01       		.byte	0x1
+ 605 0346 AA       		.byte	0xaa
+ 606 0347 20000000 		.4byte	.LFB132
+ 607 034b 02000000 		.4byte	.LFE132-.LFB132
+ 608 034f 01       		.uleb128 0x1
+ 609 0350 9C       		.byte	0x9c
+ 610 0351 13       		.uleb128 0x13
+ 611 0352 6B030000 		.4byte	.LASF58
+ 612 0356 01       		.byte	0x1
+ 613 0357 9C       		.byte	0x9c
+ 614 0358 10000000 		.4byte	.LFB131
+ 615 035c 02000000 		.4byte	.LFE131-.LFB131
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s 			page 12
+
+
+ 616 0360 01       		.uleb128 0x1
+ 617 0361 9C       		.byte	0x9c
+ 618 0362 13       		.uleb128 0x13
+ 619 0363 34010000 		.4byte	.LASF59
+ 620 0367 01       		.byte	0x1
+ 621 0368 89       		.byte	0x89
+ 622 0369 00000000 		.4byte	.LFB130
+ 623 036d 02000000 		.4byte	.LFE130-.LFB130
+ 624 0371 01       		.uleb128 0x1
+ 625 0372 9C       		.byte	0x9c
+ 626 0373 00       		.byte	0
+ 627              		.section	.debug_abbrev,"",%progbits
+ 628              	.Ldebug_abbrev0:
+ 629 0000 01       		.uleb128 0x1
+ 630 0001 11       		.uleb128 0x11
+ 631 0002 01       		.byte	0x1
+ 632 0003 25       		.uleb128 0x25
+ 633 0004 0E       		.uleb128 0xe
+ 634 0005 13       		.uleb128 0x13
+ 635 0006 0B       		.uleb128 0xb
+ 636 0007 03       		.uleb128 0x3
+ 637 0008 0E       		.uleb128 0xe
+ 638 0009 1B       		.uleb128 0x1b
+ 639 000a 0E       		.uleb128 0xe
+ 640 000b 11       		.uleb128 0x11
+ 641 000c 01       		.uleb128 0x1
+ 642 000d 12       		.uleb128 0x12
+ 643 000e 06       		.uleb128 0x6
+ 644 000f 10       		.uleb128 0x10
+ 645 0010 17       		.uleb128 0x17
+ 646 0011 00       		.byte	0
+ 647 0012 00       		.byte	0
+ 648 0013 02       		.uleb128 0x2
+ 649 0014 24       		.uleb128 0x24
+ 650 0015 00       		.byte	0
+ 651 0016 0B       		.uleb128 0xb
+ 652 0017 0B       		.uleb128 0xb
+ 653 0018 3E       		.uleb128 0x3e
+ 654 0019 0B       		.uleb128 0xb
+ 655 001a 03       		.uleb128 0x3
+ 656 001b 0E       		.uleb128 0xe
+ 657 001c 00       		.byte	0
+ 658 001d 00       		.byte	0
+ 659 001e 03       		.uleb128 0x3
+ 660 001f 16       		.uleb128 0x16
+ 661 0020 00       		.byte	0
+ 662 0021 03       		.uleb128 0x3
+ 663 0022 0E       		.uleb128 0xe
+ 664 0023 3A       		.uleb128 0x3a
+ 665 0024 0B       		.uleb128 0xb
+ 666 0025 3B       		.uleb128 0x3b
+ 667 0026 0B       		.uleb128 0xb
+ 668 0027 49       		.uleb128 0x49
+ 669 0028 13       		.uleb128 0x13
+ 670 0029 00       		.byte	0
+ 671 002a 00       		.byte	0
+ 672 002b 04       		.uleb128 0x4
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s 			page 13
+
+
+ 673 002c 24       		.uleb128 0x24
+ 674 002d 00       		.byte	0
+ 675 002e 0B       		.uleb128 0xb
+ 676 002f 0B       		.uleb128 0xb
+ 677 0030 3E       		.uleb128 0x3e
+ 678 0031 0B       		.uleb128 0xb
+ 679 0032 03       		.uleb128 0x3
+ 680 0033 08       		.uleb128 0x8
+ 681 0034 00       		.byte	0
+ 682 0035 00       		.byte	0
+ 683 0036 05       		.uleb128 0x5
+ 684 0037 26       		.uleb128 0x26
+ 685 0038 00       		.byte	0
+ 686 0039 49       		.uleb128 0x49
+ 687 003a 13       		.uleb128 0x13
+ 688 003b 00       		.byte	0
+ 689 003c 00       		.byte	0
+ 690 003d 06       		.uleb128 0x6
+ 691 003e 35       		.uleb128 0x35
+ 692 003f 00       		.byte	0
+ 693 0040 49       		.uleb128 0x49
+ 694 0041 13       		.uleb128 0x13
+ 695 0042 00       		.byte	0
+ 696 0043 00       		.byte	0
+ 697 0044 07       		.uleb128 0x7
+ 698 0045 34       		.uleb128 0x34
+ 699 0046 00       		.byte	0
+ 700 0047 03       		.uleb128 0x3
+ 701 0048 0E       		.uleb128 0xe
+ 702 0049 3A       		.uleb128 0x3a
+ 703 004a 0B       		.uleb128 0xb
+ 704 004b 3B       		.uleb128 0x3b
+ 705 004c 05       		.uleb128 0x5
+ 706 004d 49       		.uleb128 0x49
+ 707 004e 13       		.uleb128 0x13
+ 708 004f 3F       		.uleb128 0x3f
+ 709 0050 19       		.uleb128 0x19
+ 710 0051 3C       		.uleb128 0x3c
+ 711 0052 19       		.uleb128 0x19
+ 712 0053 00       		.byte	0
+ 713 0054 00       		.byte	0
+ 714 0055 08       		.uleb128 0x8
+ 715 0056 34       		.uleb128 0x34
+ 716 0057 00       		.byte	0
+ 717 0058 03       		.uleb128 0x3
+ 718 0059 0E       		.uleb128 0xe
+ 719 005a 3A       		.uleb128 0x3a
+ 720 005b 0B       		.uleb128 0xb
+ 721 005c 3B       		.uleb128 0x3b
+ 722 005d 0B       		.uleb128 0xb
+ 723 005e 49       		.uleb128 0x49
+ 724 005f 13       		.uleb128 0x13
+ 725 0060 3F       		.uleb128 0x3f
+ 726 0061 19       		.uleb128 0x19
+ 727 0062 3C       		.uleb128 0x3c
+ 728 0063 19       		.uleb128 0x19
+ 729 0064 00       		.byte	0
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s 			page 14
+
+
+ 730 0065 00       		.byte	0
+ 731 0066 09       		.uleb128 0x9
+ 732 0067 01       		.uleb128 0x1
+ 733 0068 01       		.byte	0x1
+ 734 0069 49       		.uleb128 0x49
+ 735 006a 13       		.uleb128 0x13
+ 736 006b 01       		.uleb128 0x1
+ 737 006c 13       		.uleb128 0x13
+ 738 006d 00       		.byte	0
+ 739 006e 00       		.byte	0
+ 740 006f 0A       		.uleb128 0xa
+ 741 0070 21       		.uleb128 0x21
+ 742 0071 00       		.byte	0
+ 743 0072 49       		.uleb128 0x49
+ 744 0073 13       		.uleb128 0x13
+ 745 0074 2F       		.uleb128 0x2f
+ 746 0075 0B       		.uleb128 0xb
+ 747 0076 00       		.byte	0
+ 748 0077 00       		.byte	0
+ 749 0078 0B       		.uleb128 0xb
+ 750 0079 13       		.uleb128 0x13
+ 751 007a 01       		.byte	0x1
+ 752 007b 0B       		.uleb128 0xb
+ 753 007c 0B       		.uleb128 0xb
+ 754 007d 3A       		.uleb128 0x3a
+ 755 007e 0B       		.uleb128 0xb
+ 756 007f 3B       		.uleb128 0x3b
+ 757 0080 0B       		.uleb128 0xb
+ 758 0081 01       		.uleb128 0x1
+ 759 0082 13       		.uleb128 0x13
+ 760 0083 00       		.byte	0
+ 761 0084 00       		.byte	0
+ 762 0085 0C       		.uleb128 0xc
+ 763 0086 0D       		.uleb128 0xd
+ 764 0087 00       		.byte	0
+ 765 0088 03       		.uleb128 0x3
+ 766 0089 0E       		.uleb128 0xe
+ 767 008a 3A       		.uleb128 0x3a
+ 768 008b 0B       		.uleb128 0xb
+ 769 008c 3B       		.uleb128 0x3b
+ 770 008d 0B       		.uleb128 0xb
+ 771 008e 49       		.uleb128 0x49
+ 772 008f 13       		.uleb128 0x13
+ 773 0090 38       		.uleb128 0x38
+ 774 0091 0B       		.uleb128 0xb
+ 775 0092 00       		.byte	0
+ 776 0093 00       		.byte	0
+ 777 0094 0D       		.uleb128 0xd
+ 778 0095 0F       		.uleb128 0xf
+ 779 0096 00       		.byte	0
+ 780 0097 0B       		.uleb128 0xb
+ 781 0098 0B       		.uleb128 0xb
+ 782 0099 49       		.uleb128 0x49
+ 783 009a 13       		.uleb128 0x13
+ 784 009b 00       		.byte	0
+ 785 009c 00       		.byte	0
+ 786 009d 0E       		.uleb128 0xe
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s 			page 15
+
+
+ 787 009e 34       		.uleb128 0x34
+ 788 009f 00       		.byte	0
+ 789 00a0 03       		.uleb128 0x3
+ 790 00a1 0E       		.uleb128 0xe
+ 791 00a2 3A       		.uleb128 0x3a
+ 792 00a3 0B       		.uleb128 0xb
+ 793 00a4 3B       		.uleb128 0x3b
+ 794 00a5 0B       		.uleb128 0xb
+ 795 00a6 49       		.uleb128 0x49
+ 796 00a7 13       		.uleb128 0x13
+ 797 00a8 02       		.uleb128 0x2
+ 798 00a9 18       		.uleb128 0x18
+ 799 00aa 00       		.byte	0
+ 800 00ab 00       		.byte	0
+ 801 00ac 0F       		.uleb128 0xf
+ 802 00ad 2E       		.uleb128 0x2e
+ 803 00ae 01       		.byte	0x1
+ 804 00af 3F       		.uleb128 0x3f
+ 805 00b0 19       		.uleb128 0x19
+ 806 00b1 03       		.uleb128 0x3
+ 807 00b2 0E       		.uleb128 0xe
+ 808 00b3 3A       		.uleb128 0x3a
+ 809 00b4 0B       		.uleb128 0xb
+ 810 00b5 3B       		.uleb128 0x3b
+ 811 00b6 0B       		.uleb128 0xb
+ 812 00b7 27       		.uleb128 0x27
+ 813 00b8 19       		.uleb128 0x19
+ 814 00b9 11       		.uleb128 0x11
+ 815 00ba 01       		.uleb128 0x1
+ 816 00bb 12       		.uleb128 0x12
+ 817 00bc 06       		.uleb128 0x6
+ 818 00bd 40       		.uleb128 0x40
+ 819 00be 18       		.uleb128 0x18
+ 820 00bf 9742     		.uleb128 0x2117
+ 821 00c1 19       		.uleb128 0x19
+ 822 00c2 01       		.uleb128 0x1
+ 823 00c3 13       		.uleb128 0x13
+ 824 00c4 00       		.byte	0
+ 825 00c5 00       		.byte	0
+ 826 00c6 10       		.uleb128 0x10
+ 827 00c7 34       		.uleb128 0x34
+ 828 00c8 00       		.byte	0
+ 829 00c9 03       		.uleb128 0x3
+ 830 00ca 08       		.uleb128 0x8
+ 831 00cb 3A       		.uleb128 0x3a
+ 832 00cc 0B       		.uleb128 0xb
+ 833 00cd 3B       		.uleb128 0x3b
+ 834 00ce 0B       		.uleb128 0xb
+ 835 00cf 49       		.uleb128 0x49
+ 836 00d0 13       		.uleb128 0x13
+ 837 00d1 02       		.uleb128 0x2
+ 838 00d2 17       		.uleb128 0x17
+ 839 00d3 00       		.byte	0
+ 840 00d4 00       		.byte	0
+ 841 00d5 11       		.uleb128 0x11
+ 842 00d6 0B       		.uleb128 0xb
+ 843 00d7 01       		.byte	0x1
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s 			page 16
+
+
+ 844 00d8 55       		.uleb128 0x55
+ 845 00d9 17       		.uleb128 0x17
+ 846 00da 00       		.byte	0
+ 847 00db 00       		.byte	0
+ 848 00dc 12       		.uleb128 0x12
+ 849 00dd 2E       		.uleb128 0x2e
+ 850 00de 00       		.byte	0
+ 851 00df 3F       		.uleb128 0x3f
+ 852 00e0 19       		.uleb128 0x19
+ 853 00e1 03       		.uleb128 0x3
+ 854 00e2 0E       		.uleb128 0xe
+ 855 00e3 3A       		.uleb128 0x3a
+ 856 00e4 0B       		.uleb128 0xb
+ 857 00e5 3B       		.uleb128 0x3b
+ 858 00e6 0B       		.uleb128 0xb
+ 859 00e7 27       		.uleb128 0x27
+ 860 00e8 19       		.uleb128 0x19
+ 861 00e9 8701     		.uleb128 0x87
+ 862 00eb 19       		.uleb128 0x19
+ 863 00ec 11       		.uleb128 0x11
+ 864 00ed 01       		.uleb128 0x1
+ 865 00ee 12       		.uleb128 0x12
+ 866 00ef 06       		.uleb128 0x6
+ 867 00f0 40       		.uleb128 0x40
+ 868 00f1 18       		.uleb128 0x18
+ 869 00f2 9742     		.uleb128 0x2117
+ 870 00f4 19       		.uleb128 0x19
+ 871 00f5 00       		.byte	0
+ 872 00f6 00       		.byte	0
+ 873 00f7 13       		.uleb128 0x13
+ 874 00f8 2E       		.uleb128 0x2e
+ 875 00f9 00       		.byte	0
+ 876 00fa 3F       		.uleb128 0x3f
+ 877 00fb 19       		.uleb128 0x19
+ 878 00fc 03       		.uleb128 0x3
+ 879 00fd 0E       		.uleb128 0xe
+ 880 00fe 3A       		.uleb128 0x3a
+ 881 00ff 0B       		.uleb128 0xb
+ 882 0100 3B       		.uleb128 0x3b
+ 883 0101 0B       		.uleb128 0xb
+ 884 0102 27       		.uleb128 0x27
+ 885 0103 19       		.uleb128 0x19
+ 886 0104 11       		.uleb128 0x11
+ 887 0105 01       		.uleb128 0x1
+ 888 0106 12       		.uleb128 0x12
+ 889 0107 06       		.uleb128 0x6
+ 890 0108 40       		.uleb128 0x40
+ 891 0109 18       		.uleb128 0x18
+ 892 010a 9742     		.uleb128 0x2117
+ 893 010c 19       		.uleb128 0x19
+ 894 010d 00       		.byte	0
+ 895 010e 00       		.byte	0
+ 896 010f 00       		.byte	0
+ 897              		.section	.debug_loc,"",%progbits
+ 898              	.Ldebug_loc0:
+ 899              	.LLST0:
+ 900 0000 40000000 		.4byte	.LVL0-.Ltext0
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s 			page 17
+
+
+ 901 0004 44000000 		.4byte	.LVL1-.Ltext0
+ 902 0008 0600     		.2byte	0x6
+ 903 000a 03       		.byte	0x3
+ 904 000b 00000000 		.4byte	ram_areas
+ 905 000f 9F       		.byte	0x9f
+ 906 0010 44000000 		.4byte	.LVL1-.Ltext0
+ 907 0014 78000000 		.4byte	.LFE134-.Ltext0
+ 908 0018 0100     		.2byte	0x1
+ 909 001a 52       		.byte	0x52
+ 910 001b 00000000 		.4byte	0
+ 911 001f 00000000 		.4byte	0
+ 912              	.LLST1:
+ 913 0023 44000000 		.4byte	.LVL1-.Ltext0
+ 914 0027 48000000 		.4byte	.LVL2-.Ltext0
+ 915 002b 0100     		.2byte	0x1
+ 916 002d 50       		.byte	0x50
+ 917 002e 48000000 		.4byte	.LVL2-.Ltext0
+ 918 0032 4C000000 		.4byte	.LVL3-.Ltext0
+ 919 0036 0300     		.2byte	0x3
+ 920 0038 70       		.byte	0x70
+ 921 0039 7C       		.sleb128 -4
+ 922 003a 9F       		.byte	0x9f
+ 923 003b 4C000000 		.4byte	.LVL3-.Ltext0
+ 924 003f 68000000 		.4byte	.LVL7-.Ltext0
+ 925 0043 0100     		.2byte	0x1
+ 926 0045 50       		.byte	0x50
+ 927 0046 6A000000 		.4byte	.LVL8-.Ltext0
+ 928 004a 78000000 		.4byte	.LFE134-.Ltext0
+ 929 004e 0100     		.2byte	0x1
+ 930 0050 50       		.byte	0x50
+ 931 0051 00000000 		.4byte	0
+ 932 0055 00000000 		.4byte	0
+ 933              	.LLST2:
+ 934 0059 44000000 		.4byte	.LVL1-.Ltext0
+ 935 005d 64000000 		.4byte	.LVL6-.Ltext0
+ 936 0061 0100     		.2byte	0x1
+ 937 0063 53       		.byte	0x53
+ 938 0064 6C000000 		.4byte	.LVL9-.Ltext0
+ 939 0068 6E000000 		.4byte	.LVL10-.Ltext0
+ 940 006c 0100     		.2byte	0x1
+ 941 006e 53       		.byte	0x53
+ 942 006f 00000000 		.4byte	0
+ 943 0073 00000000 		.4byte	0
+ 944              		.section	.debug_aranges,"",%progbits
+ 945 0000 1C000000 		.4byte	0x1c
+ 946 0004 0200     		.2byte	0x2
+ 947 0006 00000000 		.4byte	.Ldebug_info0
+ 948 000a 04       		.byte	0x4
+ 949 000b 00       		.byte	0
+ 950 000c 0000     		.2byte	0
+ 951 000e 0000     		.2byte	0
+ 952 0010 00000000 		.4byte	.Ltext0
+ 953 0014 78000000 		.4byte	.Letext0-.Ltext0
+ 954 0018 00000000 		.4byte	0
+ 955 001c 00000000 		.4byte	0
+ 956              		.section	.debug_ranges,"",%progbits
+ 957              	.Ldebug_ranges0:
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s 			page 18
+
+
+ 958 0000 44000000 		.4byte	.LBB2-.Ltext0
+ 959 0004 62000000 		.4byte	.LBE2-.Ltext0
+ 960 0008 68000000 		.4byte	.LBB3-.Ltext0
+ 961 000c 6E000000 		.4byte	.LBE3-.Ltext0
+ 962 0010 00000000 		.4byte	0
+ 963 0014 00000000 		.4byte	0
+ 964              		.section	.debug_line,"",%progbits
+ 965              	.Ldebug_line0:
+ 966 0000 03020000 		.section	.debug_str,"MS",%progbits,1
+ 966      0200CF01 
+ 966      00000201 
+ 966      FB0E0D00 
+ 966      01010101 
+ 967              	.LASF44:
+ 968 0000 5F5F7261 		.ascii	"__ram5_init_text__\000"
+ 968      6D355F69 
+ 968      6E69745F 
+ 968      74657874 
+ 968      5F5F00
+ 969              	.LASF25:
+ 970 0013 5F5F7261 		.ascii	"__ram0_init__\000"
+ 970      6D305F69 
+ 970      6E69745F 
+ 970      5F00
+ 971              	.LASF37:
+ 972 0021 5F5F7261 		.ascii	"__ram3_init__\000"
+ 972      6D335F69 
+ 972      6E69745F 
+ 972      5F00
+ 973              	.LASF21:
+ 974 002f 636C6561 		.ascii	"clear_area\000"
+ 974      725F6172 
+ 974      656100
+ 975              	.LASF2:
+ 976 003a 73686F72 		.ascii	"short int\000"
+ 976      7420696E 
+ 976      7400
+ 977              	.LASF63:
+ 978 0044 5F5F696E 		.ascii	"__init_ram_areas\000"
+ 978      69745F72 
+ 978      616D5F61 
+ 978      72656173 
+ 978      00
+ 979              	.LASF7:
+ 980 0055 5F5F7569 		.ascii	"__uint32_t\000"
+ 980      6E743332 
+ 980      5F7400
+ 981              	.LASF39:
+ 982 0060 5F5F7261 		.ascii	"__ram3_noinit__\000"
+ 982      6D335F6E 
+ 982      6F696E69 
+ 982      745F5F00 
+ 983              	.LASF60:
+ 984 0070 474E5520 		.ascii	"GNU C11 7.2.1 20170904 (release) [ARM/embedded-7-br"
+ 984      43313120 
+ 984      372E322E 
+ 984      31203230 
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s 			page 19
+
+
+ 984      31373039 
+ 985 00a3 616E6368 		.ascii	"anch revision 255204] -mcpu=cortex-m4 -mthumb -ggdb"
+ 985      20726576 
+ 985      6973696F 
+ 985      6E203235 
+ 985      35323034 
+ 986 00d6 202D4F67 		.ascii	" -Og -fomit-frame-pointer -falign-functions=16\000"
+ 986      202D666F 
+ 986      6D69742D 
+ 986      6672616D 
+ 986      652D706F 
+ 987              	.LASF42:
+ 988 0105 5F5F7261 		.ascii	"__ram4_clear__\000"
+ 988      6D345F63 
+ 988      6C656172 
+ 988      5F5F00
+ 989              	.LASF12:
+ 990 0114 75696E74 		.ascii	"uint8_t\000"
+ 990      385F7400 
+ 991              	.LASF45:
+ 992 011c 5F5F7261 		.ascii	"__ram5_init__\000"
+ 992      6D355F69 
+ 992      6E69745F 
+ 992      5F00
+ 993              	.LASF56:
+ 994 012a 72616D5F 		.ascii	"ram_areas\000"
+ 994      61726561 
+ 994      7300
+ 995              	.LASF59:
+ 996 0134 5F5F636F 		.ascii	"__core_init\000"
+ 996      72655F69 
+ 996      6E697400 
+ 997              	.LASF48:
+ 998 0140 5F5F7261 		.ascii	"__ram6_init_text__\000"
+ 998      6D365F69 
+ 998      6E69745F 
+ 998      74657874 
+ 998      5F5F00
+ 999              	.LASF35:
+ 1000 0153 5F5F7261 		.ascii	"__ram2_noinit__\000"
+ 1000      6D325F6E 
+ 1000      6F696E69 
+ 1000      745F5F00 
+ 1001              	.LASF9:
+ 1002 0163 6C6F6E67 		.ascii	"long long int\000"
+ 1002      206C6F6E 
+ 1002      6720696E 
+ 1002      7400
+ 1003              	.LASF64:
+ 1004 0171 5F5F6465 		.ascii	"__default_exit\000"
+ 1004      6661756C 
+ 1004      745F6578 
+ 1004      697400
+ 1005              	.LASF22:
+ 1006 0180 6E6F5F69 		.ascii	"no_init_area\000"
+ 1006      6E69745F 
+ 1006      61726561 
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s 			page 20
+
+
+ 1006      00
+ 1007              	.LASF23:
+ 1008 018d 72616D5F 		.ascii	"ram_init_area_t\000"
+ 1008      696E6974 
+ 1008      5F617265 
+ 1008      615F7400 
+ 1009              	.LASF29:
+ 1010 019d 5F5F7261 		.ascii	"__ram1_init__\000"
+ 1010      6D315F69 
+ 1010      6E69745F 
+ 1010      5F00
+ 1011              	.LASF6:
+ 1012 01ab 6C6F6E67 		.ascii	"long int\000"
+ 1012      20696E74 
+ 1012      00
+ 1013              	.LASF57:
+ 1014 01b4 5F5F6C61 		.ascii	"__late_init\000"
+ 1014      74655F69 
+ 1014      6E697400 
+ 1015              	.LASF51:
+ 1016 01c0 5F5F7261 		.ascii	"__ram6_noinit__\000"
+ 1016      6D365F6E 
+ 1016      6F696E69 
+ 1016      745F5F00 
+ 1017              	.LASF30:
+ 1018 01d0 5F5F7261 		.ascii	"__ram1_clear__\000"
+ 1018      6D315F63 
+ 1018      6C656172 
+ 1018      5F5F00
+ 1019              	.LASF4:
+ 1020 01df 5F5F7569 		.ascii	"__uint8_t\000"
+ 1020      6E74385F 
+ 1020      7400
+ 1021              	.LASF47:
+ 1022 01e9 5F5F7261 		.ascii	"__ram5_noinit__\000"
+ 1022      6D355F6E 
+ 1022      6F696E69 
+ 1022      745F5F00 
+ 1023              	.LASF62:
+ 1024 01f9 433A5C55 		.ascii	"C:\\Users\\RakibulChowdhury\\OneDrive - DIAS Geophy"
+ 1024      73657273 
+ 1024      5C52616B 
+ 1024      6962756C 
+ 1024      43686F77 
+ 1025 0229 73696361 		.ascii	"sical\\Dias32FirmwareDevelopment\\FirmwareRepo\\Dia"
+ 1025      6C5C4469 
+ 1025      61733332 
+ 1025      4669726D 
+ 1025      77617265 
+ 1026 0259 73333257 		.ascii	"s32Workspace\\DIAS-Gen2-testing\000"
+ 1026      6F726B73 
+ 1026      70616365 
+ 1026      5C444941 
+ 1026      532D4765 
+ 1027              	.LASF34:
+ 1028 0278 5F5F7261 		.ascii	"__ram2_clear__\000"
+ 1028      6D325F63 
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s 			page 21
+
+
+ 1028      6C656172 
+ 1028      5F5F00
+ 1029              	.LASF28:
+ 1030 0287 5F5F7261 		.ascii	"__ram1_init_text__\000"
+ 1030      6D315F69 
+ 1030      6E69745F 
+ 1030      74657874 
+ 1030      5F5F00
+ 1031              	.LASF1:
+ 1032 029a 756E7369 		.ascii	"unsigned char\000"
+ 1032      676E6564 
+ 1032      20636861 
+ 1032      7200
+ 1033              	.LASF38:
+ 1034 02a8 5F5F7261 		.ascii	"__ram3_clear__\000"
+ 1034      6D335F63 
+ 1034      6C656172 
+ 1034      5F5F00
+ 1035              	.LASF27:
+ 1036 02b7 5F5F7261 		.ascii	"__ram0_noinit__\000"
+ 1036      6D305F6E 
+ 1036      6F696E69 
+ 1036      745F5F00 
+ 1037              	.LASF18:
+ 1038 02c7 41504250 		.ascii	"APBPrescTable\000"
+ 1038      72657363 
+ 1038      5461626C 
+ 1038      6500
+ 1039              	.LASF0:
+ 1040 02d5 7369676E 		.ascii	"signed char\000"
+ 1040      65642063 
+ 1040      68617200 
+ 1041              	.LASF10:
+ 1042 02e1 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1042      206C6F6E 
+ 1042      6720756E 
+ 1042      7369676E 
+ 1042      65642069 
+ 1043              	.LASF14:
+ 1044 02f8 75696E74 		.ascii	"uint32_t\000"
+ 1044      33325F74 
+ 1044      00
+ 1045              	.LASF46:
+ 1046 0301 5F5F7261 		.ascii	"__ram5_clear__\000"
+ 1046      6D355F63 
+ 1046      6C656172 
+ 1046      5F5F00
+ 1047              	.LASF11:
+ 1048 0310 756E7369 		.ascii	"unsigned int\000"
+ 1048      676E6564 
+ 1048      20696E74 
+ 1048      00
+ 1049              	.LASF8:
+ 1050 031d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1050      20756E73 
+ 1050      69676E65 
+ 1050      6420696E 
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s 			page 22
+
+
+ 1050      7400
+ 1051              	.LASF50:
+ 1052 032f 5F5F7261 		.ascii	"__ram6_clear__\000"
+ 1052      6D365F63 
+ 1052      6C656172 
+ 1052      5F5F00
+ 1053              	.LASF43:
+ 1054 033e 5F5F7261 		.ascii	"__ram4_noinit__\000"
+ 1054      6D345F6E 
+ 1054      6F696E69 
+ 1054      745F5F00 
+ 1055              	.LASF49:
+ 1056 034e 5F5F7261 		.ascii	"__ram6_init__\000"
+ 1056      6D365F69 
+ 1056      6E69745F 
+ 1056      5F00
+ 1057              	.LASF54:
+ 1058 035c 5F5F7261 		.ascii	"__ram7_clear__\000"
+ 1058      6D375F63 
+ 1058      6C656172 
+ 1058      5F5F00
+ 1059              	.LASF58:
+ 1060 036b 5F5F6561 		.ascii	"__early_init\000"
+ 1060      726C795F 
+ 1060      696E6974 
+ 1060      00
+ 1061              	.LASF13:
+ 1062 0378 696E7433 		.ascii	"int32_t\000"
+ 1062      325F7400 
+ 1063              	.LASF3:
+ 1064 0380 73686F72 		.ascii	"short unsigned int\000"
+ 1064      7420756E 
+ 1064      7369676E 
+ 1064      65642069 
+ 1064      6E7400
+ 1065              	.LASF52:
+ 1066 0393 5F5F7261 		.ascii	"__ram7_init_text__\000"
+ 1066      6D375F69 
+ 1066      6E69745F 
+ 1066      74657874 
+ 1066      5F5F00
+ 1067              	.LASF24:
+ 1068 03a6 5F5F7261 		.ascii	"__ram0_init_text__\000"
+ 1068      6D305F69 
+ 1068      6E69745F 
+ 1068      74657874 
+ 1068      5F5F00
+ 1069              	.LASF16:
+ 1070 03b9 53797374 		.ascii	"SystemCoreClock\000"
+ 1070      656D436F 
+ 1070      7265436C 
+ 1070      6F636B00 
+ 1071              	.LASF33:
+ 1072 03c9 5F5F7261 		.ascii	"__ram2_init__\000"
+ 1072      6D325F69 
+ 1072      6E69745F 
+ 1072      5F00
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s 			page 23
+
+
+ 1073              	.LASF32:
+ 1074 03d7 5F5F7261 		.ascii	"__ram2_init_text__\000"
+ 1074      6D325F69 
+ 1074      6E69745F 
+ 1074      74657874 
+ 1074      5F5F00
+ 1075              	.LASF17:
+ 1076 03ea 41484250 		.ascii	"AHBPrescTable\000"
+ 1076      72657363 
+ 1076      5461626C 
+ 1076      6500
+ 1077              	.LASF26:
+ 1078 03f8 5F5F7261 		.ascii	"__ram0_clear__\000"
+ 1078      6D305F63 
+ 1078      6C656172 
+ 1078      5F5F00
+ 1079              	.LASF40:
+ 1080 0407 5F5F7261 		.ascii	"__ram4_init_text__\000"
+ 1080      6D345F69 
+ 1080      6E69745F 
+ 1080      74657874 
+ 1080      5F5F00
+ 1081              	.LASF15:
+ 1082 041a 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1082      52784275 
+ 1082      66666572 
+ 1082      00
+ 1083              	.LASF55:
+ 1084 0427 5F5F7261 		.ascii	"__ram7_noinit__\000"
+ 1084      6D375F6E 
+ 1084      6F696E69 
+ 1084      745F5F00 
+ 1085              	.LASF5:
+ 1086 0437 5F5F696E 		.ascii	"__int32_t\000"
+ 1086      7433325F 
+ 1086      7400
+ 1087              	.LASF61:
+ 1088 0441 2E2E2F2E 		.ascii	"../../../ChibiOSRepo/chibios191/os/common/startup/A"
+ 1088      2E2F2E2E 
+ 1088      2F436869 
+ 1088      62694F53 
+ 1088      5265706F 
+ 1089 0474 524D434D 		.ascii	"RMCMx/compilers/GCC/crt1.c\000"
+ 1089      782F636F 
+ 1089      6D70696C 
+ 1089      6572732F 
+ 1089      4743432F 
+ 1090              	.LASF31:
+ 1091 048f 5F5F7261 		.ascii	"__ram1_noinit__\000"
+ 1091      6D315F6E 
+ 1091      6F696E69 
+ 1091      745F5F00 
+ 1092              	.LASF41:
+ 1093 049f 5F5F7261 		.ascii	"__ram4_init__\000"
+ 1093      6D345F69 
+ 1093      6E69745F 
+ 1093      5F00
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s 			page 24
+
+
+ 1094              	.LASF53:
+ 1095 04ad 5F5F7261 		.ascii	"__ram7_init__\000"
+ 1095      6D375F69 
+ 1095      6E69745F 
+ 1095      5F00
+ 1096              	.LASF36:
+ 1097 04bb 5F5F7261 		.ascii	"__ram3_init_text__\000"
+ 1097      6D335F69 
+ 1097      6E69745F 
+ 1097      74657874 
+ 1097      5F5F00
+ 1098              	.LASF20:
+ 1099 04ce 696E6974 		.ascii	"init_area\000"
+ 1099      5F617265 
+ 1099      6100
+ 1100              	.LASF19:
+ 1101 04d8 696E6974 		.ascii	"init_text_area\000"
+ 1101      5F746578 
+ 1101      745F6172 
+ 1101      656100
+ 1102              		.ident	"GCC: (GNU Tools for Arm Embedded Processors 7-2017-q4-major) 7.2.1 20170904 (release) [ARM
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s 			page 25
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 crt1.c
+C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s:15     .text:00000000 $t
+C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s:23     .text:00000000 __core_init
+C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s:44     .text:00000010 __early_init
+C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s:64     .text:00000020 __late_init
+C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s:84     .text:00000030 __default_exit
+C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s:105    .text:00000040 __init_ram_areas
+C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s:168    .text:00000070 $d
+C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s:174    .rodata:00000000 $d
+C:\Users\RAKIBU~1\AppData\Local\Temp\ccZhtkbb.s:178    .rodata:00000000 ram_areas
+
+UNDEFINED SYMBOLS
+__ram0_init_text__
+__ram0_init__
+__ram0_clear__
+__ram0_noinit__
+__ram1_init_text__
+__ram1_init__
+__ram1_clear__
+__ram1_noinit__
+__ram2_init_text__
+__ram2_init__
+__ram2_clear__
+__ram2_noinit__
+__ram3_init_text__
+__ram3_init__
+__ram3_clear__
+__ram3_noinit__
+__ram4_init_text__
+__ram4_init__
+__ram4_clear__
+__ram4_noinit__
+__ram5_init_text__
+__ram5_init__
+__ram5_clear__
+__ram5_noinit__
+__ram6_init_text__
+__ram6_init__
+__ram6_clear__
+__ram6_noinit__
+__ram7_init_text__
+__ram7_init__
+__ram7_clear__
+__ram7_noinit__
