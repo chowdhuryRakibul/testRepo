@@ -1,0 +1,1880 @@
+
+build/ch.elf:     file format elf32-littlearm
+build/ch.elf
+architecture: arm, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0x080002d9
+
+Program Header:
+0x70000001 off    0x0002b1b0 vaddr 0x0801b1b0 paddr 0x0801b1b0 align 2**2
+         filesz 0x00000008 memsz 0x00000008 flags r--
+    LOAD off    0x00010000 vaddr 0x08000000 paddr 0x08000000 align 2**16
+         filesz 0x0001b1b8 memsz 0x0001b1b8 flags r-x
+    LOAD off    0x00031a00 vaddr 0x20001a00 paddr 0x0801b1b8 align 2**16
+         filesz 0x0000061c memsz 0x0000061c flags rw-
+    LOAD off    0x00032020 vaddr 0x20002020 paddr 0x0801b7d4 align 2**16
+         filesz 0x00000000 memsz 0x0000e2ec flags rw-
+    LOAD off    0x00040000 vaddr 0x20000000 paddr 0x20000000 align 2**16
+         filesz 0x00000000 memsz 0x00020000 flags rw-
+private flags = 5000200: [Version5 EABI] [soft-float ABI]
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .mstack       00000400  20000000  20000000  00040000  2**0
+                  ALLOC
+  1 .pstack       00001600  20000400  20000400  00040000  2**0
+                  ALLOC
+  2 .vectors      000001e0  08000000  08000000  00010000  2**4
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  3 .text         00018988  08000200  08000200  00010200  2**6
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  4 .rodata       00002628  08018b88  08018b88  00028b88  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  5 .ARM.exidx    00000008  0801b1b0  0801b1b0  0002b1b0  2**2
+                  CONTENTS, ALLOC, LOAD, READONLY, DATA
+  6 .data         0000061c  20001a00  0801b1b8  00031a00  2**3
+                  CONTENTS, ALLOC, LOAD, DATA
+  7 .bss          0000e2ec  20002020  0801b7d4  00032020  2**3
+                  ALLOC
+  8 .ram0_init    00000000  2001030c  2001030c  0003201c  2**2
+                  CONTENTS
+  9 .ram0         00000000  2001030c  2001030c  0003201c  2**2
+                  CONTENTS
+ 10 .ram1_init    00000000  20000000  20000000  0003201c  2**2
+                  CONTENTS
+ 11 .ram1         00000000  20000000  20000000  0003201c  2**2
+                  CONTENTS
+ 12 .ram2_init    00000000  2001c000  2001c000  0003201c  2**2
+                  CONTENTS
+ 13 .ram2         00000000  2001c000  2001c000  0003201c  2**2
+                  CONTENTS
+ 14 .ram3_init    00000000  00000000  00000000  0003201c  2**2
+                  CONTENTS
+ 15 .ram3         00000000  00000000  00000000  0003201c  2**2
+                  CONTENTS
+ 16 .ram4_init    00000000  10000000  10000000  0003201c  2**2
+                  CONTENTS
+ 17 .ram4         00000000  10000000  10000000  0003201c  2**2
+                  CONTENTS
+ 18 .ram5_init    00000000  40024000  40024000  0003201c  2**2
+                  CONTENTS
+ 19 .ram5         00000000  40024000  40024000  0003201c  2**2
+                  CONTENTS
+ 20 .ram6_init    00000000  00000000  00000000  0003201c  2**2
+                  CONTENTS
+ 21 .ram6         00000000  00000000  00000000  0003201c  2**2
+                  CONTENTS
+ 22 .ram7_init    00000000  00000000  00000000  0003201c  2**2
+                  CONTENTS
+ 23 .ram7         00000000  00000000  00000000  0003201c  2**2
+                  CONTENTS
+ 24 .heap         0000fcf4  2001030c  2001030c  00040000  2**0
+                  ALLOC
+ 25 .ARM.attributes 0000002f  00000000  00000000  0003201c  2**0
+                  CONTENTS, READONLY
+ 26 .comment      0000007e  00000000  00000000  0003204b  2**0
+                  CONTENTS, READONLY
+ 27 .debug_line   0002d680  00000000  00000000  000320c9  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 28 .debug_info   000e9964  00000000  00000000  0005f749  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 29 .debug_abbrev 000127c0  00000000  00000000  001490ad  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 30 .debug_aranges 00000b00  00000000  00000000  0015b870  2**3
+                  CONTENTS, READONLY, DEBUGGING
+ 31 .debug_str    0000b627  00000000  00000000  0015c370  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 32 .debug_loc    0001e56f  00000000  00000000  00167997  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 33 .debug_ranges 00001428  00000000  00000000  00185f06  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 34 .debug_frame  000079e4  00000000  00000000  00187330  2**2
+                  CONTENTS, READONLY, DEBUGGING
+SYMBOL TABLE:
+20000000 l    d  .mstack	00000000 .mstack
+20000400 l    d  .pstack	00000000 .pstack
+08000000 l    d  .vectors	00000000 .vectors
+08000200 l    d  .text	00000000 .text
+08018b88 l    d  .rodata	00000000 .rodata
+0801b1b0 l    d  .ARM.exidx	00000000 .ARM.exidx
+20001a00 l    d  .data	00000000 .data
+20002020 l    d  .bss	00000000 .bss
+2001030c l    d  .ram0_init	00000000 .ram0_init
+2001030c l    d  .ram0	00000000 .ram0
+20000000 l    d  .ram1_init	00000000 .ram1_init
+20000000 l    d  .ram1	00000000 .ram1
+2001c000 l    d  .ram2_init	00000000 .ram2_init
+2001c000 l    d  .ram2	00000000 .ram2
+00000000 l    d  .ram3_init	00000000 .ram3_init
+00000000 l    d  .ram3	00000000 .ram3
+10000000 l    d  .ram4_init	00000000 .ram4_init
+10000000 l    d  .ram4	00000000 .ram4
+40024000 l    d  .ram5_init	00000000 .ram5_init
+40024000 l    d  .ram5	00000000 .ram5
+00000000 l    d  .ram6_init	00000000 .ram6_init
+00000000 l    d  .ram6	00000000 .ram6
+00000000 l    d  .ram7_init	00000000 .ram7_init
+00000000 l    d  .ram7	00000000 .ram7
+2001030c l    d  .heap	00000000 .heap
+00000000 l    d  .ARM.attributes	00000000 .ARM.attributes
+00000000 l    d  .comment	00000000 .comment
+00000000 l    d  .debug_line	00000000 .debug_line
+00000000 l    d  .debug_info	00000000 .debug_info
+00000000 l    d  .debug_abbrev	00000000 .debug_abbrev
+00000000 l    d  .debug_aranges	00000000 .debug_aranges
+00000000 l    d  .debug_str	00000000 .debug_str
+00000000 l    d  .debug_loc	00000000 .debug_loc
+00000000 l    d  .debug_ranges	00000000 .debug_ranges
+00000000 l    d  .debug_frame	00000000 .debug_frame
+00000000 l    df *ABS*	00000000 build/obj/vectors.o
+080002de l       .text	00000000 .stay
+00000000 l    df *ABS*	00000000 build/obj/crt0_v7m.o
+08000234 l       .text	00000000 msloop
+08000242 l       .text	00000000 psloop
+08000252 l       .text	00000000 dloop
+08000266 l       .text	00000000 bloop
+0800027c l       .text	00000000 initloop
+08000288 l       .text	00000000 endinitloop
+08000290 l       .text	00000000 finiloop
+0800029c l       .text	00000000 endfiniloop
+00000000 l    df *ABS*	00000000 build/obj/chcoreasm_v7m.o
+e000ed04 l       *ABS*	00000000 SCB_ICSR
+10000000 l       *ABS*	00000000 ICSR_PENDSVSET
+00000000 l    df *ABS*	00000000 crt1.c
+08018b88 l     O .rodata	00000080 ram_areas
+00000000 l    df *ABS*	00000000 board.c
+080003a0 l     F .text	0000001e gpio_init
+080003c0 l     F .text	000000b4 stm32_gpio_init
+08018c08 l     O .rodata	000000fc gpio_default_config
+20002020 l     O .bss	00000001 last_status.8999
+00000000 l    df *ABS*	00000000 osal.c
+00000000 l    df *ABS*	00000000 hal.c
+00000000 l    df *ABS*	00000000 hal_st.c
+08018d04 l     O .rodata	0000000d __func__.8971
+08018d14 l     O .rodata	0000000b __func__.8978
+08018d20 l     O .rodata	0000000b __func__.8982
+00000000 l    df *ABS*	00000000 hal_buffers.c
+08018d2c l     O .rodata	0000000e __func__.9176
+08018d3c l     O .rodata	00000013 __func__.9187
+08018d50 l     O .rodata	00000019 __func__.9201
+08018d6c l     O .rodata	0000000c __func__.6519
+08018d78 l     O .rodata	00000017 __func__.9208
+08018d90 l     O .rodata	0000000f __func__.9221
+08018da0 l     O .rodata	0000000e __func__.9234
+08018db0 l     O .rodata	00000017 __func__.9245
+08018dc8 l     O .rodata	0000001a __func__.9259
+08018de4 l     O .rodata	00000013 __func__.9268
+08018df8 l     O .rodata	00000010 __func__.9282
+00000000 l    df *ABS*	00000000 hal_queues.c
+08000ed0 l     F .text	00000074 iq_read
+08000f50 l     F .text	00000074 oq_write
+08018e08 l     O .rodata	00000008 __func__.9174
+08018e10 l     O .rodata	00000009 __func__.9182
+08018e1c l     O .rodata	0000000c __func__.6519
+08018e28 l     O .rodata	0000000e __func__.9225
+08018e38 l     O .rodata	0000000f __func__.9276
+00000000 l    df *ABS*	00000000 hal_mmcsd.c
+08018e48 l     O .rodata	00000011 __func__.8974
+08018e5c l     O .rodata	00000014 __func__.8981
+08018e70 l     O .rodata	00000018 __func__.8989
+08018e88 l     O .rodata	00000016 __func__.8995
+08018ea0 l     O .rodata	00000016 __func__.9001
+08018eb8 l     O .rodata	00000016 __func__.9007
+08018ed0 l     O .rodata	00000016 __func__.9013
+08018ee8 l     O .rodata	00000016 __func__.9019
+00000000 l    df *ABS*	00000000 hal_gpt.c
+08018f00 l     O .rodata	00000009 __func__.8975
+08018f0c l     O .rodata	0000000c __func__.6118
+08018f18 l     O .rodata	00000008 __func__.8979
+08018f20 l     O .rodata	00000012 __func__.8984
+08018f34 l     O .rodata	00000014 __func__.8993
+08018f48 l     O .rodata	00000011 __func__.9002
+08018f5c l     O .rodata	0000000e __func__.9009
+08018f6c l     O .rodata	0000000f __func__.9014
+00000000 l    df *ABS*	00000000 hal_i2c.c
+08018f7c l     O .rodata	00000009 __func__.8975
+08018f88 l     O .rodata	0000000c __func__.6118
+08018f94 l     O .rodata	00000008 __func__.8979
+08018f9c l     O .rodata	0000000d __func__.8983
+08018fac l     O .rodata	00000019 __func__.8994
+08018fc8 l     O .rodata	00000018 __func__.9003
+08018fe0 l     O .rodata	0000000e __func__.9007
+08018ff0 l     O .rodata	0000000e __func__.9011
+00000000 l    df *ABS*	00000000 hal_pal.c
+08019000 l     O .rodata	0000000b __func__.8968
+0801900c l     O .rodata	0000000c __func__.8973
+08019018 l     O .rodata	0000000e __func__.8979
+08019028 l     O .rodata	0000000c __func__.6118
+00000000 l    df *ABS*	00000000 hal_rtc.c
+08019034 l     O .rodata	0000000b __func__.8976
+08019040 l     O .rodata	0000000b __func__.8981
+0801904c l     O .rodata	0000000c __func__.8987
+08019058 l     O .rodata	0000000c __func__.8993
+08019064 l     O .rodata	0000000f __func__.8998
+08019074 l     O .rodata	0000000c month_len
+00000000 l    df *ABS*	00000000 hal_sdc.c
+08002640 l     F .text	00000016 sdc_cmd6_extract_info
+08002660 l     F .text	00000022 sdc_cmd6_check_status
+08002690 l     F .text	00000034 mmc_cmd6_construct
+080026d0 l     F .text	00000048 mmc_detect_bus_clk
+08002720 l     F .text	00000030 sdc_cmd6_construct
+08002780 l     F .text	0000007c mode_detect
+08002800 l     F .text	0000004c mmc_init
+08002850 l     F .text	00000080 sdc_init
+080028d0 l     F .text	00000078 sdc_detect_bus_clk
+08002950 l     F .text	00000018 detect_bus_clk
+08002968 l     F .text	00000060 sdc_set_bus_width
+080029c8 l     F .text	00000080 mmc_set_bus_width
+08019080 l     O .rodata	00000013 __func__.9225
+08019094 l     O .rodata	00000013 __func__.9232
+080190a8 l     O .rodata	0000000b __func__.9350
+080190b4 l     O .rodata	00000012 __func__.9276
+080190c8 l     O .rodata	0000000b __func__.9308
+080190d4 l     O .rodata	00000008 __func__.9327
+080190dc l     O .rodata	00000009 __func__.9335
+080190e8 l     O .rodata	00000008 __func__.9345
+080190f0 l     O .rodata	0000000e __func__.9319
+08019100 l     O .rodata	0000000c __func__.6519
+0801910c l     O .rodata	00000024 sdc_vmt
+08019130 l     O .rodata	00000009 __func__.9298
+0801913c l     O .rodata	00000008 __func__.9302
+08019144 l     O .rodata	00000015 __func__.9340
+0801915c l     O .rodata	00000009 __func__.9357
+00000000 l    df *ABS*	00000000 hal_serial.c
+08003000 l     F .text	00000030 _ctl
+08003030 l     F .text	00000016 _readt
+08003050 l     F .text	0000001a _read
+08003070 l     F .text	00000016 _writet
+08003090 l     F .text	0000001a _write
+080030b0 l     F .text	0000000a _gett
+080030c0 l     F .text	00000012 _get
+080030e0 l     F .text	0000000a _putt
+080030f0 l     F .text	00000012 _put
+08019168 l     O .rodata	00000005 __func__.9009
+08019170 l     O .rodata	00000028 vmt
+08019198 l     O .rodata	00000008 __func__.9027
+080191a0 l     O .rodata	0000000c __func__.6118
+080191ac l     O .rodata	00000007 __func__.9031
+080191b4 l     O .rodata	00000010 __func__.9036
+080191c4 l     O .rodata	0000000f __func__.9041
+00000000 l    df *ABS*	00000000 hal_spi.c
+080191d4 l     O .rodata	00000009 __func__.8975
+080191e0 l     O .rodata	0000000c __func__.6118
+080191ec l     O .rodata	00000008 __func__.8979
+080191f4 l     O .rodata	0000000a __func__.8983
+08019200 l     O .rodata	0000000c __func__.8987
+0801920c l     O .rodata	0000000f __func__.8992
+0801921c l     O .rodata	00000011 __func__.8999
+08019230 l     O .rodata	0000000d __func__.9005
+08019240 l     O .rodata	00000010 __func__.9011
+08019250 l     O .rodata	0000000a __func__.9015
+0801925c l     O .rodata	00000009 __func__.9019
+08019268 l     O .rodata	0000000a __func__.9024
+08019274 l     O .rodata	0000000c __func__.9031
+08019280 l     O .rodata	00000008 __func__.9037
+08019288 l     O .rodata	0000000b __func__.9043
+08019294 l     O .rodata	0000000e __func__.9047
+080192a4 l     O .rodata	0000000e __func__.9051
+00000000 l    df *ABS*	00000000 hal_community.c
+00000000 l    df *ABS*	00000000 hal_eeprom.c
+080192b4 l     O .rodata	0000000f __func__.9183
+080192c4 l     O .rodata	0000000e __func__.9213
+080192d4 l     O .rodata	00000012 __func__.9217
+080192e8 l     O .rodata	0000000c __func__.9223
+080192f4 l     O .rodata	0000000c __func__.9227
+08019300 l     O .rodata	0000000f __func__.9231
+00000000 l    df *ABS*	00000000 hal_ee24xx.c
+08003d30 l     F .text	0000003c calc_timeout
+08003d70 l     F .text	0000002c __clamp_size
+08003da0 l     F .text	00000074 eeprom_read
+08003e20 l     F .text	00000058 read
+08003e80 l     F .text	000000a4 eeprom_write
+08003f30 l     F .text	00000054 __fitted_write
+08003f90 l     F .text	000000d4 write
+08019310 l     O .rodata	0000000c __func__.9182
+0801931c l     O .rodata	00000005 __func__.9224
+08019324 l     O .rodata	0000000d __func__.9191
+08019334 l     O .rodata	0000000f __func__.9203
+08019344 l     O .rodata	00000006 __func__.9214
+0801934c l     O .rodata	00000028 vmt
+00000000 l    df *ABS*	00000000 nvic.c
+08019374 l     O .rodata	0000001d __func__.8976
+00000000 l    df *ABS*	00000000 stm32_isr.c
+08019394 l     O .rodata	00000009 __func__.8969
+080193a0 l     O .rodata	00000009 __func__.8974
+080193ac l     O .rodata	00000009 __func__.8979
+080193b8 l     O .rodata	00000009 __func__.8984
+080193c4 l     O .rodata	00000009 __func__.8989
+00000000 l    df *ABS*	00000000 hal_lld.c
+080044b0 l     F .text	00000054 hal_lld_backup_domain_init
+00000000 l    df *ABS*	00000000 stm32_dma.c
+080193d0 l     O .rodata	00000009 __func__.8977
+080193dc l     O .rodata	00000009 __func__.8982
+080193e8 l     O .rodata	00000009 __func__.8987
+080193f4 l     O .rodata	00000009 __func__.8992
+08019400 l     O .rodata	00000009 __func__.8997
+0801940c l     O .rodata	00000009 __func__.9002
+08019418 l     O .rodata	00000009 __func__.9007
+08019424 l     O .rodata	00000009 __func__.9012
+08019430 l     O .rodata	0000000a __func__.9017
+0801943c l     O .rodata	0000000a __func__.9022
+08019448 l     O .rodata	0000000a __func__.9027
+08019454 l     O .rodata	0000000a __func__.9032
+08019460 l     O .rodata	0000000a __func__.9037
+0801946c l     O .rodata	0000000a __func__.9042
+08019478 l     O .rodata	0000000a __func__.9047
+08019484 l     O .rodata	0000000a __func__.9052
+08019550 l     O .rodata	00000010 __func__.9069
+08019560 l     O .rodata	0000000c __func__.6118
+0801956c l     O .rodata	0000000f __func__.9088
+20002024 l     O .bss	00000084 dma
+00000000 l    df *ABS*	00000000 stm32_exti.c
+0801957c l     O .rodata	0000000f __func__.8975
+0801958c l     O .rodata	0000000e __func__.8980
+00000000 l    df *ABS*	00000000 hal_pal_lld.c
+0801959c l     O .rodata	00000018 __func__.8999
+080195b4 l     O .rodata	00000019 __func__.9011
+00000000 l    df *ABS*	00000000 hal_i2c_lld.c
+08005150 l     F .text	00000056 i2c_lld_abort_operation
+080051b0 l     F .text	00000034 i2c_lld_set_opmode
+080051f0 l     F .text	00000120 i2c_lld_serve_event_interrupt
+08005310 l     F .text	000000fa i2c_lld_serve_error_interrupt
+08005410 l     F .text	00000044 i2c_lld_serve_tx_end_irq
+08005460 l     F .text	0000007c i2c_lld_serve_rx_end_irq
+080054e0 l     F .text	00000128 i2c_lld_set_clock
+080195d0 l     O .rodata	00000012 __func__.8984
+080195e4 l     O .rodata	00000009 __func__.9038
+080195f0 l     O .rodata	00000009 __func__.9043
+080195fc l     O .rodata	0000000e __func__.9051
+0801960c l     O .rodata	0000000c __func__.6118
+00000000 l    df *ABS*	00000000 hal_rtc_lld.c
+08005ab0 l     F .text	0000001c rtc_enter_init
+08005ad0 l     F .text	0000005c rtc_decode_time
+08005b30 l     F .text	00000050 rtc_decode_date
+08005b80 l     F .text	000000b0 rtc_encode_time
+08005c30 l     F .text	00000074 rtc_encode_date
+08005cb0 l     F .text	00000004 _getsize
+08005cc0 l     F .text	00000070 _write
+08005d30 l     F .text	0000005c _read
+08019618 l     O .rodata	00000007 __func__.9019
+08019620 l     O .rodata	00000006 __func__.9005
+08019628 l     O .rodata	00000009 __func__.9032
+08019634 l     O .rodata	00000009 __func__.9039
+08019640 l     O .rodata	00000009 __func__.9046
+0801964c l     O .rodata	0000001a __func__.9097
+00000000 l    df *ABS*	00000000 hal_spi_lld.c
+080061d0 l     F .text	00000018 spi_lld_serve_tx_interrupt
+080061f0 l     F .text	000000e0 spi_lld_serve_rx_interrupt
+08019668 l     O .rodata	0000000e __func__.8989
+08019678 l     O .rodata	0000000f __func__.8997
+08019688 l     O .rodata	00000002 dummytx
+0801968c l     O .rodata	00000011 __func__.9004
+080196a0 l     O .rodata	0000000d __func__.9010
+080196b0 l     O .rodata	00000010 __func__.9016
+200020a8 l     O .bss	00000002 dummyrx
+00000000 l    df *ABS*	00000000 hal_sdc_lld.c
+08006730 l     F .text	00000050 sdc_lld_collect_errors
+08006780 l     F .text	00000070 sdc_lld_prepare_read_bytes
+08006a60 l     F .text	000000d4 sdc_lld_wait_transaction_end
+08006b40 l     F .text	00000068 sdc_lld_error_cleanup
+08006bb0 l     F .text	00000050 sdc_lld_prepare_read
+08006c00 l     F .text	00000050 sdc_lld_prepare_write
+080196c0 l     O .rodata	0000001b __func__.9178
+080196dc l     O .rodata	0000000a __func__.9216
+080196e8 l     O .rodata	00000008 sdc_default_cfg
+080196f0 l     O .rodata	0000000e __func__.9223
+08019700 l     O .rodata	0000000c __func__.6519
+0801970c l     O .rodata	00000015 __func__.9300
+08019724 l     O .rodata	00000016 __func__.9309
+200020ac l     O .bss	00000200 u
+00000000 l    df *ABS*	00000000 hal_st_lld.c
+0801973c l     O .rodata	00000009 __func__.8968
+00000000 l    df *ABS*	00000000 hal_gpt_lld.c
+08019748 l     O .rodata	0000000e __func__.8977
+08019758 l     O .rodata	0000000a __func__.8969
+00000000 l    df *ABS*	00000000 hal_serial_lld.c
+080071e0 l     F .text	0000008c usart_init
+08007270 l     F .text	0000000a usart_deinit
+08007280 l     F .text	00000010 notify2
+08007290 l     F .text	00000010 notify3
+080072a0 l     F .text	00000010 notify6
+080072b0 l     F .text	00000036 set_error
+080072f0 l     F .text	00000130 serve_interrupt
+08019764 l     O .rodata	00000009 __func__.9006
+08019770 l     O .rodata	00000009 __func__.9010
+0801977c l     O .rodata	0000000a __func__.9014
+08019788 l     O .rodata	0000000c default_config
+00000000 l    df *ABS*	00000000 hal_stm32_dma2d.c
+00000000 l    df *ABS*	00000000 hal_stm32_ltdc.c
+00000000 l    df *ABS*	00000000 chsys.c
+08007640 l     F .text	00000002 _idle_thread
+08019794 l     O .rodata	00000018 idle_descriptor.7113
+080197ac l     O .rodata	0000000b __func__.4250
+080197b8 l     O .rodata	0000000c __func__.6204
+080197c4 l     O .rodata	0000000c __func__.6118
+00000000 l    df *ABS*	00000000 chdebug.c
+00000000 l    df *ABS*	00000000 chtrace.c
+08007bb0 l     F .text	0000003c trace_next
+080197d0 l     O .rodata	0000000c __func__.6118
+00000000 l    df *ABS*	00000000 chvt.c
+080197dc l     O .rodata	0000000b __func__.7114
+080197e8 l     O .rodata	0000000d __func__.7123
+080197f8 l     O .rodata	0000000b __func__.4250
+00000000 l    df *ABS*	00000000 chschd.c
+08008190 l     F .text	00000072 wakeup
+08019804 l     O .rodata	0000000c __func__.7111
+08019810 l     O .rodata	00000011 __func__.7118
+08019824 l     O .rodata	0000000d __func__.7147
+00000000 l    df *ABS*	00000000 chthreads.c
+08019834 l     O .rodata	00000016 __func__.7120
+0801984c l     O .rodata	00000015 __func__.7125
+08019864 l     O .rodata	0000000c __func__.6118
+08019870 l     O .rodata	0000000c __func__.7133
+0801987c l     O .rodata	00000012 __func__.7142
+08019890 l     O .rodata	0000000b __func__.7146
+0801989c l     O .rodata	0000000c __func__.7150
+080198a8 l     O .rodata	0000000d __func__.7154
+080198b8 l     O .rodata	0000000b __func__.7169
+080198c4 l     O .rodata	0000000a __func__.7174
+080198d0 l     O .rodata	00000011 __func__.7179
+080198e4 l     O .rodata	0000000c __func__.6307
+080198f0 l     O .rodata	0000000e __func__.7202
+08019900 l     O .rodata	00000015 __func__.7208
+08019918 l     O .rodata	0000000d __func__.7214
+08019928 l     O .rodata	0000000d __func__.7220
+08019938 l     O .rodata	00000014 __func__.6319
+00000000 l    df *ABS*	00000000 chtm.c
+00000000 l    df *ABS*	00000000 chstats.c
+00000000 l    df *ABS*	00000000 chregistry.c
+0801994c l     O .rodata	0000000c __func__.6519
+08019958 l     O .rodata	00000010 __func__.7513
+00000000 l    df *ABS*	00000000 chsem.c
+08019980 l     O .rodata	00000010 __func__.7107
+08019990 l     O .rodata	0000000c __func__.7117
+0801999c l     O .rodata	0000000c __func__.6118
+080199a8 l     O .rodata	0000000b __func__.7128
+080199b4 l     O .rodata	00000012 __func__.7138
+080199c8 l     O .rodata	0000000c __func__.7142
+080199d4 l     O .rodata	0000000d __func__.7146
+080199e4 l     O .rodata	00000011 __func__.7152
+080199f8 l     O .rodata	00000010 __func__.7161
+00000000 l    df *ABS*	00000000 chmtx.c
+08019a08 l     O .rodata	00000010 __func__.7106
+08019a18 l     O .rodata	0000000b __func__.7114
+08019a24 l     O .rodata	0000000c __func__.6118
+08019a30 l     O .rodata	0000000e __func__.7131
+08019a40 l     O .rodata	0000000c __func__.7137
+08019a4c l     O .rodata	0000000d __func__.7148
+00000000 l    df *ABS*	00000000 chcond.c
+08019a5c l     O .rodata	00000011 __func__.7106
+08019a70 l     O .rodata	0000000d __func__.7110
+08019a80 l     O .rodata	0000000c __func__.6118
+08019a8c l     O .rodata	0000000e __func__.7114
+08019a9c l     O .rodata	00000011 __func__.7122
+08019ab0 l     O .rodata	0000000c __func__.7136
+08019abc l     O .rodata	00000013 __func__.7148
+00000000 l    df *ABS*	00000000 chevents.c
+08019ad0 l     O .rodata	0000001b __func__.7109
+08019aec l     O .rodata	0000000c __func__.6118
+08019af8 l     O .rodata	00000010 __func__.7115
+08019b08 l     O .rodata	0000000d __func__.7153
+08019b18 l     O .rodata	00000015 __func__.7136
+08019b30 l     O .rodata	0000000c __func__.7148
+08019b3c l     O .rodata	0000000e __func__.7167
+00000000 l    df *ABS*	00000000 chmsg.c
+08019b4c l     O .rodata	0000000a __func__.7108
+08019b58 l     O .rodata	0000000c __func__.6118
+08019b64 l     O .rodata	0000000d __func__.7117
+00000000 l    df *ABS*	00000000 chdynamic.c
+08019b74 l     O .rodata	0000000c __func__.6118
+08019b80 l     O .rodata	0000001a __func__.7123
+00000000 l    df *ABS*	00000000 chmboxes.c
+08019b9c l     O .rodata	0000000f __func__.7108
+08019bac l     O .rodata	0000000b __func__.7115
+08019bb8 l     O .rodata	0000000c __func__.6118
+08019bc4 l     O .rodata	00000011 __func__.7128
+08019bd8 l     O .rodata	0000000a __func__.7135
+08019be4 l     O .rodata	00000016 __func__.7148
+08019bfc l     O .rodata	0000000f __func__.7155
+08019c0c l     O .rodata	00000012 __func__.7168
+08019c20 l     O .rodata	0000000b __func__.7175
+00000000 l    df *ABS*	00000000 chmemcore.c
+08019c2c l     O .rodata	0000001e __func__.7118
+08019c4c l     O .rodata	0000000c __func__.6118
+00000000 l    df *ABS*	00000000 chmemheaps.c
+08019c58 l     O .rodata	00000011 __func__.7113
+08019c6c l     O .rodata	00000013 __func__.7123
+08019c80 l     O .rodata	0000000b __func__.7136
+200022ac l     O .bss	0000001c default_heap
+00000000 l    df *ABS*	00000000 chmempools.c
+08019c8c l     O .rodata	00000018 __func__.7109
+08019ca4 l     O .rodata	0000000d __func__.7123
+08019cb4 l     O .rodata	0000000c __func__.6118
+08019cc0 l     O .rodata	0000000c __func__.7133
+08019ccc l     O .rodata	00000010 __func__.7115
+08019cdc l     O .rodata	00000017 __func__.7148
+00000000 l    df *ABS*	00000000 chpipes.c
+0800b230 l     F .text	0000007c pipe_write
+0800b2b0 l     F .text	00000076 pipe_read
+08019cf4 l     O .rodata	00000011 __func__.7523
+08019d08 l     O .rodata	0000000c __func__.7527
+08019d14 l     O .rodata	0000000c __func__.6519
+08019d20 l     O .rodata	00000013 __func__.7535
+08019d34 l     O .rodata	00000012 __func__.7548
+00000000 l    df *ABS*	00000000 chfactory.c
+0800b570 l     F .text	0000001a dyn_list_unlink
+0800b590 l     F .text	0000000a chCoreAllocAlignedI
+0800b5a0 l     F .text	00000022 dyn_list_find
+0800b5d0 l     F .text	00000048 dyn_create_object_pool
+0800b620 l     F .text	0000002c dyn_find_object
+0800b650 l     F .text	00000040 dyn_release_object_pool
+0800b690 l     F .text	00000048 dyn_create_object_heap
+0800b6e0 l     F .text	00000038 dyn_release_object_heap
+08019d48 l     O .rodata	00000017 __func__.7542
+08019d60 l     O .rodata	00000010 __func__.7554
+08019d70 l     O .rodata	00000018 __func__.7548
+08019d88 l     O .rodata	00000017 __func__.7530
+08019da0 l     O .rodata	00000018 __func__.7535
+08019db8 l     O .rodata	00000018 __func__.7250
+00000000 l    df *ABS*	00000000 chcore.c
+00000000 l    df *ABS*	00000000 chcore_v7m.c
+00000000 l    df *ABS*	00000000 chprintf.c
+0800bc30 l     F .text	0000004a long_to_string_with_divisor
+0800bc80 l     F .text	0000000a ch_ltoa
+00000000 l    df *ABS*	00000000 memstreams.c
+0800bfb0 l     F .text	0000001c _put
+0800bfd0 l     F .text	0000001a _get
+0800bff0 l     F .text	00000028 _reads
+0800c020 l     F .text	00000026 _writes
+08019dd0 l     O .rodata	00000014 vmt
+00000000 l    df *ABS*	00000000 nullstreams.c
+0800c070 l     F .text	00000004 writes
+0800c080 l     F .text	00000004 reads
+0800c090 l     F .text	00000004 put
+0800c0a0 l     F .text	00000004 get
+08019de4 l     O .rodata	00000014 vmt
+00000000 l    df *ABS*	00000000 shell.c
+0800c0c0 l     F .text	00000020 list_commands
+0800c0e0 l     F .text	0000002c cmdexec
+0800c110 l     F .text	00000050 parse_arguments
+00000000 l    df *ABS*	00000000 shell_cmd.c
+0800c3a0 l     F .text	00000028 cmd_echo
+0800c3d0 l     F .text	000000bc cmd_info
+0800c490 l     F .text	00000080 cmd_threads
+0800c510 l     F .text	00000068 cmd_mem
+0800c580 l     F .text	00000070 cmd_systime
+0800c5f0 l     F .text	00000020 cmd_exit
+08019df8 l     O .rodata	00000040 states.9252
+08019e38 l     O .rodata	0000000c __func__.6519
+00000000 l    df *ABS*	00000000 fatfs_diskio.c
+00000000 l    df *ABS*	00000000 fatfs_syscall.c
+00000000 l    df *ABS*	00000000 ff.c
+0800c740 l     F .text	0000000a ld_word
+0800c750 l     F .text	00000016 ld_dword
+0800c770 l     F .text	000000a8 ld_qword
+0800c820 l     F .text	00000008 st_word
+0800c830 l     F .text	00000014 st_dword
+0800c850 l     F .text	00000026 st_qword
+0800c880 l     F .text	00000012 mem_cpy
+0800c8a0 l     F .text	0000000a mem_set
+0800c8b0 l     F .text	0000001e mem_cmp
+0800c8d0 l     F .text	00000010 chk_chr
+0800c8e0 l     F .text	00000004 dbc_1st
+0800c8f0 l     F .text	00000004 dbc_2nd
+0800c900 l     F .text	00000018 clst2sect
+0800c920 l     F .text	00000030 clmt_clust
+0800c950 l     F .text	00000026 ld_clust
+0800c980 l     F .text	00000026 st_clust
+0800c9b0 l     F .text	00000088 pick_lfn
+0800ca40 l     F .text	00000078 put_lfn
+0800cac0 l     F .text	000000b0 gen_numname
+0800cb70 l     F .text	0000001c sum_sfn
+0800cb90 l     F .text	00000030 xdir_sum
+0800cbc0 l     F .text	00000052 get_ldnumber
+0800cc20 l     F .text	00000048 validate
+0800cc70 l     F .text	00000050 sync_window
+0800ccc0 l     F .text	00000034 move_window
+0800cd00 l     F .text	0000008c check_fs
+0800cd90 l     F .text	00000468 find_volume
+0800d200 l     F .text	00000086 find_bitmap
+0800d290 l     F .text	00000078 change_bitmap
+0800d310 l     F .text	0000011e put_fat
+0800d430 l     F .text	00000030 fill_last_frag
+0800d460 l     F .text	00000032 fill_first_frag
+0800d4a0 l     F .text	00000164 get_fat
+0800d610 l     F .text	000000b4 dir_sdi
+0800d6d0 l     F .text	000001cc create_chain
+0800d8a0 l     F .text	0000013e remove_chain
+0800d9e0 l     F .text	000000b4 dir_clear
+0800daa0 l     F .text	000000dc dir_next
+0800db80 l     F .text	00000100 load_xdir
+0800dc80 l     F .text	0000003a load_obj_xdir
+0800dcc0 l     F .text	000000ea dir_read
+0800ddb0 l     F .text	0000006c dir_alloc
+0800de20 l     F .text	0000005e store_xdir
+0800de80 l     F .text	00000060 dir_remove
+0800dee0 l     F .text	00000288 create_name
+0800e170 l     F .text	000000a8 get_xdir_info
+0800e220 l     F .text	00000116 get_fileinfo
+0800e340 l     F .text	00000036 xname_sum
+0800e380 l     F .text	00000082 create_xdir
+0800e410 l     F .text	000000a4 cmp_lfn
+0800e4c0 l     F .text	0000015c dir_find
+0800e620 l     F .text	000000ce follow_path
+0800e6f0 l     F .text	00000208 dir_register
+0800e900 l     F .text	0000008c sync_fs
+08019e7c l     O .rodata	0000000d LfnOfs
+08019e8c l     O .rodata	00000080 ExCvt
+200022c8 l     O .bss	00000004 FatFs
+200022cc l     O .bss	00000002 Fsid
+00000000 l    df *ABS*	00000000 ffunicode.c
+08019f0c l     O .rodata	00000100 uc850
+0801a00c l     O .rodata	000000bc cvt2.7347
+0801a0c8 l     O .rodata	000001f2 cvt1.7346
+00000000 l    df *ABS*	00000000 nm_bsp_stm32f429.c
+08010090 l     F .text	00000078 init_chip_pins
+0801a2bc l     O .rodata	0000000c __func__.6138
+00000000 l    df *ABS*	00000000 nm_bus_wrapper_stm32f429.c
+08010310 l     F .text	00000058 spi_rw
+200022d0 l     O .bss	0000012c spiDummyBuf
+00000000 l    df *ABS*	00000000 nm_common.c
+00000000 l    df *ABS*	00000000 m2m_ate_mode.c
+00000000 l    df *ABS*	00000000 m2m_crypto.c
+00000000 l    df *ABS*	00000000 m2m_hif.c
+08010540 l     F .text	00000002 m2m_hif_cb
+08010550 l     F .text	00000040 hif_set_rx_done
+08010590 l     F .text	000001cc hif_isr
+00000000 l    df *ABS*	00000000 m2m_ota.c
+08010b20 l     F .text	0000006c m2m_ota_cb
+200023fc l     O .bss	00000004 gpfOtaNotifCb
+20002400 l     O .bss	00000004 gpfOtaUpdateCb
+00000000 l    df *ABS*	00000000 m2m_periph.c
+00000000 l    df *ABS*	00000000 m2m_ssl.c
+08010d50 l     F .text	0000005c m2m_ssl_cb
+20002404 l     O .bss	00000004 gpfAppSSLCb
+20002408 l     O .bss	00000004 gu32HIFAddr
+00000000 l    df *ABS*	00000000 m2m_wifi.c
+08010fc0 l     F .text	00000048 m2m_validate_scan_options
+08011010 l     F .text	00000228 m2m_wifi_cb
+08011240 l     F .text	000000cc m2m_validate_ap_parameters
+2000240c l     O .bss	00000004 gpfAppWifiCb
+20002410 l     O .bss	00000001 gu8scanInProgress
+20002411 l     O .bss	00000001 gu8ChNum
+00000000 l    df *ABS*	00000000 nmasic.c
+20002414 l     O .bss	00000004 chipid.9726
+00000000 l    df *ABS*	00000000 nmbus.c
+08012540 l     F .text	00000008 p_nm_read_block
+08012550 l     F .text	00000008 p_nm_write_block
+00000000 l    df *ABS*	00000000 nmdrv.c
+00000000 l    df *ABS*	00000000 nmi2c.c
+00000000 l    df *ABS*	00000000 nmspi.c
+080129f0 l     F .text	00000010 crc7_byte
+08012a00 l     F .text	00000018 crc7
+08012a20 l     F .text	0000001c nmi_spi_write
+08012a40 l     F .text	00000190 spi_cmd
+08012bd0 l     F .text	00000094 spi_data_write
+08012c70 l     F .text	0000001c nmi_spi_read
+08012c90 l     F .text	0000007a spi_cmd_rsp
+08012d10 l     F .text	000000a4 spi_data_read
+08012dc0 l     F .text	00000044 spi_data_rsp
+08012e10 l     F .text	0000006e spi_write_reg
+08012e80 l     F .text	000000a8 spi_read_reg
+08012f30 l     F .text	0000009a nm_spi_read
+08012fd0 l     F .text	00000084 nm_spi_write
+0801a2dc l     O .rodata	00000100 crc7_syndrome_table
+20002418 l     O .bss	00000001 gu8Crc_off
+00000000 l    df *ABS*	00000000 nmuart.c
+00000000 l    df *ABS*	00000000 socket.c
+080131b0 l     F .text	00000118 sslSetSockOpt
+08013390 l     F .text	000002d4 m2m_ip_cb
+2000241d l     O .bss	00000001 u8NextTcpSock.9961
+2000241e l     O .bss	00000001 u8NextUdpSock.9962
+00000000 l    df *ABS*	00000000 spi_flash.c
+08013ea0 l     F .text	000000ac spi_flash_load_to_cortus_mem
+08013f50 l     F .text	00000080 spi_flash_write_enable
+08013fd0 l     F .text	000000ac spi_flash_page_program
+08014080 l     F .text	00000080 spi_flash_write_disable
+08014100 l     F .text	00000098 spi_flash_sector_erase
+080141a0 l     F .text	0000005c spi_flash_leave_low_power_mode
+08014200 l     F .text	0000005c spi_flash_enter_low_power_mode
+08014260 l     F .text	00000090 spi_flash_read_status_reg
+080142f0 l     F .text	0000009c spi_flash_rdid
+08014390 l     F .text	00000026 spi_flash_read_internal
+080143c0 l     F .text	00000068 spi_flash_pp
+20002420 l     O .bss	00000004 gu32InernalFlashSize.9278
+00000000 l    df *ABS*	00000000 syscalls.c
+0801a3dc l     O .rodata	00000008 __func__.8186
+00000000 l    df *ABS*	00000000 main.c
+08014690 l     F .text	00000010 gpt5cb
+080146a0 l     F .text	00000034 chSysUnlock
+080146e0 l     F .text	00000128 pps_thread
+08014810 l     F .text	00000190 gps_thread
+080149a0 l     F .text	00000128 blinker_thread
+08014ad0 l     F .text	00000120 wifi_cb
+08015d10 l     F .text	00000904 logger_thread
+08016cd0 l     F .text	00000258 ctl_thread
+0801a3e4 l     O .rodata	0000000c __func__.6118
+0801a3f0 l     O .rodata	00000010 gpt5cfg
+0801a400 l     O .rodata	0000000c gpsSerialcfg
+0801a410 l     O .rodata	0000000c xbeeSerialcfg
+0801a41c l     O .rodata	0000000f __func__.11866
+0801a490 l     O .rodata	00000008 sdccfg
+20004038 l     O .bss	00000200 sd_scratchpad
+20001a30 l     O .data	00000020 eeCfg
+20002432 l     O .bss	00000001 scan_request_index
+20002434 l     O .bss	00000010 eeFile
+20002444 l     O .bss	00000004 eeFS
+20002448 l     O .bss	00000039 node_config
+200024c4 l     O .bss	00000280 file_buffer2.11941
+20002744 l     O .bss	00000280 file_buffer1.11940
+200029c4 l     O .bss	00000238 SDC_FS
+20002c0c l     O .bss	00000080 string_buffer.11942
+20002ca0 l     O .bss	000002e8 wa_blinker_thread
+20002f88 l     O .bss	000002e8 wa_gps_thread
+20003270 l     O .bss	000002e8 wa_pps_thread
+20003558 l     O .bss	000008e8 wa_logger_thread
+20003e40 l     O .bss	000001e8 wa_ctl_thread
+00000000 l    df *ABS*	00000000 GPS.c
+00000000 l    df *ABS*	00000000 mcp23017.c
+080173a0 l     F .text	0000000c mcp23017_regForPin
+080173b0 l     F .text	00000006 mcp23017_bitForPin
+080173c0 l     F .text	0000001e mcp23017_bitWrite
+08017640 l     F .text	0000005c mcp23017_updateRegisterBit
+00000000 l    df *ABS*	00000000 xbee.c
+0801a4a0 l     O .rodata	0000000c __func__.6118
+2000423c l     O .bss	0000049c xbee_mailbox
+00000000 l    df *ABS*	00000000 _aeabi_ldivmod.o
+00000000 l    df *ABS*	00000000 _aeabi_uldivmod.o
+00000000 l    df *ABS*	00000000 libgcc2.c
+00000000 l    df *ABS*	00000000 _dvmd_tls.o
+00000000 l    df *ABS*	00000000 memcmp.c
+00000000 l    df *ABS*	00000000 lib_a-memcpy.o
+00000000 l    df *ABS*	00000000 memset.c
+00000000 l    df *ABS*	00000000 strcat.c
+00000000 l    df *ABS*	00000000 strchr.c
+00000000 l    df *ABS*	00000000 lib_a-strcmp.o
+00000000 l    df *ABS*	00000000 strcpy.c
+00000000 l    df *ABS*	00000000 lib_a-strlen.o
+00000000 l    df *ABS*	00000000 strncmp.c
+00000000 l    df *ABS*	00000000 strncpy.c
+00000000 l    df *ABS*	00000000 strpbrk.c
+00000000 l    df *ABS*	00000000 strspn.c
+00000000 l    df *ABS*	00000000 strtoul.c
+080188ac l     F .text	0000014c _strtoul_l.isra.0
+00000000 l    df *ABS*	00000000 impure.c
+20001a88 l     O .data	00000428 impure_data
+00000000 l    df *ABS*	00000000 locale.c
+00000000 l    df *ABS*	00000000 mbtowc_r.c
+00000000 l    df *ABS*	00000000 wctomb_r.c
+00000000 l    df *ABS*	00000000 ctype_.c
+20001a74 g     O .data	0000000c mcp23017_i2ccfg
+08010bf0 g     F .text	0000001c m2m_ota_notif_check_for_update
+08011620 g     F .text	00000028 m2m_wifi_set_mac_address
+08003af0 g     F .text	00000020 EepromFindDevice
+0800bf50 g     F .text	00000036 chvsnprintf
+08017550 g     F .text	0000004a mcp23017_pinModeAB
+08015100 g     F .text	000000e8 Vector58
+200024a0 g     O .bss	00000004 pendsv_last_s_index
+080121f0 g     F .text	00000076 cpu_halt
+080002da  w    F .text	00000000 VectorE8
+080042d0 g     F .text	00000164 Vector9C
+0800a810 g     F .text	00000084 chMBPostTimeoutS
+08009550 g     F .text	000000dc chSemSignalWait
+20004030 g     O .bss	00000004 gpt_last_error
+08014680 g     F .text	00000004 _isatty_r
+08004070 g     F .text	00000028 nvicEnableVector
+0801867c g     F .text	000000ba strcpy
+08010cd0 g     F .text	0000001c m2m_ota_abort
+00000000 g       *ABS*	00000000 __flash1_end__
+0801a40c g     O .rodata	00000004 mcp_cfg
+080002da  w    F .text	00000000 VectorAC
+080077c0 g     F .text	00000130 chSysTimerHandlerI
+08008990 g     F .text	0000001a chThdExit
+08009f40 g     F .text	00000040 chEvtBroadcastFlagsI
+080082c0 g     F .text	0000005c chSchGoSleepTimeoutS
+00000000 g       .ram7	00000000 __flash6_free__
+08017400 g     F .text	00000054 mcp23017_readRegister
+08001ef0 g     F .text	00000008 i2cInit
+08014600 g     F .text	00000004 _lseek_r
+080002da  w    F .text	00000000 DebugMon_Handler
+08003780 g     F .text	0000003c spiAbortI
+08001d50 g     F .text	00000050 gptStartContinuous
+20005b28 g     O .bss	00000001 byte_index
+08012050 g     F .text	0000001c nmi_get_rfrevid
+20005b2c g     O .bss	00000004 last_pps_time
+08008d70 g     F .text	0000002c chThdResumeS
+08100000 g       *ABS*	00000000 __flash0_end__
+00000000 g       .bss	00000000 __flash6_start__
+08012270 g     F .text	00000018 chip_reset
+08017270 g     F .text	0000005c hex_to_int
+08011ed0 g     F .text	000000b4 cpu_start
+080101c0 g     F .text	00000098 nm_bsp_register_isr
+080002da  w    F .text	00000000 Vector1A0
+20002c9c g     O .bss	00000001 pwr_btn_state
+08009650 g     F .text	000000f8 chMtxLockS
+08001690 g     F .text	000000cc _mmcsd_unpack_mmc_cid
+08011f90 g     F .text	000000b4 nmi_get_chipid
+10000000 g       .bss	00000000 __ram4_start__
+08003590 g     F .text	0000006c spiStartIgnore
+0800a6a0 g     F .text	0000009c chThdCreateFromMemoryPool
+00000000 g       .ram7	00000000 __flash7_free__
+200024c1 g     O .bss	00000001 enable_spi_cb
+08004110 g     F .text	00000070 Vector5C
+08007a50 g     F .text	00000028 _dbg_check_unlock
+0800a970 g     F .text	00000088 chMBPostAheadTimeoutS
+080014d0 g     F .text	00000058 _mmcsd_get_slice
+200024a8 g     O .bss	00000004 cur_sample_num
+08008570 g     F .text	0000000c _thread_memfill
+20002c90 g     O .bss	00000004 rdy_btn_cnt
+080097a0 g     F .text	00000038 chMtxTryLockS
+080125b0 g     F .text	00000008 nm_read_reg_with_ret
+080023e0 g     F .text	00000020 rtcSetTime
+0800ae70 g     F .text	000000b8 chHeapFree
+080002da  w    F .text	00000000 Vector11C
+40024000 g       .ram5	00000000 __ram5_clear__
+08012420 g     F .text	00000034 chip_deinit
+08011780 g     F .text	00000054 m2m_wifi_request_scan
+08017100 g     F .text	00000170 gps_parse_sentence
+080002da  w    F .text	00000000 HardFault_Handler
+20004238 g     O .bss	00000001 s_index_flag
+08001ba0 g     F .text	0000000a gptObjectInit
+080008c0 g     F .text	00000118 ibqReadTimeout
+080002da  w    F .text	00000000 Vector1B8
+08015950 g     F .text	00000154 ads1282_init
+08000c40 g     F .text	000000b0 obqPutTimeout
+08010480 g     F .text	00000032 m2m_strncmp
+08013b30 g     F .text	00000098 recv
+08013940 g     F .text	00000094 connect
+08004ba0 g     F .text	00000048 dmaInit
+08018a68 g     F .text	00000040 _setlocale_r
+20002490 g     O .bss	00000004 raw_sample_start
+08002540 g     F .text	0000006e rtcConvertStructTmToDateTime
+08009ac0 g     F .text	0000002c chCondSignalI
+080002da  w    F .text	00000000 Vector19C
+2000fed0 g     O .bss	00000010 gpsMutex
+200046e0 g     O .bss	00000002 buf_end_pos
+2001030c g       .ram0_init	00000000 __ram0_init__
+080119a0 g     F .text	0000002a m2m_wifi_enable_ap
+08016bd0 g     F .text	00000020 button_hw_init
+08014c40 g     F .text	00000060 read_config_eeprom
+08008ed0 g     F .text	0000000c chTMStartMeasurementX
+08001250 g     F .text	00000018 oqObjectInit
+080109e0 g     F .text	0000002c hif_handle_isr
+0800b380 g     F .text	0000008c chPipeReset
+08007000 g     F .text	00000098 gpt_lld_start
+08010500 g     F .text	00000024 m2m_memcmp
+080002da  w    F .text	00000000 Vector8C
+080002da  w    F .text	00000000 SysTick_Handler
+20001a24 g     O .data	00000002 egstrNmBusCapabilities
+08007140 g     F .text	00000028 gpt_lld_polled_delay
+20005b30 g     O .bss	00009c68 adcBuffer
+20004036 g     O .bss	00000002 adc_last_s_index
+08009de0 g     F .text	00000014 chEvtGetAndClearEventsI
+08009d70 g     F .text	0000006c chEvtUnregister
+08003c70 g     F .text	0000001c eepfs_getposition
+2000f798 g     O .bss	00000004 missed_sample_cnt
+08010cf0 g     F .text	0000001c m2m_ota_switch_firmware
+08011be0 g     F .text	00000068 m2m_wifi_start_provision_mode
+08006990 g     F .text	00000028 sdc_lld_set_bus_mode
+20000000 g       .ram1	00000000 __ram1_free__
+08011c70 g     F .text	0000001c m2m_wifi_get_connection_info
+08006cf0 g     F .text	000000a4 sdc_lld_read_aligned
+08007450 g     F .text	00000030 VectorDC
+20001a20 g     O .data	00000004 myChp
+08012460 g     F .text	0000007c nmi_get_otp_mac_address
+080117e0 g     F .text	00000058 m2m_wifi_request_scan_passive
+00000000 g       .bss	00000000 __ram6_start__
+08007170 g     F .text	00000036 gpt_lld_serve_interrupt
+08015300 g     F .text	00000540 PendSV_Handler
+08018acc g     F .text	0000001c __locale_ctype_ptr
+080002da  w    F .text	00000000 Vector168
+0800bb20 g     F .text	0000003c chFactoryCreatePipe
+080002da  w    F .text	00000000 NMI_Handler
+08001760 g     F .text	000001a0 _mmcsd_unpack_csd_mmc
+08000000 g       .vectors	00000000 _vectors
+0801b1b8 g       .ARM.exidx	00000000 __exidx_end
+08007d60 g     F .text	00000044 chDbgWriteTraceI
+20001a68 g     O .data	0000000c eeprom_i2ccfg
+2000f79c g     O .bss	00000004 pps_period
+08009d00 g     F .text	0000006c chEvtRegisterMaskWithFlags
+08009b20 g     F .text	00000050 chCondBroadcast
+2000fee0 g     O .bss	00000064 local_GPGGA
+08008260 g     F .text	00000058 chSchGoSleepS
+080002da  w    F .text	00000000 Vector110
+08008df0 g     F .text	00000028 chThdEnqueueTimeoutS
+08001290 g     F .text	0000003e oqPutI
+08011420 g     F .text	00000012 m2m_wifi_deinit
+08013100 g     F .text	0000000c nm_spi_deinit
+080145c0 g     F .text	00000030 spi_flash_get_size
+08010dd0 g     F .text	0000001e m2m_ssl_send_certs_to_winc
+0800b930 g     F .text	00000028 chFactoryFindSemaphore
+080040f0 g     F .text	00000018 nvicClearPending
+2000f7a0 g     O .bss	00000004 xbee_stream
+08002020 g     F .text	00000018 i2cGetErrors
+080021d0 g     F .text	0000001c i2cReleaseBus
+2000ffa8 g     O .bss	00000002 packet_length
+08000a60 g     F .text	0000002e obqGetFullBufferI
+2001030c g       .ram0	00000000 __ram0_free__
+200047e8 g     O .bss	00000038 I2CD1
+20010310 g       .heap	00000000 __heap_base__
+08014660 g     F .text	00000018 _fstat_r
+08009a30 g     F .text	00000018 chCondObjectInit
+2000248c g     O .bss	00000004 adc_last_pps_cnt
+08004d50 g     F .text	00000080 dmaStreamFreeI
+08002420 g     F .text	00000024 rtcSetAlarm
+08000b30 g     F .text	00000058 obqGetEmptyBufferTimeout
+080022e0 g     F .text	0000005c palWaitPadTimeout
+08004920 g     F .text	00000044 Vector120
+0801a49a g     O .rodata	00000002 FIR_length
+08008670 g     F .text	0000000c chThdCreateI
+080002da  w    F .text	00000000 Vector1D8
+080057a0 g     F .text	00000054 i2c_lld_stop
+20002c04 g     O .bss	00000004 data_end_pos
+08001180 g     F .text	000000cc iqReadTimeout
+0800c050 g     F .text	00000018 msObjectInit
+08007e20 g     F .text	0000004c chDbgSuspendTrace
+08010d10 g     F .text	0000001c m2m_ota_switch_crt
+080002da  w    F .text	00000000 VectorC8
+20005a3c g     O .bss	00000028 gstrHifCxt
+08007120 g     F .text	00000016 gpt_lld_stop_timer
+080172d0 g     F .text	0000004c gps_test_checksum
+0800fff0 g     F .text	0000009c ff_wtoupper
+08011bc0 g     F .text	0000001e m2m_wifi_get_firmware_version
+2000f7a4 g     O .bss	00000004 gpt_last_target
+08006650 g     F .text	00000068 spi_lld_receive
+20002428 g     O .bss	00000001 gpt_started
+08008320 g     F .text	00000084 chSchWakeupS
+08010c90 g     F .text	0000001c m2m_ota_rollback
+08009180 g     F .text	00000020 chRegFindThreadByWorkingArea
+200024c3 g     O .bss	00000001 gain_setting
+08003260 g     F .text	00000044 sdIncomingDataI
+080103d0 g     F .text	0000001a nm_bus_ioctl
+0801b7d4 g       *ABS*	00000000 __ram3_init_text__
+0800a740 g     F .text	0000003c chMBObjectInit
+08008120 g     F .text	00000014 _scheduler_init
+200024c0 g     O .bss	00000001 missed_adc_flag
+080086f0 g     F .text	000000bc chThdCreateStatic
+08008490 g     F .text	00000024 chSchRescheduleS
+08003c40 g     F .text	00000024 eepfs_getsize
+20002c08 g     O .bss	00000004 max_latency
+08008ff0 g     F .text	00000024 _stats_ctxswc
+080002da  w    F .text	00000000 Vector94
+40025000 g       *ABS*	00000000 __ram5_end__
+0801a498 g     O .rodata	00000002 target_sps
+40024000 g       .ram5	00000000 __ram5_noinit__
+00000000 g       .ram7	00000000 __flash1_free__
+00001000 g       *ABS*	00000000 __ram5_size__
+0800b410 g     F .text	000000ac chPipeWriteTimeout
+08001900 g     F .text	00000148 _mmcsd_unpack_csd_v10
+080002da  w    F .text	00000000 VectorA8
+2000ffac g     O .bss	00000100 xbee_com_buffer
+080032e0 g     F .text	00000050 sdPutWouldBlock
+08017f60 g     F .text	00000134 memcpy
+08006940 g     F .text	00000028 sdc_lld_start_clk
+08006f80 g     F .text	00000054 st_lld_init
+080002da  w    F .text	00000000 VectorB4
+08000520 g     F .text	0000002c stStartAlarm
+08003d20 g     F .text	00000004 eepfs_get
+08009130 g     F .text	00000024 chRegFindThreadByName
+00000000 g       *ABS*	00000000 __flash7_size__
+200046e2 g     O .bss	00000002 buf_start_pos
+08008cd0 g     F .text	0000002c chThdSuspendS
+08009020 g     F .text	00000010 _stats_start_measure_crit_thd
+08010530 g     F .text	00000010 isr
+0800c610 g     F .text	0000002c disk_initialize
+20004820 g     O .bss	0000000c RTCD1
+0800bac0 g     F .text	00000028 chFactoryFindObjectsFIFO
+08017c60 g     F .text	00000000 .hidden __aeabi_uldivmod
+08000590 g     F .text	00000024 stGetAlarm
+200048e8 g     O .bss	0000025c SD2
+2000f7a8 g     O .bss	00000064 global_GPRMC
+08008140 g     F .text	0000004c chSchReadyI
+08008ee0 g     F .text	00000044 chTMStopMeasurementX
+08014d50 g     F .text	00000308 setRelayState
+080001e0 g       .vectors	00000000 __fini_array_end
+08001f20 g     F .text	00000078 i2cStart
+08012290 g     F .text	00000020 chip_reset_and_cpu_halt
+08000670 g     F .text	00000064 ibqPostFullBufferI
+08007a00 g     F .text	00000020 _dbg_check_enable
+0800bf90 g     F .text	0000001c chsnprintf
+080091c0 g     F .text	00000058 chSemResetI
+20001a00 g       .pstack	00000000 __main_thread_stack_end__
+20001a0c g     O .data	00000004 SystemCoreClock
+08011e40 g     F .text	0000002e chip_idle
+08010260 g     F .text	000000a4 nm_bsp_interrupt_ctrl
+20001a04 g     O .data	00000008 eepdev_24xx
+08000000 g       .bss	00000000 __flash0_start__
+080120a0 g     F .text	00000026 nmi_update_pll
+08007ee0 g     F .text	00000020 _vt_init
+08009040 g     F .text	00000010 _stats_start_measure_crit_isr
+08009e00 g     F .text	00000050 chEvtGetAndClearEvents
+0800fd80 g     F .text	000001fc f_rename
+0801b1b0 g       .rodata	00000000 __rodata_end__
+08011b20 g     F .text	00000008 m2m_wifi_get_sleep_mode
+20002481 g     O .bss	00000001 relay_state
+08000200 g     F .text	00000000 _crt0_entry
+08003520 g     F .text	0000006c spiUnselect
+0800acf0 g     F .text	00000020 _heap_init
+08007e00 g     F .text	0000001c chDbgSuspendTraceI
+08004740 g     F .text	00000048 Vector74
+2000242c g     O .bss	00000004 gpt_error
+08007ae0 g     F .text	00000034 _dbg_check_enter_isr
+080004e0 g     F .text	00000030 halInit
+20005a64 g     O .bss	00000002 gu16BufferSize
+080002da  w    F .text	00000000 Vector160
+080002da  w    F .text	00000000 Vector1B0
+08013170 g     F .text	00000014 nm_spi_read_block
+080002da  w    F .text	00000000 UsageFault_Handler
+08008f30 g     F .text	0000002c _tm_init
+080144a0 g     F .text	00000040 spi_flash_read
+080176f0 g     F .text	0000000c mcp23017_digitalWriteA
+080002da  w    F .text	00000000 VectorEC
+08005030 g     F .text	0000009c _pal_lld_enablepadevent
+20002020 g       .bss	00000000 _bss_start
+080083d0 g     F .text	00000054 chSchDoRescheduleBehind
+08001010 g     F .text	0000004a iqPutI
+08007720 g     F .text	000000a0 chSysIntegrityCheckI
+08015c20 g     F .text	00000090 new_logfile
+08013c50 g     F .text	0000009c recvfrom
+08011d70 g     F .text	00000022 m2m_wifi_enable_firmware_logs
+08003600 g     F .text	00000078 spiStartExchange
+20005000 g     O .bss	000000f8 ch_idle_thread_wa
+2000f80c g     O .bss	00000078 fir_adc_buffer
+0800c640 g     F .text	0000002c disk_status
+00000000 g       .ram7	00000000 __flash4_free__
+0800f9c0 g     F .text	000000ce f_truncate
+20020000 g       .heap	00000000 __heap_end__
+0800baf0 g     F .text	00000024 chFactoryReleaseObjectsFIFO
+08018a3c g     F .text	0000002c strtoul
+08001150 g     F .text	00000026 iqReadI
+0800a610 g     F .text	00000088 chThdCreateFromHeap
+08004eb0 g     F .text	00000034 extiEnableLine
+0001c000 g       *ABS*	00000000 __ram1_size__
+08017c90 g     F .text	000002cc .hidden __udivmoddi4
+08006900 g     F .text	00000040 sdc_lld_stop
+08016660 g     F .text	00000568 run_cmd
+080002da  w    F .text	00000000 Vector40
+08014630 g     F .text	00000030 _sbrk_r
+080002da  w    F .text	00000000 VectorF8
+080071b0 g     F .text	00000030 Vector108
+080007d0 g     F .text	0000004c ibqReleaseEmptyBuffer
+08003cf0 g     F .text	0000001c eepfs_geterror
+08000790 g     F .text	00000040 ibqReleaseEmptyBufferS
+08000550 g     F .text	0000000a stStopAlarm
+08002400 g     F .text	00000020 rtcGetTime
+08012690 g     F .text	000000bc nm_get_firmware_info
+20001a54 g     O .data	00000004 adcLatency
+08013710 g     F .text	0000010c socket
+08005610 g     F .text	00000030 VectorBC
+080002da  w    F .text	00000000 Vector190
+00000000 g       .ram7	00000000 __flash3_free__
+08004ab0 g     F .text	00000048 Vector150
+0800f7a0 g     F .text	0000001a f_closedir
+0800c0b0 g     F .text	0000000c nullObjectInit
+08002dd0 g     F .text	00000008 sdcInit
+080145f0 g     F .text	0000000a _read_r
+20000000 g       .ram1	00000000 __ram1_clear__
+00000000 g       .bss	00000000 __flash2_start__
+08004970 g     F .text	00000048 Vector124
+080119d0 g     F .text	00000026 m2m_wifi_set_gains
+0800af30 g     F .text	0000004c chHeapStatus
+08009f80 g     F .text	00000060 chEvtSignal
+0801a47c g     O .rodata	00000014 ads1282ADC_spicfg
+0800c6d0 g     F .text	00000030 disk_ioctl
+2000f884 g     O .bss	00000064 tmp_GPS_buffer
+20001a28 g     O .data	00000002 glbl_s_index
+00000000 g       .bss	00000000 __flash4_start__
+08010150 g     F .text	00000028 nm_bsp_sleep
+08000200 g       .text	00000000 __text_base
+0800a780 g     F .text	00000040 chMBResetI
+08000bf0 g     F .text	00000050 obqPostFullBuffer
+08004510 g     F .text	0000006c hal_lld_init
+08013e70 g     F .text	00000022 sslEnableCertExpirationCheck
+08002290 g     F .text	00000010 palSetPadCallbackI
+080120d0 g     F .text	0000001c nmi_set_sys_clk_src_to_xo
+080103c0 g     F .text	00000010 nm_bus_init
+00000000 g       .ram7	00000000 __ram7_free__
+08009050 g     F .text	00000010 _stats_stop_measure_crit_isr
+00010000 g       *ABS*	00000000 __ram4_size__
+08002de0 g     F .text	00000018 sdcObjectInit
+080062d0 g     F .text	00000050 spi_lld_init
+080002da  w    F .text	00000000 Vector1C4
+080002da  w    F .text	00000000 Vector1CC
+2001c000 g       *ABS*	00000000 __ram1_end__
+10010000 g       *ABS*	00000000 __ram4_end__
+08014ca0 g     F .text	000000b0 default_config_eeprom
+0801b1b0 g       .ARM.exidx	00000000 __exidx_start
+08004dd0 g     F .text	0000004c dmaStreamFree
+080092e0 g     F .text	00000050 chSemWait
+08008940 g     F .text	00000050 chThdExitS
+08000a90 g     F .text	0000004c obqReleaseEmptyBufferI
+080023c0 g     F .text	00000008 rtcInit
+080013d0 g     F .text	00000026 oqWriteI
+08010c30 g     F .text	00000024 m2m_ota_start_update
+0801b7d4 g       *ABS*	00000000 __ram0_init_text__
+0801b098 g     O .rodata	00000004 _global_impure_ptr
+08011920 g     F .text	00000004 m2m_wifi_req_client_ctrl
+08008fa0 g     F .text	00000024 _stats_init
+08011b90 g     F .text	00000030 m2m_wifi_set_device_name
+08012580 g     F .text	00000008 nm_bus_reset
+0801b7d4 g       *ABS*	00000000 __ram1_init_text__
+00000000 g       *ABS*	00000000 __flash5_end__
+080173e0 g     F .text	00000020 mcp23017_init
+08011650 g     F .text	0000001e m2m_wifi_set_static_ip
+080037c0 g     F .text	0000006c spiAbort
+00000000 g       .ram7	00000000 __flash2_free__
+2000f8e8 g     O .bss	00000280 raw_sample_buffer
+20005a38 g     O .bss	00000004 shell_terminated
+20002484 g     O .bss	00000004 glbl_pps_cnt
+080139e0 g     F .text	0000009c send
+0800b8f0 g     F .text	00000038 chFactoryCreateSemaphore
+080021b0 g     F .text	0000001c i2cAcquireBus
+080002da  w    F .text	00000000 Vector148
+2000fb68 g     O .bss	00000004 drdy_gpt_cnt
+080002da  w    F .text	00000000 Vector188
+08011e10 g     F .text	00000030 chip_apply_conf
+08004440 g     F .text	0000003c irqInit
+080144e0 g     F .text	0000006c spi_flash_write
+00020000 g       *ABS*	00000000 __ram0_size__
+08007930 g     F .text	00000054 chSysRestoreStatusX
+08001fa0 g     F .text	00000074 i2cStop
+08015060 g     F .text	00000034 cmd_adc
+08003ae0 g     F .text	00000002 halCommunityInit
+0800b850 g     F .text	00000038 chFactoryCreateBuffer
+080116e0 g     F .text	00000034 m2m_wifi_set_cust_InfoElement
+08011ab0 g     F .text	00000024 m2m_wifi_get_mac_address
+08001ec0 g     F .text	00000028 gptPolledDelay
+08008f60 g     F .text	0000003c chTMChainMeasurementToX
+08011d40 g     F .text	00000022 m2m_wifi_set_tx_power
+08011c90 g     F .text	00000022 m2m_wifi_set_sytem_time
+0800bc90 g     F .text	0000026c chvprintf
+0800fa90 g     F .text	00000128 f_unlink
+08003680 g     F .text	00000074 spiStartSend
+08002220 g     F .text	00000034 palWriteBus
+00000000 g       *ABS*	00000000 __flash2_end__
+08011b10 g     F .text	0000000c m2m_wifi_get_num_ap_found
+0801b7d4 g       *ABS*	00000000 __ram5_init_text__
+08006710 g     F .text	00000014 spi_lld_polled_exchange
+00000000 g       *ABS*	00000000 __flash4_size__
+08002bd0 g     F .text	00000054 sdcRead
+0800c160 g     F .text	0000000c shellInit
+080178d0 g     F .text	00000124 xbee_process_packet
+08013150 g     F .text	00000014 nm_spi_write_reg
+08014430 g     F .text	0000006e spi_flash_enable
+20005a66 g     O .bss	00000001 gsockerrno
+20002c9d g     O .bss	00000001 pps_lock
+080136f0 g     F .text	00000014 registerSocketCallback
+080107b0 g     F .text	0000000c hif_get_sleep_mode
+08010450 g     F .text	0000000e m2m_memset
+2000fb6c g     O .bss	00000004 buffer_overflows
+08007700 g     F .text	00000014 chSysHalt
+080002da  w    F .text	00000000 Vector198
+080002da  w    F .text	00000000 Vector118
+080174c0 g     F .text	0000000c mcp23017_digitalReadB
+08017740 g     F .text	00000098 xbee_init
+00000000 g       .ram7	00000000 __flash5_free__
+080041f0 g     F .text	00000070 Vector64
+080125a0 g     F .text	00000008 nm_read_reg
+2001030c g       .bss	00000000 _bss_end
+0800abb0 g     F .text	0000005c chMBFetchI
+0800ff80 g     F .text	00000034 ff_uni2oem
+08013910 g     F .text	00000028 accept
+08006eb0 g     F .text	00000054 sdc_lld_write
+08004ef0 g     F .text	00000024 extiClearLine
+08004f40 g     F .text	000000f0 _pal_lld_setgroupmode
+0800ace0 g     F .text	00000010 chCoreGetStatusX
+08003380 g     F .text	00000008 sdControl
+080002d8  w    F .text	00000000 Reset_Handler
+20002430 g     O .bss	00000001 node_state
+08002d10 g     F .text	000000bc sdcDisconnect
+08000510 g     F .text	00000008 stInit
+08011ce0 g     F .text	00000022 m2m_wifi_enable_sntp
+08003aa0 g     F .text	0000001c spiAcquireBus
+08003700 g     F .text	00000074 spiStartReceive
+20001a50 g     O .data	00000002 glbl_last_s_index
+08015840 g     F .text	000000b0 VectorCC
+08011470 g     F .text	00000164 m2m_wifi_connect_sc
+0800bb60 g     F .text	00000028 chFactoryFindPipe
+0800b1a0 g     F .text	0000005c chGuardedPoolFree
+0800b960 g     F .text	00000028 chFactoryReleaseSemaphore
+20004b44 g     O .bss	0000025c SD3
+080074b0 g     F .text	00000060 sd_lld_init
+2000fb70 g     O .bss	00000001 data_flag
+080002da  w    F .text	00000000 Vector54
+08010df0 g     F .text	00000118 m2m_ssl_retrieve_cert
+2000fb74 g     O .bss	00000004 debug_stream
+080129c0 g     F .text	00000028 nm_drv_deinit
+080002da  w    F .text	00000000 Vector98
+080069c0 g     F .text	0000001c sdc_lld_send_cmd_none
+08006da0 g     F .text	000000a8 sdc_lld_write_aligned
+08006e50 g     F .text	00000054 sdc_lld_read
+08013670 g     F .text	00000034 socketInit
+2000488c g     O .bss	0000004c SDCD1
+08008d00 g     F .text	0000003c chThdSuspendTimeoutS
+00000000 g       .bss	00000000 __flash5_start__
+10000000 g       .ram4	00000000 __ram4_clear__
+08001de0 g     F .text	00000050 gptStartOneShot
+2000fb78 g     O .bss	00000004 global_LON
+40024000 g       .ram5	00000000 __ram5_free__
+08007420 g     F .text	00000030 VectorD8
+08010a10 g     F .text	00000078 hif_receive
+0800a040 g     F .text	0000000c chEvtGetAndClearFlagsI
+00000000 g       *ABS*	00000000 __flash6_end__
+0801b7d4 g       *ABS*	00000000 __ram6_init_text__
+08016bf0 g     F .text	000000dc read_buttons
+080002da  w    F .text	00000000 Vector138
+200046dc g     O .bss	00000004 lastXB_RX_mS
+08010110 g     F .text	0000003c nm_bsp_deinit
+08011a00 g     F .text	0000001c m2m_wifi_disable_ap
+08005800 g     F .text	00000128 i2c_lld_master_receive_timeout
+080002da  w    F .text	00000000 Vector24
+08007b60 g     F .text	00000024 chDbgCheckClassI
+20002bfc g     O .bss	00000001 logger_pos
+08009750 g     F .text	0000004c chMtxLock
+200100ac g     O .bss	0000005e new_packet
+08006320 g     F .text	00000160 spi_lld_start
+00000000 g       .ram3	00000000 __ram3_clear__
+08002f50 g     F .text	000000b0 sdcErase
+08000350  w    F .text	00000002 __default_exit
+08011cc0 g     F .text	0000001c m2m_wifi_get_sytem_time
+080015a0 g     F .text	00000030 _mmcsd_get_capacity_ext
+08018554 g     F .text	0000003e strcat
+00000000 g       *ABS*	00000000 __ram6_end__
+08009ea0 g     F .text	00000050 chEvtGetAndClearFlags
+0800bb90 g     F .text	00000024 chFactoryReleasePipe
+200046d8 g     O .bss	00000004 lastXB_CMD_mS
+08013820 g     F .text	00000090 bind
+00000000 g       .ram6_init	00000000 __ram6_init__
+080002da  w    F .text	00000000 Vector1AC
+080084c0 g     F .text	00000054 chSchDoReschedule
+2000ff44 g     O .bss	00000064 local_GPRMC
+08007650 g     F .text	000000ac chSysInit
+08001270 g     F .text	00000020 oqResetI
+20002c98 g     O .bss	00000004 pwr_btn_cnt
+08010db0 g     F .text	0000001c m2m_ssl_handshake_rsp
+00000000 g       .ram7_init	00000000 __ram7_init__
+2000fb7c g     O .bss	00000004 evtSindex
+080002da  w    F .text	00000000 Vector178
+08010180 g     F .text	0000002c nm_bsp_reset
+00000000 g       .ram6	00000000 __ram6_free__
+0800b100 g     F .text	00000016 chGuardedPoolObjectInitAligned
+08008b10 g     F .text	00000064 chThdSleep
+080175d0 g     F .text	00000062 mcp23017_digitalWrite
+08000820 g     F .text	000000a0 ibqGetTimeout
+080032b0 g     F .text	00000030 sdRequestDataI
+0801a42c g     O .rodata	00000050 FIR_coeffs
+08011330 g     F .text	00000020 m2m_wifi_send_crl
+08010d30 g     F .text	0000001e m2m_ota_get_firmware_version
+080022c0 g     F .text	00000014 palWaitPadTimeoutS
+08010f70 g     F .text	00000022 m2m_ssl_set_active_ciphersuites
+08019490 g     O .rodata	000000c0 _stm32_dma_streams
+08004880 g     F .text	00000048 Vector84
+2001c000 g       .ram2	00000000 __ram2_noinit__
+08002c90 g     F .text	0000002c sdcSync
+080015d0 g     F .text	000000c0 _mmcsd_unpack_sdc_cid
+080176a0 g     F .text	0000001a mcp23017_pinMode
+08010810 g     F .text	0000001c hif_deinit
+00000000 g       .bss	00000000 __flash3_start__
+08013d90 g     F .text	00000084 setsockopt
+08008600 g     F .text	0000006c chThdCreateSuspended
+080009e0 g     F .text	00000050 obqObjectInit
+08011ae0 g     F .text	00000022 m2m_wifi_req_scan_result
+080033a0 g     F .text	00000014 spiObjectInit
+2000482c g     O .bss	00000030 SPID1
+08000ff0 g     F .text	0000001e iqResetI
+2000fb80 g     O .bss	00000001 global_GPS_STATUS
+00000000 g       .ram6	00000000 __ram6_noinit__
+08009bd0 g     F .text	00000050 chCondWait
+08003c90 g     F .text	0000002c eepfs_lseek
+08004580 g     F .text	00000114 stm32_clock_init
+10000000 g       .ram4_init	00000000 __ram4_init__
+2000241c g     O .bss	00000001 gbSocketInit
+080002da  w    F .text	00000000 Vector1A4
+0800b200 g     F .text	0000002c chGuardedPoolLoadArray
+08004f20 g     F .text	00000020 _pal_lld_init
+2000fb84 g     O .bss	00000004 tmp_data_value
+0800afc0 g     F .text	00000040 chPoolAllocI
+08018aa8 g     F .text	0000001c __locale_mb_cur_max
+08003110 g     F .text	00000008 sdInit
+0800aa60 g     F .text	00000068 chMBPostAheadI
+00000000 g       .ram7	00000000 __ram7_clear__
+080103f0 g     F .text	00000010 nm_bus_deinit
+2000423a g     O .bss	00000002 tmp_buffer_index
+080091a0 g     F .text	00000020 chSemObjectInit
+0800ba30 g     F .text	00000088 chFactoryCreateObjectsFIFO
+080024a0 g     F .text	000000a0 rtcConvertDateTimeToStructTm
+08009630 g     F .text	0000001c chMtxObjectInit
+0801b7d4 g       .ram7	00000000 __flash0_init__
+0800f2a0 g     F .text	00000028 f_close
+080066c0 g     F .text	00000046 spi_lld_abort
+080002da  w    F .text	00000000 VectorD0
+0800aad0 g     F .text	00000074 chMBFetchTimeoutS
+08008e60 g     F .text	00000044 chThdDequeueAllI
+0800ac10 g     F .text	00000018 _core_init
+080170e0 g     F .text	00000018 gps_init
+08010f10 g     F .text	00000038 m2m_ssl_retrieve_hash
+08009900 g     F .text	00000090 chMtxUnlockS
+2000fb88 g     O .bss	00000004 evtPPS
+08011930 g     F .text	00000004 m2m_wifi_req_server_init
+0800b0d0 g     F .text	0000002c chPoolLoadArray
+20001a00 g       .data	00000000 _data_start
+08008da0 g     F .text	00000050 chThdResume
+00000000 g       *ABS*	00000000 __ram7_size__
+080002da  w    F .text	00000000 Vector1B4
+08003cc0 g     F .text	00000024 eepfs_close
+08002480 g     F .text	00000020 rtcSetCallback
+080097e0 g     F .text	00000050 chMtxTryLock
+08003170 g     F .text	00000070 sdStart
+20002494 g     O .bss	00000002 raw_buff_overflow
+08012560 g     F .text	00000008 nm_bus_iface_init
+20004034 g     O .bss	00000001 gpt_synced
+080002da  w    F .text	00000000 Vector140
+20005a67 g     O .bss	00000001 gu8OpCode
+08004cf0 g     F .text	0000005c dmaStreamAlloc
+08011690 g     F .text	00000022 m2m_wifi_enable_dhcp
+08005e80 g     F .text	0000006c VectorE4
+080099e0 g     F .text	00000048 chMtxUnlockAll
+0800ed00 g     F .text	000001de f_read
+08011900 g     F .text	0000001c m2m_wifi_wps_disable
+0800b000 g     F .text	00000050 chPoolAlloc
+08005640 g     F .text	00000044 VectorC0
+08010c10 g     F .text	0000001c m2m_ota_notif_sched
+2000402a g     O .bss	00000002 coef_index
+08002cc0 g     F .text	00000048 _sdc_wait_for_transfer_state
+08010b90 g     F .text	00000024 m2m_ota_init
+08018738 g     F .text	00000096 strncmp
+08000490 g     F .text	00000030 sdc_lld_is_card_inserted
+08004b50 g     F .text	00000048 Vector158
+08012950 g     F .text	00000064 nm_drv_init
+080070f0 g     F .text	0000002e gpt_lld_start_timer
+0801b7d4 g       .ram7	00000000 __flash0_free__
+20002488 g     O .bss	00000004 raw_sample_end
+080132d0 g     F .text	000000c0 Socket_ReadSocketData
+08015b90 g     F .text	00000088 new_filename
+08008eb0 g     F .text	00000018 chTMObjectInit
+08004a60 g     F .text	00000044 Vector130
+080002e0 g     F .text	00000000 _port_switch
+08000320  w    F .text	00000002 __core_init
+08002750 g     F .text	00000030 sdcGetInfo
+10000000 g       .ram4	00000000 __ram4_noinit__
+0800f7c0 g     F .text	0000006e f_readdir
+080002da  w    F .text	00000000 Vector1C0
+0800a3c0 g     F .text	000000c8 chEvtWaitAllTimeout
+080107c0 g     F .text	00000018 hif_chip_sleep_sc
+08000e10 g     F .text	00000052 obqTryFlushI
+08011a40 g     F .text	00000038 m2m_wifi_send_ethernet_pkt
+080187d0 g     F .text	00000064 strncpy
+08009280 g     F .text	00000060 chSemWaitS
+08000560 g     F .text	00000024 stSetAlarm
+08000340  w    F .text	00000002 __late_init
+08013a80 g     F .text	000000a8 sendto
+0800ad10 g     F .text	0000003c chHeapObjectInit
+08001b90 g     F .text	00000008 gptInit
+0800a490 g     F .text	00000084 chMsgSend
+08011b30 g     F .text	00000030 m2m_wifi_set_sleep_mode
+08019e44 g     O .rodata	00000038 shell_local_commands
+08006480 g     F .text	00000074 spi_lld_stop
+20002c00 g     O .bss	00000004 buff_free_size
+0800bbe0 g     F .text	00000050 _port_irq_epilogue
+080136b0 g     F .text	00000034 socketDeinit
+08013060 g     F .text	00000020 nm_spi_reset
+08003bc0 g     F .text	00000018 EepromReadWord
+2000fb8c g     O .bss	00000082 eeprom_buffer
+080002da  w    F .text	00000000 Vector134
+2001010c g     O .bss	00000100 xbee_cmd_buffer
+080189f8 g     F .text	00000024 _strtoul_r
+00000000 g       .bss	00000000 __ram7_start__
+08016620 g     F .text	0000001c check_node_state
+08007cd0 g     F .text	00000044 _trace_isr_leave
+08011680 g     F .text	00000004 m2m_wifi_request_dhcp_server
+08011350 g     F .text	000000c4 m2m_wifi_init
+00000000 g       .ram6	00000000 __ram6_clear__
+080002da  w    F .text	00000000 Vector1D0
+08001e30 g     F .text	00000034 gptStopTimerI
+20004028 g     O .bss	00000001 error_flag
+08010370 g     F .text	00000044 nm_bus_wifi_spi_init
+08009e50 g     F .text	00000050 chEvtAddEvents
+00000000 g       *ABS*	00000000 __flash3_end__
+08010bc0 g     F .text	00000024 m2m_ota_notif_set_url
+08014620 g     F .text	00000004 _close_r
+08009a50 g     F .text	00000064 chCondSignal
+08010460 g     F .text	00000014 m2m_strlen
+08002100 g     F .text	000000a8 i2cMasterReceiveTimeout
+08007b90 g     F .text	00000020 chDbgCheckClassS
+08008810 g     F .text	00000064 chThdAddRef
+080002da  w    F .text	00000000 VectorF0
+08012910 g     F .text	00000038 nm_drv_init_download_mode
+0801845c g     F .text	00000062 memcmp
+080138b0 g     F .text	00000060 listen
+08017730 g     F .text	0000000c mcp23017_digitalWriteB
+08001380 g     F .text	00000046 oqGetI
+08015ab0 g     F .text	000000dc init_adc
+08012830 g     F .text	000000d4 nm_get_ota_firmware_info
+08000ae0 g     F .text	0000004c obqGetEmptyBufferTimeoutS
+08004a10 g     F .text	00000048 Vector12C
+2000485c g     O .bss	00000030 SPID2
+08001400 g     F .text	000000cc oqWriteTimeout
+2000201c g       .data	00000000 _data_end
+08006fe0 g     F .text	00000018 gpt_lld_init
+0800b780 g     F .text	00000030 chFactoryRegisterObject
+080002da  w    F .text	00000000 Vector13C
+08017f5c  w    F .text	00000002 .hidden __aeabi_ldiv0
+200048d8 g     O .bss	00000010 GPTD5
+0800ac80 g     F .text	00000058 chCoreAllocAlignedWithOffset
+080021f0 g     F .text	00000024 palReadBus
+00000000 g       *ABS*	00000000 __ram3_size__
+08010a90 g     F .text	00000054 hif_register_cb
+08018b88 g       .text	00000000 __text_end
+08000730 g     F .text	00000058 ibqGetFullBufferTimeout
+08006040 g     F .text	0000009e rtc_lld_set_alarm
+080002da  w    F .text	00000000 Vector100
+08006570 g     F .text	00000068 spi_lld_exchange
+080151f0 g     F .text	00000108 VectorE0
+0800c700 g     F .text	0000001c get_fattime
+080002da  w    F .text	00000000 VectorF4
+08011440 g     F .text	00000008 m2m_wifi_handle_events
+0800b820 g     F .text	00000028 chFactoryReleaseObject
+08010c60 g     F .text	00000024 m2m_ota_start_update_crt
+08009030 g     F .text	00000010 _stats_stop_measure_crit_thd
+08003330 g     F .text	00000050 sdGetWouldBlock
+0800a900 g     F .text	00000068 chMBPostI
+0800ab50 g     F .text	0000005c chMBFetchTimeout
+080001e0 g       .vectors	00000000 __fini_array_start
+2001c000 g       .ram2	00000000 __ram2_clear__
+00000000 g       *ABS*	00000000 __ram3_end__
+08011450 g     F .text	0000001c m2m_wifi_default_connect
+08011600 g     F .text	0000001c m2m_wifi_disconnect
+08011dd0 g     F .text	00000040 m2m_wifi_prng_get_random_bytes
+08010830 g     F .text	000001ac hif_send
+0800b8c0 g     F .text	00000024 chFactoryReleaseBuffer
+08011840 g     F .text	00000080 m2m_wifi_request_scan_ssid_list
+08010f50 g     F .text	00000010 m2m_ssl_stop_processing_certs
+200046e8 g     O .bss	00000100 _pal_events
+2000fc10 g     O .bss	00000064 global_GPGGA
+0800b140 g     F .text	00000058 chGuardedPoolAllocTimeout
+00004000 g       *ABS*	00000000 __ram2_size__
+08007a80 g     F .text	00000028 _dbg_check_lock_from_isr
+0800a8a0 g     F .text	0000005c chMBPostTimeout
+0800af80 g     F .text	00000034 chPoolObjectInitAligned
+20000000 g       .bss	00000000 __ram1_start__
+080069e0 g     F .text	00000032 sdc_lld_send_cmd_short
+20004029 g     O .bss	00000001 filtered_buffer_end_pos
+08018b88 g       .rodata	00000000 __rodata_base__
+00000000 g       *ABS*	00000000 __flash3_size__
+0800a520 g     F .text	00000074 chMsgWait
+08000a30 g     F .text	00000024 obqResetI
+0800ac30 g     F .text	00000050 chCoreAllocAlignedWithOffsetI
+08008b80 g     F .text	00000070 chThdSleepUntil
+08004bf0 g     F .text	000000f4 dmaStreamAllocI
+080184c0 g     F .text	00000094 memset
+080002da  w    F .text	00000000 MemManage_Handler
+08016f90 g     F .text	0000014c main
+080046a0 g     F .text	00000044 Vector6C
+00000000 g       *ABS*	00000000 __ram6_size__
+08001bb0 g     F .text	00000074 gptStart
+2000fc74 g     O .bss	00000004 xbee_mbx
+08009060 g     F .text	00000050 chRegFirstThread
+0800f120 g     F .text	0000017e f_sync
+080002da  w    F .text	00000000 VectorA0
+08003390 g     F .text	00000008 spiInit
+08003ac0 g     F .text	0000001c spiReleaseBus
+0801b7d4 g       *ABS*	00000000 __ram2_init_text__
+08001e70 g     F .text	0000004c gptStopTimer
+00000000 g       *ABS*	00000000 __flash5_size__
+08013130 g     F .text	00000014 nm_spi_read_reg_with_ret
+0800bbc0 g     F .text	00000012 SVC_Handler
+08011980 g     F .text	0000001c m2m_wifi_p2p_disconnect
+08002360 g     F .text	00000058 palWaitLineTimeout
+2000fc78 g     O .bss	00000046 gps_data
+08005930 g     F .text	00000180 i2c_lld_master_transmit_timeout
+00000000 g       .ram3	00000000 __ram3_free__
+20001a64 g     O .data	00000001 auto_gain_flag
+08009410 g     F .text	00000088 chSemSignal
+080001e0 g       .vectors	00000000 __init_array_end
+08002260 g     F .text	00000028 palSetBusMode
+080031e0 g     F .text	00000080 sdStop
+00000000 g       .ram7	00000000 __flash3_init__
+080010a0 g     F .text	000000a8 iqGetTimeout
+08018b6c g     F .text	0000001a __ascii_wctomb
+08007c30 g     F .text	00000044 _trace_switch
+080002da  w    F .text	00000000 VectorC4
+080047e0 g     F .text	00000044 Vector7C
+00000000 g       .ram7	00000000 __flash6_init__
+0800e990 g     F .text	00000050 f_mount
+0801b7d4 g       *ABS*	00000000 __ram4_init_text__
+080002da  w    F .text	00000000 Vector180
+20000000 g       .ram1	00000000 __ram1_noinit__
+08006ca0 g     F .text	0000004c sdc_lld_read_special
+0800c240 g     F .text	0000015c shellThread
+0800f6c0 g     F .text	000000d2 f_opendir
+08014bf0 g     F .text	00000044 write_config_eeprom
+08018af8 g     F .text	00000024 _mbtowc_r
+08013cf0 g     F .text	00000070 nmi_inet_addr
+08009fe0 g     F .text	00000054 chEvtBroadcastFlags
+2000fcc0 g     O .bss	00000010 tmp_data
+080050d0 g     F .text	00000080 _pal_lld_disablepadevent
+080175a0 g     F .text	00000024 mcp23017_digitalWriteAB
+08006f20 g     F .text	00000058 VectorB0
+08009ca0 g     F .text	00000058 chCondWaitTimeout
+08019968 g     O .rodata	00000016 ch_debug
+080025b0 g     F .text	00000090 rtcConvertDateTimeToFAT
+0800bf00 g     F .text	0000001c chprintf
+0800ffc0 g     F .text	0000002c ff_oem2uni
+080002da  w    F .text	00000000 Vector90
+08009ef0 g     F .text	00000048 chEvtSignalI
+08003b80 g     F .text	0000001a EepromReadByte
+080180a8 g     F .text	000002dc strcmp
+0800a0b0 g     F .text	0000006c chEvtWaitOne
+080002da  w    F .text	00000000 Vector114
+080174d0 g     F .text	00000072 mcp23017_writeRegister
+08005fd0 g     F .text	00000070 rtc_lld_get_time
+080002f0 g     F .text	00000000 _port_thread_start
+08015cb0 g     F .text	00000028 format_data
+080002da  w    F .text	00000000 Vector164
+08004180 g     F .text	00000070 Vector60
+0800b050 g     F .text	00000028 chPoolFreeI
+08018a1c g     F .text	00000020 strtoul_l
+08001a50 g     F .text	0000013c _mmcsd_unpack_csd_v20
+080002da  w    F .text	00000000 Vector1C
+08007990 g     F .text	0000000e chSysIsCounterWithinX
+200024c2 g     O .bss	00000001 msg_flag
+08008430 g     F .text	00000054 chSchDoRescheduleAhead
+08013d60 g     F .text	0000002e gethostbyname
+20005a68 g     O .bss	000000b0 gastrSockets
+080002da  w    F .text	00000000 Vector1BC
+2000fcd0 g     O .bss	00000078 fir_cnt_buffer
+080002da  w    F .text	00000000 Vector1D4
+08009c20 g     F .text	00000074 chCondWaitTimeoutS
+080115e0 g     F .text	00000016 m2m_wifi_connect
+08001c30 g     F .text	00000070 gptStop
+0800b7e0 g     F .text	00000040 chFactoryFindObjectByPointer
+00000000 g       *ABS*	00000000 __flash2_size__
+0800f2d0 g     F .text	000003e2 f_lseek
+080002da  w    F .text	00000000 Vector17C
+08002040 g     F .text	000000b4 i2cMasterTransmitTimeout
+00000000 g       *ABS*	00000000 __flash4_end__
+08012070 g     F .text	00000024 restore_pmu_settings_after_global_reset
+08002e00 g     F .text	00000070 sdcStart
+08008e20 g     F .text	0000003c chThdDequeueNextI
+2001c000 g       .ram2_init	00000000 __ram2_init__
+08005d90 g     F .text	00000090 Vector48
+200046e4 g     O .bss	00000004 _PathLocale
+2000241a g     O .bss	00000002 gu16SessionID
+08005690 g     F .text	00000020 i2c_lld_init
+20020000 g       *ABS*	00000000 __ram2_end__
+080107e0 g     F .text	00000030 hif_chip_sleep
+20004da0 g     O .bss	0000025c SD6
+08010430 g     F .text	00000012 m2m_checksum
+20000400 g       .pstack	00000000 __process_stack_base__
+080002da  w    F .text	00000000 Vector1A8
+08010f60 g     F .text	0000000c m2m_ssl_ecc_process_done
+0800a190 g     F .text	00000064 chEvtWaitAll
+080038c0 g     F .text	0000009c spiExchange
+2000fd48 g     O .bss	0000005e tx_packet
+08014610 g     F .text	00000004 _write_r
+08002340 g     F .text	00000018 palWaitLineTimeoutS
+08011da0 g     F .text	00000026 m2m_wifi_set_battery_voltage
+080002da  w    F .text	00000000 Vector16C
+200024b0 g     O .bss	00000008 last_val
+080118c0 g     F .text	0000003c m2m_wifi_wps
+08018ae8 g     F .text	00000010 setlocale
+08012590 g     F .text	00000004 nm_bus_iface_reconfigure
+2001030c g       .ram0	00000000 __ram0_clear__
+08017320 g     F .text	0000007c GPSParseChar
+080023d0 g     F .text	0000000c rtcObjectInit
+080094f0 g     F .text	00000060 chSemAddCounterI
+0800b720 g     F .text	00000054 _factory_init
+080125d0 g     F .text	00000054 nm_read_block
+0800a7c0 g     F .text	00000050 chMBReset
+2000249c g     O .bss	00000004 raw_max_val
+20001a80 g     O .data	00000004 _impure_ptr
+08012750 g     F .text	000000d4 nm_get_firmware_full_info
+080046f0 g     F .text	00000048 Vector70
+080002da  w    F .text	00000000 VectorD4
+0800a050 g     F .text	00000054 chEvtDispatch
+080040c0 g     F .text	00000028 nvicSetSystemHandlerPriority
+080079a0 g     F .text	00000020 chSysPolledDelayX
+08001f00 g     F .text	00000012 i2cObjectInit
+08001da0 g     F .text	00000040 gptStartOneShotI
+080125c0 g     F .text	00000008 nm_write_reg
+08008030 g     F .text	000000e8 chVTDoResetI
+20005b18 g     O .bss	00000004 gpfAppSocketCb
+08003440 g     F .text	00000070 spiStop
+2000fda8 g     O .bss	00000006 mem_value
+0800c1a0 g     F .text	000000a0 shellGetLine
+08002ee0 g     F .text	00000068 sdcGetAndClearErrors
+2000fdb0 g     O .bss	00000004 gpt_cnt
+080107a0 g     F .text	0000000c hif_set_sleep_mode
+08008880 g     F .text	000000c0 chThdRelease
+0800a200 g     F .text	000000e0 chEvtWaitOneTimeout
+00000000 g       .ram3	00000000 __ram3_noinit__
+080065e0 g     F .text	00000068 spi_lld_send
+08008580 g     F .text	00000078 chThdCreateSuspendedI
+08003830 g     F .text	00000090 spiIgnore
+08000b90 g     F .text	00000054 obqPostFullBufferS
+0800c730 g     F .text	00000008 ff_memfree
+080176c0 g     F .text	0000002c mcp23017_pinModeA
+08018b1c g     F .text	0000002a __ascii_mbtowc
+08007ab0 g     F .text	00000028 _dbg_check_unlock_from_isr
+0800f830 g     F .text	00000060 f_stat
+08013110 g     F .text	00000012 nm_spi_read_reg
+080120f0 g     F .text	00000068 chip_sleep
+08006100 g     F .text	00000004 rtc_lld_set_callback
+0800b080 g     F .text	00000050 chPoolFree
+080087b0 g     F .text	00000060 chThdStart
+2001030c g       .ram0	00000000 __ram0_noinit__
+08002a50 g     F .text	00000178 sdcConnect
+08000360 g     F .text	00000038 __init_ram_areas
+00000000 g       .bss	00000000 __flash7_start__
+0800aa00 g     F .text	0000005c chMBPostAheadTimeout
+08005e20 g     F .text	00000058 Vector4C
+08011b60 g     F .text	0000002e m2m_wifi_request_sleep
+08011750 g     F .text	00000022 m2m_wifi_set_scan_region
+0800b9d0 g     F .text	00000028 chFactoryFindMailbox
+2001c000 g       .bss	00000000 __ram2_start__
+080002da  w    F .text	00000000 Vector144
+0800a5a0 g     F .text	00000064 chMsgRelease
+08004830 g     F .text	00000048 Vector80
+08002450 g     F .text	0000002c rtcGetAlarm
+08011a20 g     F .text	0000001c m2m_wifi_req_curr_rssi
+08008d40 g     F .text	0000002c chThdResumeI
+08000308 g     F .text	00000000 _port_switch_from_isr
+08002e70 g     F .text	00000070 sdcStop
+08013e20 g     F .text	00000004 getsockopt
+08008fd0 g     F .text	00000020 _stats_increase_irq
+08007480 g     F .text	00000030 Vector15C
+08015ce0 g     F .text	0000002c set_pga
+00000000 g       *ABS*	00000000 __ram7_end__
+0801a49c g     O .rodata	00000004 FIR_coeffs_sum
+08011a80 g     F .text	00000028 m2m_wifi_get_otp_mac_address
+08004260 g     F .text	00000070 Vector68
+00000000 g       .ram7	00000000 __flash5_init__
+08009830 g     F .text	000000c8 chMtxUnlock
+00000000 g       .bss	00000000 __flash1_start__
+08005f70 g     F .text	0000005c rtc_lld_set_time
+08007bf0 g     F .text	0000003c _trace_init
+080034b0 g     F .text	0000006c spiSelect
+08006f10 g     F .text	00000004 sdc_lld_sync
+0800a2e0 g     F .text	000000e0 chEvtWaitAnyTimeout
+08017a00 g     F .text	000001c0 xbee_com_parse
+08012570 g     F .text	00000008 nm_bus_iface_deinit
+080174b0 g     F .text	0000000c mcp23017_digitalReadA
+0801a2c8 g     O .rodata	00000014 spicfg
+0800ba00 g     F .text	00000024 chFactoryReleaseMailbox
+08003960 g     F .text	00000098 spiSend
+20000400 g       .mstack	00000000 __main_stack_end__
+08004790 g     F .text	00000048 Vector78
+08010760 g     F .text	0000003c hif_chip_wake
+08006500 g     F .text	00000068 spi_lld_ignore
+200059f0 g     O .bss	00000048 ch_factory
+08000cf0 g     F .text	0000011c obqWriteTimeout
+08012630 g     F .text	00000054 nm_write_block
+08010cb0 g     F .text	0000001c m2m_ota_rollback_crt
+40024000 g       .ram5_init	00000000 __ram5_init__
+2000fdb4 g     O .bss	00000004 global_LAT
+2000fdb8 g     O .bss	00000008 fir_adcValue
+08008210 g     F .text	0000004c chSchReadyAheadI
+20002498 g     O .bss	00000004 raw_min_val
+200024b8 g     O .bss	00000008 last_cnt
+00000000 g       .ram7	00000000 __flash7_init__
+080056b0 g     F .text	000000ec i2c_lld_start
+00000000 g       *ABS*	00000000 __flash1_size__
+2000fdc0 g     O .bss	00000078 fir_sindex_buffer
+08002c30 g     F .text	00000054 sdcWrite
+0800a120 g     F .text	00000068 chEvtWaitAny
+08000640 g     F .text	00000026 ibqGetEmptyBufferI
+08001060 g     F .text	00000036 iqGetI
+0800eee0 g     F .text	0000023a f_write
+0800b990 g     F .text	0000003c chFactoryCreateMailbox
+080002de  w    F .text	00000000 _unhandled_exception
+08014550 g     F .text	00000070 spi_flash_erase
+080070a0 g     F .text	00000044 gpt_lld_stop
+08012160 g     F .text	00000084 chip_wake
+0800c170 g     F .text	00000028 shellExit
+080002da  w    F .text	00000000 Vector170
+2000402c g     O .bss	00000001 adc_last_s_index_flag
+08003120 g     F .text	00000044 sdObjectInit
+08007d20 g     F .text	00000038 _trace_halt
+200024a4 g     O .bss	00000004 pendsv_skipped_s_index
+080002da  w    F .text	00000000 Vector88
+08003c20 g     F .text	00000018 EepromWriteWord
+08011310 g     F .text	00000014 m2m_wifi_download_mode
+0800b890 g     F .text	00000028 chFactoryFindBuffer
+0800b4c0 g     F .text	000000ac chPipeReadTimeout
+0800e9e0 g     F .text	0000031c f_open
+0800c6a0 g     F .text	00000030 disk_write
+0800bf20 g     F .text	00000024 myPrintf
+200059e8 g     O .bss	00000008 ch_memcore
+08004e20 g     F .text	00000088 extiEnableGroup1
+08011d10 g     F .text	00000022 m2m_wifi_set_power_profile
+08007db0 g     F .text	00000050 chDbgWriteTrace
+08008680 g     F .text	00000070 chThdCreate
+00100000 g       *ABS*	00000000 __flash0_size__
+20000400 g       .pstack	00000000 __main_thread_stack_base__
+08007f00 g     F .text	00000128 chVTDoSetI
+08001d10 g     F .text	00000034 gptStartContinuousI
+08007e70 g     F .text	0000001c chDbgResumeTraceI
+0801b7d4 g       *ABS*	00000000 __ram7_init_text__
+00000000 g       .ram3_init	00000000 __ram3_init__
+08006970 g     F .text	0000000c sdc_lld_set_data_clk
+080067f0 g     F .text	00000058 Vector104
+080061a0 g     F .text	00000028 rtcSTM32GetPeriodicWakeup
+08000e70 g     F .text	00000058 obqFlush
+2000fe38 g     O .bss	00000004 data_gpt_cnt
+080002da  w    F .text	00000000 Vector184
+080060e0 g     F .text	00000012 rtc_lld_get_alarm
+080002da  w    F .text	00000000 Vector10C
+08017460 g     F .text	00000046 mcp23017_digitalRead
+20000000 g       .bss	00000000 __ram0_start__
+0800031c g       .text	00000000 _port_exit_from_isr
+2000402d g     O .bss	00000001 global_last_pps
+20000000 g       .ram1_init	00000000 __ram1_init__
+08013e30 g     F .text	0000003e m2m_ping_req
+08008a50 g     F .text	00000070 chThdSetPriority
+080022a0 g     F .text	00000014 palSetLineCallbackI
+0801b0ac g     O .rodata	00000101 _ctype_
+2000fe3c g     O .bss	00000004 data_value
+20002c94 g     O .bss	00000001 rdy_btn_state
+08017f5c  w    F .text	00000002 .hidden __aeabi_idiv0
+080001e0 g       .vectors	00000000 __init_array_start
+20001a00 g     O .data	00000004 __eeprom_drv_table
+08006110 g     F .text	00000090 rtcSTM32SetPeriodicWakeup
+20005b1c g     O .bss	00000004 gfpPingCb
+080075b0 g     F .text	0000008c sd_lld_stop
+080078f0 g     F .text	00000034 chSysGetStatusAndLockX
+08003b10 g     F .text	0000006c EepromFileOpen
+080089b0 g     F .text	00000094 chThdWait
+0800fbc0 g     F .text	000001b2 f_mkdir
+2000fe40 g     O .bss	00000004 adcValue
+20001a10 g     O .data	00000010 _rtc_lld_vmt
+080083b0 g     F .text	00000018 chSchIsPreemptionRequired
+20002431 g     O .bss	00000001 logging_state
+08009160 g     F .text	0000001e chRegFindThreadByPointer
+08006c50 g     F .text	00000044 sdc_lld_send_cmd_long_crc
+080033c0 g     F .text	00000074 spiStart
+0801b1b8 g       *ABS*	00000000 _textdata_start
+20001a58 g     O .data	0000000c data_filename
+08011940 g     F .text	00000034 m2m_wifi_p2p
+08008bf0 g     F .text	00000078 chThdSleepUntilWindowed
+0800b120 g     F .text	00000018 chGuardedPoolAllocTimeoutS
+080002da  w    F .text	00000000 Vector14C
+08000fd0 g     F .text	0000001e iqObjectInit
+08017700 g     F .text	0000002c mcp23017_pinModeB
+080104c0 g     F .text	0000003c m2m_strstr
+40024000 g       .bss	00000000 __ram5_start__
+08011720 g     F .text	0000002a m2m_wifi_set_scan_options
+08013080 g     F .text	00000078 nm_spi_init
+08016f30 g     F .text	00000054 init_i2c
+08018878 g     F .text	00000034 strspn
+080005c0 g     F .text	00000050 ibqObjectInit
+080101b0 g     F .text	0000000e nm_bsp_init
+08008520 g     F .text	00000048 _thread_init
+080002da  w    F .text	00000000 BusFault_Handler
+00000000 g       *ABS*	00000000 __flash6_size__
+080002da  w    F .text	00000000 Vector50
+08007a20 g     F .text	00000024 _dbg_check_lock
+200050f8 g     O .bss	000008f0 ch
+08003ba0 g     F .text	0000001a EepromReadHalfword
+0800b7b0 g     F .text	00000028 chFactoryFindObject
+2000fe44 g     O .bss	00000001 txbuf
+08009990 g     F .text	00000048 chMtxUnlockAllS
+080002da  w    F .text	00000000 Vector1C8
+080158f0 g     F .text	00000054 spi1_custom_start
+080004c0 g     F .text	00000004 sdc_lld_is_write_protected
+08018380 g     F .text	000000dc strlen
+0800c670 g     F .text	00000030 disk_read
+2001c000 g       .ram2	00000000 __ram2_free__
+08018ac4 g     F .text	00000006 __locale_ctype_ptr_l
+080002da  w    F .text	00000000 Vector194
+08003d10 g     F .text	00000004 eepfs_put
+08010400 g     F .text	00000004 nm_bus_reinit
+080002da  w    F .text	00000000 Vector1DC
+08004b00 g     F .text	00000048 Vector154
+08008c70 g     F .text	00000060 chThdYield
+10000000 g       .ram4	00000000 __ram4_free__
+20001a2c g     O .data	00000004 gpt_new_target
+080090b0 g     F .text	00000078 chRegNextThread
+20020000 g       *ABS*	00000000 __ram0_end__
+20005b20 g     O .bss	00000004 gpfAppResolveCb
+08003be0 g     F .text	00000018 EepromWriteByte
+080079e0 g     F .text	00000020 _dbg_check_suspend
+08006980 g     F .text	0000000c sdc_lld_stop_clk
+08005ef0 g     F .text	00000080 rtc_lld_init
+08018594 g     F .text	000000e6 strchr
+080040a0 g     F .text	00000020 nvicDisableVector
+0800ad50 g     F .text	00000118 chHeapAllocAligned
+08011e70 g     F .text	0000005a enable_interrupts
+0800f890 g     F .text	0000012c f_getfree
+080093b0 g     F .text	00000058 chSemWaitTimeout
+20000000 g       .mstack	00000000 __main_stack_base__
+08007c80 g     F .text	00000044 _trace_isr_enter
+080002da  w    F .text	00000000 Vector44
+080002da  w    F .text	00000000 Vector28
+080004d0 g     F .text	00000002 boardInit
+080002da  w    F .text	00000000 VectorB8
+0800b330 g     F .text	00000048 chPipeObjectInit
+08007510 g     F .text	0000009c sd_lld_start
+2000fe48 g     O .bss	00000004 evtGPS
+00000400 g       *ABS*	00000000 __main_stack_size__
+2001020c g     O .bss	00000100 xbee_tx_buffer
+08003c00 g     F .text	00000018 EepromWriteHalfword
+080048d0 g     F .text	00000048 VectorFC
+08009220 g     F .text	00000054 chSemReset
+08009b70 g     F .text	00000060 chCondWaitS
+08018b48 g     F .text	00000024 _wctomb_r
+08001ca0 g     F .text	00000068 gptChangeInterval
+00000000 g       .ram7	00000000 __ram7_noinit__
+080079c0 g     F .text	00000020 _dbg_check_disable
+08007b20 g     F .text	00000034 _dbg_check_leave_isr
+20001a00 g       .pstack	00000000 __process_stack_end__
+08011c50 g     F .text	0000001c m2m_wifi_stop_provision_mode
+08011670 g     F .text	00000004 m2m_wifi_request_dhcp_client
+080002da  w    F .text	00000000 Vector34
+08003a00 g     F .text	00000098 spiReceive
+08010fa0 g     F .text	0000001c m2m_ssl_init
+08017bc0 g     F .text	00000000 .hidden __aeabi_ldivmod
+080150a0 g     F .text	00000058 xbee_setup
+08004480 g     F .text	0000002e irqDeinit
+00000000 g       .ram7	00000000 __flash2_init__
+20002496 g     O .bss	00000002 fir_head_index
+08000480 g     F .text	0000000c __early_init
+080122b0 g     F .text	000000e4 wait_for_bootrom
+080094a0 g     F .text	00000050 chSemSignalI
+08016640 g     F .text	00000020 check_valid_relay
+00000000 g       .ram7	00000000 __flash4_init__
+20002c8c g     O .bss	00000001 battery_soc
+080116c0 g     F .text	0000001e m2m_wifi_set_lsn_int
+2000fe4c g     O .bss	00000064 message_buffer
+080124e0 g     F .text	00000058 nmi_get_mac_address
+080049c0 g     F .text	00000048 Vector128
+00000000 g       .bss	00000000 __ram3_start__
+2000feb0 g     O .bss	0000001e fir_pps_buffer
+08013bd0 g     F .text	00000078 close
+08008ac0 g     F .text	00000050 chThdTerminate
+080123a0 g     F .text	00000074 wait_for_firmware_start
+080002da  w    F .text	00000000 VectorA4
+20001eb0 g     O .data	0000016c __global_locale
+08006a20 g     F .text	00000032 sdc_lld_send_cmd_short_crc
+08000610 g     F .text	00000022 ibqResetI
+08007e90 g     F .text	0000004c chDbgResumeTrace
+00001600 g       *ABS*	00000000 __process_stack_size__
+080177e0 g     F .text	000000e4 xbee_send_packet
+08006880 g     F .text	0000007c sdc_lld_start
+08006850 g     F .text	00000028 sdc_lld_init
+08001530 g     F .text	00000068 _mmcsd_get_capacity
+08010af0 g     F .text	0000002c hif_init
+08010410 g     F .text	00000012 m2m_memcpy
+080012d0 g     F .text	000000b0 oqPutTimeout
+08018834 g     F .text	00000042 strpbrk
+00000000 g       .ram7	00000000 __flash1_init__
+080006e0 g     F .text	0000004c ibqGetFullBufferTimeoutS
+080002da  w    F .text	00000000 Vector20
+0800c720 g     F .text	0000000e ff_memalloc
+08009af0 g     F .text	00000030 chCondBroadcastI
+080002da  w    F .text	00000000 Vector18C
+08009330 g     F .text	00000074 chSemWaitTimeoutS
+00000000 g       *ABS*	00000000 __flash7_end__
+08013190 g     F .text	00000014 nm_spi_write_block
+080002da  w    F .text	00000000 Vector174
+
+

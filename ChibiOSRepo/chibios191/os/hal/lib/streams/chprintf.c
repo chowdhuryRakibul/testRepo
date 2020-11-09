@@ -35,6 +35,8 @@
 #define MAX_FILLER 11
 #define FLOAT_PRECISION 9
 
+BaseSequentialStream* myChp = &SD6;
+
 static char *long_to_string_with_divisor(char *p,
                                          long num,
                                          unsigned radix,
@@ -308,6 +310,20 @@ int chprintf(BaseSequentialStream *chp, const char *fmt, ...) {
 
   va_start(ap, fmt);
   formatted_bytes = chvprintf(chp, fmt, ap);
+  va_end(ap);
+
+  return formatted_bytes;
+}
+
+/*
+ * Customized printf without BaseSequentionalStream object
+ */
+int myPrintf(const char *fmt, ...) {
+  va_list ap;
+  int formatted_bytes;
+
+  va_start(ap, fmt);
+  formatted_bytes = chvprintf(myChp, fmt, ap);
   va_end(ap);
 
   return formatted_bytes;
