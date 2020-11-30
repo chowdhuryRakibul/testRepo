@@ -1,0 +1,1375 @@
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccgU6rMd.s 			page 1
+
+
+   1              	# 1 "../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S"
+   1              	/*
+   0              	
+   0              	
+   0              	
+   2              	    ChibiOS - Copyright (C) 2006..2018 Giovanni Di Sirio
+   3              	
+   4              	    Licensed under the Apache License, Version 2.0 (the "License");
+   5              	    you may not use this file except in compliance with the License.
+   6              	    You may obtain a copy of the License at
+   7              	
+   8              	        http://www.apache.org/licenses/LICENSE-2.0
+   9              	
+  10              	    Unless required by applicable law or agreed to in writing, software
+  11              	    distributed under the License is distributed on an "AS IS" BASIS,
+  12              	    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  13              	    See the License for the specific language governing permissions and
+  14              	    limitations under the License.
+  15              	*/
+  16              	
+  17              	/**
+  18              	 * @file    ARMCMx/GCC/vectors.S
+  19              	 * @brief   Interrupt vectors for Cortex-Mx devices.
+  20              	 *
+  21              	 * @defgroup ARMCMx_GCC_VECTORS Cortex-Mx Interrupt Vectors
+  22              	 * @{
+  23              	 */
+  24              	
+  25              	#define _FROM_ASM_
+  26              	#include "cmparams.h"
+   1              	/*
+   2              	    ChibiOS - Copyright (C) 2006..2018 Giovanni Di Sirio
+   3              	
+   4              	    Licensed under the Apache License, Version 2.0 (the "License");
+   5              	    you may not use this file except in compliance with the License.
+   6              	    You may obtain a copy of the License at
+   7              	
+   8              	        http://www.apache.org/licenses/LICENSE-2.0
+   9              	
+  10              	    Unless required by applicable law or agreed to in writing, software
+  11              	    distributed under the License is distributed on an "AS IS" BASIS,
+  12              	    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  13              	    See the License for the specific language governing permissions and
+  14              	    limitations under the License.
+  15              	*/
+  16              	
+  17              	/**
+  18              	 * @file    STM32F4xx/cmparams.h
+  19              	 * @brief   ARM Cortex-M4 parameters for the STM32F4xx.
+  20              	 *
+  21              	 * @defgroup ARMCMx_STM32F4xx STM32F4xx Specific Parameters
+  22              	 * @ingroup ARMCMx_SPECIFIC
+  23              	 * @details This file contains the Cortex-M4 specific parameters for the
+  24              	 *          STM32F4xx platform.
+  25              	 * @{
+  26              	 */
+  27              	
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccgU6rMd.s 			page 2
+
+
+  28              	#ifndef CMPARAMS_H
+  29              	#define CMPARAMS_H
+  30              	
+  31              	/**
+  32              	 * @brief   Cortex core model.
+  33              	 */
+  34              	#define CORTEX_MODEL            4
+  35              	
+  36              	/**
+  37              	 * @brief   Floating Point unit presence.
+  38              	 */
+  39              	#define CORTEX_HAS_FPU          1
+  40              	
+  41              	/**
+  42              	 * @brief   Number of bits in priority masks.
+  43              	 */
+  44              	#define CORTEX_PRIORITY_BITS    4
+  45              	
+  46              	/* If the device type is not externally defined, for example from the Makefile,
+  47              	   then a file named board.h is included. This file must contain a device
+  48              	   definition compatible with the vendor include file.*/
+  49              	#if !defined(STM32F405xx) && !defined(STM32F415xx) &&                       \
+  50              	    !defined(STM32F407xx) && !defined(STM32F417xx) &&                       \
+  51              	    !defined(STM32F427xx) && !defined(STM32F437xx) &&                       \
+  52              	    !defined(STM32F429xx) && !defined(STM32F439xx) &&                       \
+  53              	    !defined(STM32F401xC) && !defined(STM32F401xE) &&                       \
+  54              	    !defined(STM32F410Cx) && !defined(STM32F410Rx) &&                       \
+  55              	    !defined(STM32F410Tx) &&                                                \
+  56              	    !defined(STM32F411xE) &&                                                \
+  57              	    !defined(STM32F412Cx) && !defined(STM32F412Rx) &&                       \
+  58              	    !defined(STM32F412Vx) && !defined(STM32F412Zx) &&                       \
+  59              	    !defined(STM32F413xx) &&                                                \
+  60              	    !defined(STM32F446xx) &&                                                \
+  61              	    !defined(STM32F469xx) && !defined(STM32F479xx)
+  62              	#include "board.h"
+   1              	/*
+  63              	#endif
+  27              	
+  28              	#if (CORTEX_NUM_VECTORS % 8) != 0
+  29              	#error "the constant CORTEX_NUM_VECTORS must be a multiple of 8"
+  30              	#endif
+  31              	
+  32              	#if (CORTEX_NUM_VECTORS < 8) || (CORTEX_NUM_VECTORS > 240)
+  33              	#error "the constant CORTEX_NUM_VECTORS must be between 8 and 240 inclusive"
+  34              	#endif
+  35              	
+  36              	/*===========================================================================*/
+  37              	/* Module constants.                                                         */
+  38              	/*===========================================================================*/
+  39              	
+  40              	/*===========================================================================*/
+  41              	/* Module pre-compile time settings.                                         */
+  42              	/*===========================================================================*/
+  43              	
+  44              	/*===========================================================================*/
+  45              	/* Code section.                                                             */
+  46              	/*===========================================================================*/
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccgU6rMd.s 			page 3
+
+
+  47              	
+  48              	#if !defined(__DOXYGEN__)
+  49              	
+  50              	        .syntax unified
+  51              	        .cpu    cortex-m0
+  52              	        .thumb
+  53              	
+  54              	        .section    .vectors, "ax"
+  55              	        .align      4
+  56              	        .globl      _vectors
+  57              	_vectors:
+  58 0000 00000000 	        .long       __main_stack_end__
+  59 0004 00000000 	        .long       Reset_Handler
+  60 0008 00000000 	        .long       NMI_Handler
+  61 000c 00000000 	        .long       HardFault_Handler
+  62 0010 00000000 	        .long       MemManage_Handler
+  63 0014 00000000 	        .long       BusFault_Handler
+  64 0018 00000000 	        .long       UsageFault_Handler
+  65 001c 00000000 	        .long       Vector1C
+  66 0020 00000000 	        .long       Vector20
+  67 0024 00000000 	        .long       Vector24
+  68 0028 00000000 	        .long       Vector28
+  69 002c 00000000 	        .long       SVC_Handler
+  70 0030 00000000 	        .long       DebugMon_Handler
+  71 0034 00000000 	        .long       Vector34
+  72 0038 00000000 	        .long       PendSV_Handler
+  73 003c 00000000 	        .long       SysTick_Handler
+  74 0040 00000000 	        .long       Vector40,   Vector44,   Vector48,   Vector4C
+  74      00000000 
+  74      00000000 
+  74      00000000 
+  75              	#if CORTEX_NUM_VECTORS > 4
+  76 0050 00000000 	        .long       Vector50,   Vector54,   Vector58,   Vector5C
+  76      00000000 
+  76      00000000 
+  76      00000000 
+  77              	#endif
+  78              	#if CORTEX_NUM_VECTORS > 8
+  79 0060 00000000 	        .long       Vector60,   Vector64,   Vector68,   Vector6C
+  79      00000000 
+  79      00000000 
+  79      00000000 
+  80              	#endif
+  81              	#if CORTEX_NUM_VECTORS > 12
+  82 0070 00000000 	        .long       Vector70,   Vector74,   Vector78,   Vector7C
+  82      00000000 
+  82      00000000 
+  82      00000000 
+  83              	#endif
+  84              	#if CORTEX_NUM_VECTORS > 16
+  85 0080 00000000 	        .long       Vector80,   Vector84,   Vector88,   Vector8C
+  85      00000000 
+  85      00000000 
+  85      00000000 
+  86              	#endif
+  87              	#if CORTEX_NUM_VECTORS > 20
+  88 0090 00000000 	        .long       Vector90,   Vector94,   Vector98,   Vector9C
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccgU6rMd.s 			page 4
+
+
+  88      00000000 
+  88      00000000 
+  88      00000000 
+  89              	#endif
+  90              	#if CORTEX_NUM_VECTORS > 24
+  91 00a0 00000000 	        .long       VectorA0,   VectorA4,   VectorA8,   VectorAC
+  91      00000000 
+  91      00000000 
+  91      00000000 
+  92              	#endif
+  93              	#if CORTEX_NUM_VECTORS > 28
+  94 00b0 00000000 	        .long       VectorB0,   VectorB4,   VectorB8,   VectorBC
+  94      00000000 
+  94      00000000 
+  94      00000000 
+  95              	#endif
+  96              	#if CORTEX_NUM_VECTORS > 32
+  97 00c0 00000000 	        .long       VectorC0,   VectorC4,   VectorC8,   VectorCC
+  97      00000000 
+  97      00000000 
+  97      00000000 
+  98              	#endif
+  99              	#if CORTEX_NUM_VECTORS > 36
+ 100 00d0 00000000 	        .long       VectorD0,   VectorD4,   VectorD8,   VectorDC
+ 100      00000000 
+ 100      00000000 
+ 100      00000000 
+ 101              	#endif
+ 102              	#if CORTEX_NUM_VECTORS > 40
+ 103 00e0 00000000 	        .long       VectorE0,   VectorE4,   VectorE8,   VectorEC
+ 103      00000000 
+ 103      00000000 
+ 103      00000000 
+ 104              	#endif
+ 105              	#if CORTEX_NUM_VECTORS > 44
+ 106 00f0 00000000 	        .long       VectorF0,   VectorF4,   VectorF8,   VectorFC
+ 106      00000000 
+ 106      00000000 
+ 106      00000000 
+ 107              	#endif
+ 108              	#if CORTEX_NUM_VECTORS > 48
+ 109 0100 00000000 	        .long       Vector100,  Vector104,  Vector108,  Vector10C
+ 109      00000000 
+ 109      00000000 
+ 109      00000000 
+ 110              	#endif
+ 111              	#if CORTEX_NUM_VECTORS > 52
+ 112 0110 00000000 	        .long       Vector110,  Vector114,  Vector118,  Vector11C
+ 112      00000000 
+ 112      00000000 
+ 112      00000000 
+ 113              	#endif
+ 114              	#if CORTEX_NUM_VECTORS > 56
+ 115 0120 00000000 	        .long       Vector120,  Vector124,  Vector128,  Vector12C
+ 115      00000000 
+ 115      00000000 
+ 115      00000000 
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccgU6rMd.s 			page 5
+
+
+ 116              	#endif
+ 117              	#if CORTEX_NUM_VECTORS > 60
+ 118 0130 00000000 	        .long       Vector130,  Vector134,  Vector138,  Vector13C
+ 118      00000000 
+ 118      00000000 
+ 118      00000000 
+ 119              	#endif
+ 120              	#if CORTEX_NUM_VECTORS > 64
+ 121 0140 00000000 	        .long       Vector140,  Vector144,  Vector148,  Vector14C
+ 121      00000000 
+ 121      00000000 
+ 121      00000000 
+ 122              	#endif
+ 123              	#if CORTEX_NUM_VECTORS > 68
+ 124 0150 00000000 	        .long       Vector150,  Vector154,  Vector158,  Vector15C
+ 124      00000000 
+ 124      00000000 
+ 124      00000000 
+ 125              	#endif
+ 126              	#if CORTEX_NUM_VECTORS > 72
+ 127 0160 00000000 	        .long       Vector160,  Vector164,  Vector168,  Vector16C
+ 127      00000000 
+ 127      00000000 
+ 127      00000000 
+ 128              	#endif
+ 129              	#if CORTEX_NUM_VECTORS > 76
+ 130 0170 00000000 	        .long       Vector170,  Vector174,  Vector178,  Vector17C
+ 130      00000000 
+ 130      00000000 
+ 130      00000000 
+ 131              	#endif
+ 132              	#if CORTEX_NUM_VECTORS > 80
+ 133 0180 00000000 	        .long       Vector180,  Vector184,  Vector188,  Vector18C
+ 133      00000000 
+ 133      00000000 
+ 133      00000000 
+ 134              	#endif
+ 135              	#if CORTEX_NUM_VECTORS > 84
+ 136 0190 00000000 	        .long       Vector190,  Vector194,  Vector198,  Vector19C
+ 136      00000000 
+ 136      00000000 
+ 136      00000000 
+ 137              	#endif
+ 138              	#if CORTEX_NUM_VECTORS > 88
+ 139 01a0 00000000 	        .long       Vector1A0,  Vector1A4,  Vector1A8,  Vector1AC
+ 139      00000000 
+ 139      00000000 
+ 139      00000000 
+ 140              	#endif
+ 141              	#if CORTEX_NUM_VECTORS > 92
+ 142 01b0 00000000 	        .long       Vector1B0,  Vector1B4,  Vector1B8,  Vector1BC
+ 142      00000000 
+ 142      00000000 
+ 142      00000000 
+ 143              	#endif
+ 144              	#if CORTEX_NUM_VECTORS > 96
+ 145 01c0 00000000 	        .long       Vector1C0,  Vector1C4,  Vector1C8,  Vector1CC
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccgU6rMd.s 			page 6
+
+
+ 145      00000000 
+ 145      00000000 
+ 145      00000000 
+ 146              	#endif
+ 147              	#if CORTEX_NUM_VECTORS > 100
+ 148 01d0 00000000 	        .long       Vector1D0,  Vector1D4,  Vector1D8,  Vector1DC
+ 148      00000000 
+ 148      00000000 
+ 148      00000000 
+ 149              	#endif
+ 150              	#if CORTEX_NUM_VECTORS > 104
+ 151              	        .long       Vector1E0,  Vector1E4,  Vector1E8,  Vector1EC
+ 152              	#endif
+ 153              	#if CORTEX_NUM_VECTORS > 108
+ 154              	        .long       Vector1F0,  Vector1F4,  Vector1F8,  Vector1FC
+ 155              	#endif
+ 156              	#if CORTEX_NUM_VECTORS > 112
+ 157              	        .long       Vector200,  Vector204,  Vector208,  Vector20C
+ 158              	#endif
+ 159              	#if CORTEX_NUM_VECTORS > 116
+ 160              	        .long       Vector210,  Vector214,  Vector218,  Vector21C
+ 161              	#endif
+ 162              	#if CORTEX_NUM_VECTORS > 120
+ 163              	        .long       Vector220,  Vector224,  Vector228,  Vector22C
+ 164              	#endif
+ 165              	#if CORTEX_NUM_VECTORS > 124
+ 166              	        .long       Vector230,  Vector234,  Vector238,  Vector23C
+ 167              	#endif
+ 168              	#if CORTEX_NUM_VECTORS > 128
+ 169              	        .long       Vector240,  Vector244,  Vector248,  Vector24C
+ 170              	#endif
+ 171              	#if CORTEX_NUM_VECTORS > 132
+ 172              	        .long       Vector250,  Vector254,  Vector258,  Vector25C
+ 173              	#endif
+ 174              	#if CORTEX_NUM_VECTORS > 136
+ 175              	        .long       Vector260,  Vector264,  Vector268,  Vector26C
+ 176              	#endif
+ 177              	#if CORTEX_NUM_VECTORS > 140
+ 178              	        .long       Vector270,  Vector274,  Vector278,  Vector27C
+ 179              	#endif
+ 180              	#if CORTEX_NUM_VECTORS > 144
+ 181              	        .long       Vector280,  Vector284,  Vector288,  Vector28C
+ 182              	#endif
+ 183              	#if CORTEX_NUM_VECTORS > 148
+ 184              	        .long       Vector290,  Vector294,  Vector298,  Vector29C
+ 185              	#endif
+ 186              	#if CORTEX_NUM_VECTORS > 152
+ 187              	        .long       Vector2A0,  Vector2A4,  Vector2A8,  Vector2AC
+ 188              	#endif
+ 189              	#if CORTEX_NUM_VECTORS > 156
+ 190              	        .long       Vector2B0,  Vector2B4,  Vector2B8,  Vector2BC
+ 191              	#endif
+ 192              	#if CORTEX_NUM_VECTORS > 160
+ 193              	        .long       Vector2C0,  Vector2C4,  Vector2C8,  Vector2CC
+ 194              	#endif
+ 195              	#if CORTEX_NUM_VECTORS > 164
+ 196              	        .long       Vector2D0,  Vector2D4,  Vector2D8,  Vector2DC
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccgU6rMd.s 			page 7
+
+
+ 197              	#endif
+ 198              	#if CORTEX_NUM_VECTORS > 168
+ 199              	        .long       Vector2E0,  Vector2E4,  Vector2E8,  Vector2EC
+ 200              	#endif
+ 201              	#if CORTEX_NUM_VECTORS > 172
+ 202              	        .long       Vector2F0,  Vector2F4,  Vector2F8,  Vector2FC
+ 203              	#endif
+ 204              	#if CORTEX_NUM_VECTORS > 176
+ 205              	        .long       Vector300,  Vector304,  Vector308,  Vector30C
+ 206              	#endif
+ 207              	#if CORTEX_NUM_VECTORS > 180
+ 208              	        .long       Vector310,  Vector314,  Vector318,  Vector31C
+ 209              	#endif
+ 210              	#if CORTEX_NUM_VECTORS > 184
+ 211              	        .long       Vector320,  Vector324,  Vector328,  Vector32C
+ 212              	#endif
+ 213              	#if CORTEX_NUM_VECTORS > 188
+ 214              	        .long       Vector330,  Vector334,  Vector338,  Vector33C
+ 215              	#endif
+ 216              	#if CORTEX_NUM_VECTORS > 192
+ 217              	        .long       Vector340,  Vector344,  Vector348,  Vector34C
+ 218              	#endif
+ 219              	#if CORTEX_NUM_VECTORS > 196
+ 220              	        .long       Vector350,  Vector354,  Vector358,  Vector35C
+ 221              	#endif
+ 222              	#if CORTEX_NUM_VECTORS > 200
+ 223              	        .long       Vector360,  Vector364,  Vector368,  Vector36C
+ 224              	#endif
+ 225              	#if CORTEX_NUM_VECTORS > 204
+ 226              	        .long       Vector370,  Vector374,  Vector378,  Vector37C
+ 227              	#endif
+ 228              	#if CORTEX_NUM_VECTORS > 208
+ 229              	        .long       Vector380,  Vector384,  Vector388,  Vector38C
+ 230              	#endif
+ 231              	#if CORTEX_NUM_VECTORS > 212
+ 232              	        .long       Vector390,  Vector394,  Vector398,  Vector39C
+ 233              	#endif
+ 234              	#if CORTEX_NUM_VECTORS > 216
+ 235              	        .long       Vector3A0,  Vector3A4,  Vector3A8,  Vector3AC
+ 236              	#endif
+ 237              	#if CORTEX_NUM_VECTORS > 220
+ 238              	        .long       Vector3B0,  Vector3B4,  Vector3B8,  Vector3BC
+ 239              	#endif
+ 240              	#if CORTEX_NUM_VECTORS > 224
+ 241              	        .long       Vector3C0,  Vector3C4,  Vector3C8,  Vector3CC
+ 242              	#endif
+ 243              	#if CORTEX_NUM_VECTORS > 228
+ 244              	        .long       Vector3D0,  Vector3D4,  Vector3D8,  Vector3DC
+ 245              	#endif
+ 246              	#if CORTEX_NUM_VECTORS > 232
+ 247              	        .long       Vector3E0,  Vector3E4,  Vector3E8,  Vector3EC
+ 248              	#endif
+ 249              	#if CORTEX_NUM_VECTORS > 236
+ 250              	        .long       Vector3F0,  Vector3F4,  Vector3F8,  Vector3FC
+ 251              	#endif
+ 252              	
+ 253              	        .text
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccgU6rMd.s 			page 8
+
+
+ 254              	
+ 255              	        .align      2
+ 256              	        .thumb_func
+ 257              	        .weak       Reset_Handler
+ 258              	Reset_Handler:
+ 259              	
+ 260 0000 FEE7     	         b          _crt0_entry
+ 261              	
+ 262              	        .thumb_func
+ 263              	        .weak       NMI_Handler
+ 264              	        .weak       HardFault_Handler
+ 265              	        .weak       MemManage_Handler
+ 266              	        .weak       BusFault_Handler
+ 267              	        .weak       UsageFault_Handler
+ 268              	        .weak       Vector1C
+ 269              	        .weak       Vector20
+ 270              	        .weak       Vector24
+ 271              	        .weak       Vector28
+ 272              	        .weak       SVC_Handler
+ 273              	        .weak       DebugMon_Handler
+ 274              	        .weak       Vector34
+ 275              	        .weak       PendSV_Handler
+ 276              	        .weak       SysTick_Handler
+ 277              	        .weak       Vector40,   Vector44,   Vector48,   Vector4C
+ 278              	#if CORTEX_NUM_VECTORS > 4
+ 279              	        .weak       Vector50,   Vector54,   Vector58,   Vector5C
+ 280              	#endif
+ 281              	#if CORTEX_NUM_VECTORS > 8
+ 282              	        .weak       Vector60,   Vector64,   Vector68,   Vector6C
+ 283              	#endif
+ 284              	#if CORTEX_NUM_VECTORS > 12
+ 285              	        .weak       Vector70,   Vector74,   Vector78,   Vector7C
+ 286              	#endif
+ 287              	#if CORTEX_NUM_VECTORS > 16
+ 288              	        .weak       Vector80,   Vector84,   Vector88,   Vector8C
+ 289              	#endif
+ 290              	#if CORTEX_NUM_VECTORS > 20
+ 291              	        .weak       Vector90,   Vector94,   Vector98,   Vector9C
+ 292              	#endif
+ 293              	#if CORTEX_NUM_VECTORS > 24
+ 294              	        .weak       VectorA0,   VectorA4,   VectorA8,   VectorAC
+ 295              	#endif
+ 296              	#if CORTEX_NUM_VECTORS > 28
+ 297              	        .weak       VectorB0,   VectorB4,   VectorB8,   VectorBC
+ 298              	#endif
+ 299              	#if CORTEX_NUM_VECTORS > 32
+ 300              	        .weak       VectorC0,   VectorC4,   VectorC8,   VectorCC
+ 301              	#endif
+ 302              	#if CORTEX_NUM_VECTORS > 36
+ 303              	        .weak       VectorD0,   VectorD4,   VectorD8,   VectorDC
+ 304              	#endif
+ 305              	#if CORTEX_NUM_VECTORS > 40
+ 306              	        .weak       VectorE0,   VectorE4,   VectorE8,   VectorEC
+ 307              	#endif
+ 308              	#if CORTEX_NUM_VECTORS > 44
+ 309              	        .weak       VectorF0,   VectorF4,   VectorF8,   VectorFC
+ 310              	#endif
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccgU6rMd.s 			page 9
+
+
+ 311              	#if CORTEX_NUM_VECTORS > 48
+ 312              	        .weak       Vector100,  Vector104,  Vector108,  Vector10C
+ 313              	#endif
+ 314              	#if CORTEX_NUM_VECTORS > 52
+ 315              	        .weak       Vector110,  Vector114,  Vector118,  Vector11C
+ 316              	#endif
+ 317              	#if CORTEX_NUM_VECTORS > 56
+ 318              	        .weak       Vector120,  Vector124,  Vector128,  Vector12C
+ 319              	#endif
+ 320              	#if CORTEX_NUM_VECTORS > 60
+ 321              	        .weak       Vector130,  Vector134,  Vector138,  Vector13C
+ 322              	#endif
+ 323              	#if CORTEX_NUM_VECTORS > 64
+ 324              	        .weak       Vector140,  Vector144,  Vector148,  Vector14C
+ 325              	#endif
+ 326              	#if CORTEX_NUM_VECTORS > 68
+ 327              	        .weak       Vector150,  Vector154,  Vector158,  Vector15C
+ 328              	#endif
+ 329              	#if CORTEX_NUM_VECTORS > 72
+ 330              	        .weak       Vector160,  Vector164,  Vector168,  Vector16C
+ 331              	#endif
+ 332              	#if CORTEX_NUM_VECTORS > 76
+ 333              	        .weak       Vector170,  Vector174,  Vector178,  Vector17C
+ 334              	#endif
+ 335              	#if CORTEX_NUM_VECTORS > 80
+ 336              	        .weak       Vector180,  Vector184,  Vector188,  Vector18C
+ 337              	#endif
+ 338              	#if CORTEX_NUM_VECTORS > 84
+ 339              	        .weak       Vector190,  Vector194,  Vector198,  Vector19C
+ 340              	#endif
+ 341              	#if CORTEX_NUM_VECTORS > 88
+ 342              	        .weak       Vector1A0,  Vector1A4,  Vector1A8,  Vector1AC
+ 343              	#endif
+ 344              	#if CORTEX_NUM_VECTORS > 92
+ 345              	        .weak       Vector1B0,  Vector1B4,  Vector1B8,  Vector1BC
+ 346              	#endif
+ 347              	#if CORTEX_NUM_VECTORS > 96
+ 348              	        .weak       Vector1C0,  Vector1C4,  Vector1C8,  Vector1CC
+ 349              	#endif
+ 350              	#if CORTEX_NUM_VECTORS > 100
+ 351              	        .weak       Vector1D0,  Vector1D4,  Vector1D8,  Vector1DC
+ 352              	#endif
+ 353              	#if CORTEX_NUM_VECTORS > 104
+ 354              	        .weak       Vector1E0,  Vector1E4,  Vector1E8,  Vector1EC
+ 355              	#endif
+ 356              	#if CORTEX_NUM_VECTORS > 108
+ 357              	        .weak       Vector1F0,  Vector1F4,  Vector1F8,  Vector1FC
+ 358              	#endif
+ 359              	#if CORTEX_NUM_VECTORS > 112
+ 360              	        .weak       Vector200,  Vector204,  Vector208,  Vector20C
+ 361              	#endif
+ 362              	#if CORTEX_NUM_VECTORS > 116
+ 363              	        .weak       Vector210,  Vector214,  Vector218,  Vector21C
+ 364              	#endif
+ 365              	#if CORTEX_NUM_VECTORS > 120
+ 366              	        .weak       Vector220,  Vector224,  Vector228,  Vector22C
+ 367              	#endif
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccgU6rMd.s 			page 10
+
+
+ 368              	#if CORTEX_NUM_VECTORS > 124
+ 369              	        .weak       Vector230,  Vector234,  Vector238,  Vector23C
+ 370              	#endif
+ 371              	#if CORTEX_NUM_VECTORS > 128
+ 372              	        .weak       Vector240,  Vector244,  Vector248,  Vector24C
+ 373              	#endif
+ 374              	#if CORTEX_NUM_VECTORS > 132
+ 375              	        .weak       Vector250,  Vector254,  Vector258,  Vector25C
+ 376              	#endif
+ 377              	#if CORTEX_NUM_VECTORS > 136
+ 378              	        .weak       Vector260,  Vector264,  Vector268,  Vector26C
+ 379              	#endif
+ 380              	#if CORTEX_NUM_VECTORS > 140
+ 381              	        .weak       Vector270,  Vector274,  Vector278,  Vector27C
+ 382              	#endif
+ 383              	#if CORTEX_NUM_VECTORS > 144
+ 384              	        .weak       Vector280,  Vector284,  Vector288,  Vector28C
+ 385              	#endif
+ 386              	#if CORTEX_NUM_VECTORS > 148
+ 387              	        .weak       Vector290,  Vector294,  Vector298,  Vector29C
+ 388              	#endif
+ 389              	#if CORTEX_NUM_VECTORS > 152
+ 390              	        .weak       Vector2A0,  Vector2A4,  Vector2A8,  Vector2AC
+ 391              	#endif
+ 392              	#if CORTEX_NUM_VECTORS > 156
+ 393              	        .weak       Vector2B0,  Vector2B4,  Vector2B8,  Vector2BC
+ 394              	#endif
+ 395              	#if CORTEX_NUM_VECTORS > 160
+ 396              	        .weak       Vector2C0,  Vector2C4,  Vector2C8,  Vector2CC
+ 397              	#endif
+ 398              	#if CORTEX_NUM_VECTORS > 164
+ 399              	        .weak       Vector2D0,  Vector2D4,  Vector2D8,  Vector2DC
+ 400              	#endif
+ 401              	#if CORTEX_NUM_VECTORS > 168
+ 402              	        .weak       Vector2E0,  Vector2E4,  Vector2E8,  Vector2EC
+ 403              	#endif
+ 404              	#if CORTEX_NUM_VECTORS > 172
+ 405              	        .weak       Vector2F0,  Vector2F4,  Vector2F8,  Vector2FC
+ 406              	#endif
+ 407              	#if CORTEX_NUM_VECTORS > 176
+ 408              	        .weak       Vector300,  Vector304,  Vector308,  Vector30C
+ 409              	#endif
+ 410              	#if CORTEX_NUM_VECTORS > 180
+ 411              	        .weak       Vector310,  Vector314,  Vector318,  Vector31C
+ 412              	#endif
+ 413              	#if CORTEX_NUM_VECTORS > 184
+ 414              	        .weak       Vector320,  Vector324,  Vector328,  Vector32C
+ 415              	#endif
+ 416              	#if CORTEX_NUM_VECTORS > 188
+ 417              	        .weak       Vector330,  Vector334,  Vector338,  Vector33C
+ 418              	#endif
+ 419              	#if CORTEX_NUM_VECTORS > 192
+ 420              	        .weak       Vector340,  Vector344,  Vector348,  Vector34C
+ 421              	#endif
+ 422              	#if CORTEX_NUM_VECTORS > 196
+ 423              	        .weak       Vector350,  Vector354,  Vector358,  Vector35C
+ 424              	#endif
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccgU6rMd.s 			page 11
+
+
+ 425              	#if CORTEX_NUM_VECTORS > 200
+ 426              	        .weak       Vector360,  Vector364,  Vector368,  Vector36C
+ 427              	#endif
+ 428              	#if CORTEX_NUM_VECTORS > 204
+ 429              	        .weak       Vector370,  Vector374,  Vector378,  Vector37C
+ 430              	#endif
+ 431              	#if CORTEX_NUM_VECTORS > 208
+ 432              	        .weak       Vector380,  Vector384,  Vector388,  Vector38C
+ 433              	#endif
+ 434              	#if CORTEX_NUM_VECTORS > 212
+ 435              	        .weak       Vector390,  Vector394,  Vector398,  Vector39C
+ 436              	#endif
+ 437              	#if CORTEX_NUM_VECTORS > 216
+ 438              	        .weak       Vector3A0,  Vector3A4,  Vector3A8,  Vector3AC
+ 439              	#endif
+ 440              	#if CORTEX_NUM_VECTORS > 220
+ 441              	        .weak       Vector3B0,  Vector3B4,  Vector3B8,  Vector3BC
+ 442              	#endif
+ 443              	#if CORTEX_NUM_VECTORS > 224
+ 444              	        .weak       Vector3C0,  Vector3C4,  Vector3C8,  Vector3CC
+ 445              	#endif
+ 446              	#if CORTEX_NUM_VECTORS > 228
+ 447              	        .weak       Vector3D0,  Vector3D4,  Vector3D8,  Vector3DC
+ 448              	#endif
+ 449              	#if CORTEX_NUM_VECTORS > 232
+ 450              	        .weak       Vector3E0,  Vector3E4,  Vector3E8,  Vector3EC
+ 451              	#endif
+ 452              	#if CORTEX_NUM_VECTORS > 236
+ 453              	        .weak       Vector3F0,  Vector3F4,  Vector3F8,  Vector3FC
+ 454              	#endif
+ 455              	
+ 456              	        .thumb_func
+ 457              	NMI_Handler:
+ 458              	        .thumb_func
+ 459              	HardFault_Handler:
+ 460              	        .thumb_func
+ 461              	MemManage_Handler:
+ 462              	        .thumb_func
+ 463              	BusFault_Handler:
+ 464              	        .thumb_func
+ 465              	UsageFault_Handler:
+ 466              	        .thumb_func
+ 467              	Vector1C:
+ 468              	        .thumb_func
+ 469              	Vector20:
+ 470              	        .thumb_func
+ 471              	Vector24:
+ 472              	        .thumb_func
+ 473              	Vector28:
+ 474              	        .thumb_func
+ 475              	SVC_Handler:
+ 476              	        .thumb_func
+ 477              	DebugMon_Handler:
+ 478              	        .thumb_func
+ 479              	Vector34:
+ 480              	        .thumb_func
+ 481              	PendSV_Handler:
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccgU6rMd.s 			page 12
+
+
+ 482              	        .thumb_func
+ 483              	SysTick_Handler:
+ 484              	        .thumb_func
+ 485              	Vector40:
+ 486              	        .thumb_func
+ 487              	Vector44:
+ 488              	        .thumb_func
+ 489              	Vector48:
+ 490              	        .thumb_func
+ 491              	Vector4C:
+ 492              	        .thumb_func
+ 493              	Vector50:
+ 494              	        .thumb_func
+ 495              	Vector54:
+ 496              	        .thumb_func
+ 497              	Vector58:
+ 498              	        .thumb_func
+ 499              	Vector5C:
+ 500              	#if CORTEX_NUM_VECTORS > 8
+ 501              	        .thumb_func
+ 502              	Vector60:
+ 503              	        .thumb_func
+ 504              	Vector64:
+ 505              	        .thumb_func
+ 506              	Vector68:
+ 507              	        .thumb_func
+ 508              	Vector6C:
+ 509              	        .thumb_func
+ 510              	Vector70:
+ 511              	        .thumb_func
+ 512              	Vector74:
+ 513              	        .thumb_func
+ 514              	Vector78:
+ 515              	        .thumb_func
+ 516              	Vector7C:
+ 517              	#endif
+ 518              	#if CORTEX_NUM_VECTORS > 16
+ 519              	        .thumb_func
+ 520              	Vector80:
+ 521              	        .thumb_func
+ 522              	Vector84:
+ 523              	        .thumb_func
+ 524              	Vector88:
+ 525              	        .thumb_func
+ 526              	Vector8C:
+ 527              	        .thumb_func
+ 528              	Vector90:
+ 529              	        .thumb_func
+ 530              	Vector94:
+ 531              	        .thumb_func
+ 532              	Vector98:
+ 533              	        .thumb_func
+ 534              	Vector9C:
+ 535              	#endif
+ 536              	#if CORTEX_NUM_VECTORS > 24
+ 537              	        .thumb_func
+ 538              	VectorA0:
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccgU6rMd.s 			page 13
+
+
+ 539              	        .thumb_func
+ 540              	VectorA4:
+ 541              	        .thumb_func
+ 542              	VectorA8:
+ 543              	        .thumb_func
+ 544              	VectorAC:
+ 545              	        .thumb_func
+ 546              	VectorB0:
+ 547              	        .thumb_func
+ 548              	VectorB4:
+ 549              	        .thumb_func
+ 550              	VectorB8:
+ 551              	        .thumb_func
+ 552              	VectorBC:
+ 553              	#endif
+ 554              	#if CORTEX_NUM_VECTORS > 32
+ 555              	        .thumb_func
+ 556              	VectorC0:
+ 557              	        .thumb_func
+ 558              	VectorC4:
+ 559              	        .thumb_func
+ 560              	VectorC8:
+ 561              	        .thumb_func
+ 562              	VectorCC:
+ 563              	        .thumb_func
+ 564              	VectorD0:
+ 565              	        .thumb_func
+ 566              	VectorD4:
+ 567              	        .thumb_func
+ 568              	VectorD8:
+ 569              	        .thumb_func
+ 570              	VectorDC:
+ 571              	#endif
+ 572              	#if CORTEX_NUM_VECTORS > 40
+ 573              	        .thumb_func
+ 574              	VectorE0:
+ 575              	        .thumb_func
+ 576              	VectorE4:
+ 577              	        .thumb_func
+ 578              	VectorE8:
+ 579              	        .thumb_func
+ 580              	VectorEC:
+ 581              	        .thumb_func
+ 582              	VectorF0:
+ 583              	        .thumb_func
+ 584              	VectorF4:
+ 585              	        .thumb_func
+ 586              	VectorF8:
+ 587              	        .thumb_func
+ 588              	VectorFC:
+ 589              	#endif
+ 590              	#if CORTEX_NUM_VECTORS > 48
+ 591              	        .thumb_func
+ 592              	Vector100:
+ 593              	        .thumb_func
+ 594              	Vector104:
+ 595              	        .thumb_func
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccgU6rMd.s 			page 14
+
+
+ 596              	Vector108:
+ 597              	        .thumb_func
+ 598              	Vector10C:
+ 599              	        .thumb_func
+ 600              	Vector110:
+ 601              	        .thumb_func
+ 602              	Vector114:
+ 603              	        .thumb_func
+ 604              	Vector118:
+ 605              	        .thumb_func
+ 606              	Vector11C:
+ 607              	#endif
+ 608              	#if CORTEX_NUM_VECTORS > 56
+ 609              	        .thumb_func
+ 610              	Vector120:
+ 611              	        .thumb_func
+ 612              	Vector124:
+ 613              	        .thumb_func
+ 614              	Vector128:
+ 615              	        .thumb_func
+ 616              	Vector12C:
+ 617              	        .thumb_func
+ 618              	Vector130:
+ 619              	        .thumb_func
+ 620              	Vector134:
+ 621              	        .thumb_func
+ 622              	Vector138:
+ 623              	        .thumb_func
+ 624              	Vector13C:
+ 625              	#endif
+ 626              	#if CORTEX_NUM_VECTORS > 64
+ 627              	        .thumb_func
+ 628              	Vector140:
+ 629              	        .thumb_func
+ 630              	Vector144:
+ 631              	        .thumb_func
+ 632              	Vector148:
+ 633              	        .thumb_func
+ 634              	Vector14C:
+ 635              	        .thumb_func
+ 636              	Vector150:
+ 637              	        .thumb_func
+ 638              	Vector154:
+ 639              	        .thumb_func
+ 640              	Vector158:
+ 641              	        .thumb_func
+ 642              	Vector15C:
+ 643              	#endif
+ 644              	#if CORTEX_NUM_VECTORS > 72
+ 645              	        .thumb_func
+ 646              	Vector160:
+ 647              	        .thumb_func
+ 648              	Vector164:
+ 649              	        .thumb_func
+ 650              	Vector168:
+ 651              	        .thumb_func
+ 652              	Vector16C:
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccgU6rMd.s 			page 15
+
+
+ 653              	        .thumb_func
+ 654              	Vector170:
+ 655              	        .thumb_func
+ 656              	Vector174:
+ 657              	        .thumb_func
+ 658              	Vector178:
+ 659              	        .thumb_func
+ 660              	Vector17C:
+ 661              	#endif
+ 662              	#if CORTEX_NUM_VECTORS > 80
+ 663              	        .thumb_func
+ 664              	Vector180:
+ 665              	        .thumb_func
+ 666              	Vector184:
+ 667              	        .thumb_func
+ 668              	Vector188:
+ 669              	        .thumb_func
+ 670              	Vector18C:
+ 671              	        .thumb_func
+ 672              	Vector190:
+ 673              	        .thumb_func
+ 674              	Vector194:
+ 675              	        .thumb_func
+ 676              	Vector198:
+ 677              	        .thumb_func
+ 678              	Vector19C:
+ 679              	#endif
+ 680              	#if CORTEX_NUM_VECTORS > 88
+ 681              	        .thumb_func
+ 682              	Vector1A0:
+ 683              	        .thumb_func
+ 684              	Vector1A4:
+ 685              	        .thumb_func
+ 686              	Vector1A8:
+ 687              	        .thumb_func
+ 688              	Vector1AC:
+ 689              	        .thumb_func
+ 690              	Vector1B0:
+ 691              	        .thumb_func
+ 692              	Vector1B4:
+ 693              	        .thumb_func
+ 694              	Vector1B8:
+ 695              	        .thumb_func
+ 696              	Vector1BC:
+ 697              	#endif
+ 698              	#if CORTEX_NUM_VECTORS > 96
+ 699              	        .thumb_func
+ 700              	Vector1C0:
+ 701              	        .thumb_func
+ 702              	Vector1C4:
+ 703              	        .thumb_func
+ 704              	Vector1C8:
+ 705              	        .thumb_func
+ 706              	Vector1CC:
+ 707              	        .thumb_func
+ 708              	Vector1D0:
+ 709              	        .thumb_func
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccgU6rMd.s 			page 16
+
+
+ 710              	Vector1D4:
+ 711              	        .thumb_func
+ 712              	Vector1D8:
+ 713              	        .thumb_func
+ 714              	Vector1DC:
+ 715              	#endif
+ 716              	#if CORTEX_NUM_VECTORS > 104
+ 717              	        .thumb_func
+ 718              	Vector1E0:
+ 719              	        .thumb_func
+ 720              	Vector1E4:
+ 721              	        .thumb_func
+ 722              	Vector1E8:
+ 723              	        .thumb_func
+ 724              	Vector1EC:
+ 725              	        .thumb_func
+ 726              	Vector1F0:
+ 727              	        .thumb_func
+ 728              	Vector1F4:
+ 729              	        .thumb_func
+ 730              	Vector1F8:
+ 731              	        .thumb_func
+ 732              	Vector1FC:
+ 733              	#endif
+ 734              	#if CORTEX_NUM_VECTORS > 112
+ 735              	        .thumb_func
+ 736              	Vector200:
+ 737              	        .thumb_func
+ 738              	Vector204:
+ 739              	        .thumb_func
+ 740              	Vector208:
+ 741              	        .thumb_func
+ 742              	Vector20C:
+ 743              	        .thumb_func
+ 744              	Vector210:
+ 745              	        .thumb_func
+ 746              	Vector214:
+ 747              	        .thumb_func
+ 748              	Vector218:
+ 749              	        .thumb_func
+ 750              	Vector21C:
+ 751              	#endif
+ 752              	#if CORTEX_NUM_VECTORS > 120
+ 753              	        .thumb_func
+ 754              	Vector220:
+ 755              	        .thumb_func
+ 756              	Vector224:
+ 757              	        .thumb_func
+ 758              	Vector228:
+ 759              	        .thumb_func
+ 760              	Vector22C:
+ 761              	        .thumb_func
+ 762              	Vector230:
+ 763              	        .thumb_func
+ 764              	Vector234:
+ 765              	        .thumb_func
+ 766              	Vector238:
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccgU6rMd.s 			page 17
+
+
+ 767              	        .thumb_func
+ 768              	Vector23C:
+ 769              	#endif
+ 770              	#if CORTEX_NUM_VECTORS > 128
+ 771              	        .thumb_func
+ 772              	Vector240:
+ 773              	        .thumb_func
+ 774              	Vector244:
+ 775              	        .thumb_func
+ 776              	Vector248:
+ 777              	        .thumb_func
+ 778              	Vector24C:
+ 779              	        .thumb_func
+ 780              	Vector250:
+ 781              	        .thumb_func
+ 782              	Vector254:
+ 783              	        .thumb_func
+ 784              	Vector258:
+ 785              	        .thumb_func
+ 786              	Vector25C:
+ 787              	#endif
+ 788              	#if CORTEX_NUM_VECTORS > 136
+ 789              	        .thumb_func
+ 790              	Vector260:
+ 791              	        .thumb_func
+ 792              	Vector264:
+ 793              	        .thumb_func
+ 794              	Vector268:
+ 795              	        .thumb_func
+ 796              	Vector26C:
+ 797              	        .thumb_func
+ 798              	Vector270:
+ 799              	        .thumb_func
+ 800              	Vector274:
+ 801              	        .thumb_func
+ 802              	Vector278:
+ 803              	        .thumb_func
+ 804              	Vector27C:
+ 805              	#endif
+ 806              	#if CORTEX_NUM_VECTORS > 144
+ 807              	        .thumb_func
+ 808              	Vector280:
+ 809              	        .thumb_func
+ 810              	Vector284:
+ 811              	        .thumb_func
+ 812              	Vector288:
+ 813              	        .thumb_func
+ 814              	Vector28C:
+ 815              	        .thumb_func
+ 816              	Vector290:
+ 817              	        .thumb_func
+ 818              	Vector294:
+ 819              	        .thumb_func
+ 820              	Vector298:
+ 821              	        .thumb_func
+ 822              	Vector29C:
+ 823              	#endif
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccgU6rMd.s 			page 18
+
+
+ 824              	#if CORTEX_NUM_VECTORS > 152
+ 825              	        .thumb_func
+ 826              	Vector2A0:
+ 827              	        .thumb_func
+ 828              	Vector2A4:
+ 829              	        .thumb_func
+ 830              	Vector2A8:
+ 831              	        .thumb_func
+ 832              	Vector2AC:
+ 833              	        .thumb_func
+ 834              	Vector2B0:
+ 835              	        .thumb_func
+ 836              	Vector2B4:
+ 837              	        .thumb_func
+ 838              	Vector2B8:
+ 839              	        .thumb_func
+ 840              	Vector2BC:
+ 841              	#endif
+ 842              	#if CORTEX_NUM_VECTORS > 160
+ 843              	        .thumb_func
+ 844              	Vector2C0:
+ 845              	        .thumb_func
+ 846              	Vector2C4:
+ 847              	        .thumb_func
+ 848              	Vector2C8:
+ 849              	        .thumb_func
+ 850              	Vector2CC:
+ 851              	        .thumb_func
+ 852              	Vector2D0:
+ 853              	        .thumb_func
+ 854              	Vector2D4:
+ 855              	        .thumb_func
+ 856              	Vector2D8:
+ 857              	        .thumb_func
+ 858              	Vector2DC:
+ 859              	#endif
+ 860              	#if CORTEX_NUM_VECTORS > 168
+ 861              	        .thumb_func
+ 862              	Vector2E0:
+ 863              	        .thumb_func
+ 864              	Vector2E4:
+ 865              	        .thumb_func
+ 866              	Vector2E8:
+ 867              	        .thumb_func
+ 868              	Vector2EC:
+ 869              	        .thumb_func
+ 870              	Vector2F0:
+ 871              	        .thumb_func
+ 872              	Vector2F4:
+ 873              	        .thumb_func
+ 874              	Vector2F8:
+ 875              	        .thumb_func
+ 876              	Vector2FC:
+ 877              	#endif
+ 878              	#if CORTEX_NUM_VECTORS > 176
+ 879              	        .thumb_func
+ 880              	Vector300:
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccgU6rMd.s 			page 19
+
+
+ 881              	        .thumb_func
+ 882              	Vector304:
+ 883              	        .thumb_func
+ 884              	Vector308:
+ 885              	        .thumb_func
+ 886              	Vector30C:
+ 887              	        .thumb_func
+ 888              	Vector310:
+ 889              	        .thumb_func
+ 890              	Vector314:
+ 891              	        .thumb_func
+ 892              	Vector318:
+ 893              	        .thumb_func
+ 894              	Vector31C:
+ 895              	#endif
+ 896              	#if CORTEX_NUM_VECTORS > 184
+ 897              	        .thumb_func
+ 898              	Vector320:
+ 899              	        .thumb_func
+ 900              	Vector324:
+ 901              	        .thumb_func
+ 902              	Vector328:
+ 903              	        .thumb_func
+ 904              	Vector32C:
+ 905              	        .thumb_func
+ 906              	Vector330:
+ 907              	        .thumb_func
+ 908              	Vector334:
+ 909              	        .thumb_func
+ 910              	Vector338:
+ 911              	        .thumb_func
+ 912              	Vector33C:
+ 913              	#endif
+ 914              	#if CORTEX_NUM_VECTORS > 192
+ 915              	        .thumb_func
+ 916              	Vector340:
+ 917              	        .thumb_func
+ 918              	Vector344:
+ 919              	        .thumb_func
+ 920              	Vector348:
+ 921              	        .thumb_func
+ 922              	Vector34C:
+ 923              	        .thumb_func
+ 924              	Vector350:
+ 925              	        .thumb_func
+ 926              	Vector354:
+ 927              	        .thumb_func
+ 928              	Vector358:
+ 929              	        .thumb_func
+ 930              	Vector35C:
+ 931              	#endif
+ 932              	#if CORTEX_NUM_VECTORS > 200
+ 933              	        .thumb_func
+ 934              	Vector360:
+ 935              	        .thumb_func
+ 936              	Vector364:
+ 937              	        .thumb_func
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccgU6rMd.s 			page 20
+
+
+ 938              	Vector368:
+ 939              	        .thumb_func
+ 940              	Vector36C:
+ 941              	        .thumb_func
+ 942              	Vector370:
+ 943              	        .thumb_func
+ 944              	Vector374:
+ 945              	        .thumb_func
+ 946              	Vector378:
+ 947              	        .thumb_func
+ 948              	Vector37C:
+ 949              	#endif
+ 950              	#if CORTEX_NUM_VECTORS > 208
+ 951              	        .thumb_func
+ 952              	Vector380:
+ 953              	        .thumb_func
+ 954              	Vector384:
+ 955              	        .thumb_func
+ 956              	Vector388:
+ 957              	        .thumb_func
+ 958              	Vector38C:
+ 959              	        .thumb_func
+ 960              	Vector390:
+ 961              	        .thumb_func
+ 962              	Vector394:
+ 963              	        .thumb_func
+ 964              	Vector398:
+ 965              	        .thumb_func
+ 966              	Vector39C:
+ 967              	#endif
+ 968              	#if CORTEX_NUM_VECTORS > 216
+ 969              	        .thumb_func
+ 970              	Vector3A0:
+ 971              	        .thumb_func
+ 972              	Vector3A4:
+ 973              	        .thumb_func
+ 974              	Vector3A8:
+ 975              	        .thumb_func
+ 976              	Vector3AC:
+ 977              	        .thumb_func
+ 978              	Vector3B0:
+ 979              	        .thumb_func
+ 980              	Vector3B4:
+ 981              	        .thumb_func
+ 982              	Vector3B8:
+ 983              	        .thumb_func
+ 984              	Vector3BC:
+ 985              	#endif
+ 986              	#if CORTEX_NUM_VECTORS > 224
+ 987              	        .thumb_func
+ 988              	Vector3C0:
+ 989              	        .thumb_func
+ 990              	Vector3C4:
+ 991              	        .thumb_func
+ 992              	Vector3C8:
+ 993              	        .thumb_func
+ 994              	Vector3CC:
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccgU6rMd.s 			page 21
+
+
+ 995              	        .thumb_func
+ 996              	Vector3D0:
+ 997              	        .thumb_func
+ 998              	Vector3D4:
+ 999              	        .thumb_func
+ 1000              	Vector3D8:
+ 1001              	        .thumb_func
+ 1002              	Vector3DC:
+ 1003              	#endif
+ 1004              	#if CORTEX_NUM_VECTORS > 232
+ 1005              	        .thumb_func
+ 1006              	Vector3E0:
+ 1007              	        .thumb_func
+ 1008              	Vector3E4:
+ 1009              	        .thumb_func
+ 1010              	Vector3E8:
+ 1011              	        .thumb_func
+ 1012              	Vector3EC:
+ 1013              	        .thumb_func
+ 1014              	Vector3F0:
+ 1015              	        .thumb_func
+ 1016              	Vector3F4:
+ 1017              	        .thumb_func
+ 1018              	Vector3F8:
+ 1019              	        .thumb_func
+ 1020              	Vector3FC:
+ 1021              	#endif
+ 1022 0002 FFF7FEFF 	        bl          _unhandled_exception
+ 1023              	
+ 1024              	        .thumb_func
+ 1025              	        .weak       _unhandled_exception
+ 1026              	_unhandled_exception:
+ 1027              	.stay:
+ 1028 0006 FEE7     	        b           .stay
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccgU6rMd.s 			page 22
+
+
+DEFINED SYMBOLS
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:57     .vectors:00000000 _vectors
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:58     .vectors:00000000 $d
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:258    .text:00000000 Reset_Handler
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:457    .text:00000002 NMI_Handler
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:459    .text:00000002 HardFault_Handler
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:461    .text:00000002 MemManage_Handler
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:463    .text:00000002 BusFault_Handler
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:465    .text:00000002 UsageFault_Handler
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:467    .text:00000002 Vector1C
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:469    .text:00000002 Vector20
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:471    .text:00000002 Vector24
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:473    .text:00000002 Vector28
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:475    .text:00000002 SVC_Handler
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:477    .text:00000002 DebugMon_Handler
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:479    .text:00000002 Vector34
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:481    .text:00000002 PendSV_Handler
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:483    .text:00000002 SysTick_Handler
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:485    .text:00000002 Vector40
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:487    .text:00000002 Vector44
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:489    .text:00000002 Vector48
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:491    .text:00000002 Vector4C
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:493    .text:00000002 Vector50
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:495    .text:00000002 Vector54
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:497    .text:00000002 Vector58
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:499    .text:00000002 Vector5C
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:502    .text:00000002 Vector60
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:504    .text:00000002 Vector64
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:506    .text:00000002 Vector68
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:508    .text:00000002 Vector6C
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:510    .text:00000002 Vector70
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:512    .text:00000002 Vector74
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:514    .text:00000002 Vector78
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:516    .text:00000002 Vector7C
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:520    .text:00000002 Vector80
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:522    .text:00000002 Vector84
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:524    .text:00000002 Vector88
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:526    .text:00000002 Vector8C
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:528    .text:00000002 Vector90
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:530    .text:00000002 Vector94
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:532    .text:00000002 Vector98
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:534    .text:00000002 Vector9C
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:538    .text:00000002 VectorA0
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:540    .text:00000002 VectorA4
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:542    .text:00000002 VectorA8
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:544    .text:00000002 VectorAC
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:546    .text:00000002 VectorB0
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:548    .text:00000002 VectorB4
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:550    .text:00000002 VectorB8
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:552    .text:00000002 VectorBC
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:556    .text:00000002 VectorC0
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:558    .text:00000002 VectorC4
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:560    .text:00000002 VectorC8
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:562    .text:00000002 VectorCC
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:564    .text:00000002 VectorD0
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:566    .text:00000002 VectorD4
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:568    .text:00000002 VectorD8
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccgU6rMd.s 			page 23
+
+
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:570    .text:00000002 VectorDC
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:574    .text:00000002 VectorE0
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:576    .text:00000002 VectorE4
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:578    .text:00000002 VectorE8
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:580    .text:00000002 VectorEC
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:582    .text:00000002 VectorF0
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:584    .text:00000002 VectorF4
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:586    .text:00000002 VectorF8
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:588    .text:00000002 VectorFC
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:592    .text:00000002 Vector100
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:594    .text:00000002 Vector104
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:596    .text:00000002 Vector108
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:598    .text:00000002 Vector10C
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:600    .text:00000002 Vector110
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:602    .text:00000002 Vector114
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:604    .text:00000002 Vector118
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:606    .text:00000002 Vector11C
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:610    .text:00000002 Vector120
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:612    .text:00000002 Vector124
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:614    .text:00000002 Vector128
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:616    .text:00000002 Vector12C
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:618    .text:00000002 Vector130
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:620    .text:00000002 Vector134
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:622    .text:00000002 Vector138
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:624    .text:00000002 Vector13C
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:628    .text:00000002 Vector140
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:630    .text:00000002 Vector144
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:632    .text:00000002 Vector148
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:634    .text:00000002 Vector14C
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:636    .text:00000002 Vector150
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:638    .text:00000002 Vector154
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:640    .text:00000002 Vector158
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:642    .text:00000002 Vector15C
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:646    .text:00000002 Vector160
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:648    .text:00000002 Vector164
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:650    .text:00000002 Vector168
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:652    .text:00000002 Vector16C
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:654    .text:00000002 Vector170
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:656    .text:00000002 Vector174
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:658    .text:00000002 Vector178
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:660    .text:00000002 Vector17C
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:664    .text:00000002 Vector180
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:666    .text:00000002 Vector184
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:668    .text:00000002 Vector188
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:670    .text:00000002 Vector18C
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:672    .text:00000002 Vector190
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:674    .text:00000002 Vector194
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:676    .text:00000002 Vector198
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:678    .text:00000002 Vector19C
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:682    .text:00000002 Vector1A0
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:684    .text:00000002 Vector1A4
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:686    .text:00000002 Vector1A8
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:688    .text:00000002 Vector1AC
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:690    .text:00000002 Vector1B0
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:692    .text:00000002 Vector1B4
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:694    .text:00000002 Vector1B8
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:696    .text:00000002 Vector1BC
+ARM GAS  C:\Users\RAKIBU~1\AppData\Local\Temp\ccgU6rMd.s 			page 24
+
+
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:700    .text:00000002 Vector1C0
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:702    .text:00000002 Vector1C4
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:704    .text:00000002 Vector1C8
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:706    .text:00000002 Vector1CC
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:708    .text:00000002 Vector1D0
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:710    .text:00000002 Vector1D4
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:712    .text:00000002 Vector1D8
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:714    .text:00000002 Vector1DC
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:255    .text:00000000 $t
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:1026   .text:00000006 _unhandled_exception
+../../../os/common/startup/ARMCMx/compilers/GCC/vectors.S:1027   .text:00000006 .stay
+
+UNDEFINED SYMBOLS
+__main_stack_end__
+_crt0_entry
