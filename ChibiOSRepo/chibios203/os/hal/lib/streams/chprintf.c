@@ -377,17 +377,6 @@ int chprintf(BaseSequentialStream *chp, const char *fmt, ...) {
 }
 
 
-int myPrintf(const char *fmt, ...) {
-  va_list ap;
-  int formatted_bytes;
-
-  va_start(ap, fmt);
-  formatted_bytes = chvprintf((BaseSequentialStream*)&SD6, fmt, ap);
-  va_end(ap);
-
-  return formatted_bytes;
-}
-
 /**
  * @brief   System formatted output function.
  * @details This function implements a minimal @p snprintf()-like functionality.

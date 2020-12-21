@@ -598,11 +598,11 @@
                                      PIN_PUPDR_PULLUP(GPIOC_PIN5) |         \
                                      PIN_PUPDR_PULLUP(GPIOC_PIN6) |         \
                                      PIN_PUPDR_FLOATING(GPIOC_MCLK) |       \
-                                     PIN_PUPDR_PULLUP(GPIOC_PIN8) |         \
-                                     PIN_PUPDR_PULLUP(GPIOC_PIN9) |         \
-                                     PIN_PUPDR_PULLUP(GPIOC_SCLK) |       \
-                                     PIN_PUPDR_PULLUP(GPIOC_PIN11) |        \
-                                     PIN_PUPDR_PULLUP(GPIOC_SDIN) |       \
+                                     PIN_PUPDR_FLOATING(GPIOC_PIN8) |         \
+                                     PIN_PUPDR_FLOATING(GPIOC_PIN9) |         \
+                                     PIN_PUPDR_FLOATING(GPIOC_SCLK) |       \
+                                     PIN_PUPDR_FLOATING(GPIOC_PIN11) |        \
+                                     PIN_PUPDR_FLOATING(GPIOC_SDIN) |       \
                                      PIN_PUPDR_PULLUP(GPIOC_PIN13) |        \
                                      PIN_PUPDR_PULLUP(GPIOC_PIN14) |        \
                                      PIN_PUPDR_PULLUP(GPIOC_PIN15))
@@ -644,7 +644,7 @@
  *
  * PD0  - PIN0                      (input pullup).
  * PD1  - PIN1                      (input pullup).
- * PD2  - PIN2                      (alternate 4).
+ * PD2  - PIN2                      (alternate 12).
  * PD3  - PIN3                      (input pullup).
  * PD4  - RESET                     (output pushpull maximum).
  * PD5  - OVER_CURRENT              (input floating).
@@ -709,7 +709,7 @@
                                      PIN_OSPEED_HIGH(GPIOD_LED6))
 #define VAL_GPIOD_PUPDR             (PIN_PUPDR_PULLUP(GPIOD_PIN0) |         \
                                      PIN_PUPDR_PULLUP(GPIOD_PIN1) |         \
-                                     PIN_PUPDR_PULLUP(GPIOD_PIN2) |         \
+                                     PIN_PUPDR_FLOATING(GPIOD_PIN2) |         \
                                      PIN_PUPDR_PULLUP(GPIOD_PIN3) |         \
                                      PIN_PUPDR_FLOATING(GPIOD_RESET) |      \
                                      PIN_PUPDR_FLOATING(GPIOD_OVER_CURRENT) |\
